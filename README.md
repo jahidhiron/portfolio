@@ -6,5 +6,4 @@ query for CRUD operation.
 
 Setup:
 -> yarn or npm install
-
 -> yarn start or npm start
