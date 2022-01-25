@@ -1,9 +1,8 @@
-# Raw nodejs Uptime Link Monitoring API
+# Portfolio
 
 ## Introduction
-No npm, file system as database, custom authentication, token generation and custom
-query for CRUD operation.
+Static react portfolio website
 
 Setup:
--> yarn or npm install
--> yarn start or npm start
+-> yarn 
+-> yarn start
