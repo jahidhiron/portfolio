@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import "./contact.css";
 import Phone from "../../img/phone.png";
 import Email from "../../img/email.png";
+import Github from "../../img/github.png";
 import Address from "../../img/address.png";
 
 const Contact = () => {
@@ -37,15 +38,19 @@ const Contact = () => {
           <div className="c-info">
             <div className="c-info-item">
               <img src={Phone} alt="" className="c-icon" />
-              +1 1234 556 75
+              +8801940660150
             </div>
             <div className="c-info-item">
               <img className="c-icon" src={Email} alt="" />
-              contact@lama.dev
+              namehiron.96@gmail.com
+            </div>
+            <div className="c-info-item">
+              <img className="c-icon" src={Github} alt="" />
+              https://github.com/jahidhiron
             </div>
             <div className="c-info-item">
               <img className="c-icon" src={Address} alt="" />
-              245 King Street, Touterie Victoria 8520 Australia
+              Faidabad Transmitter, Dhaka - 1230, Bangladesh
             </div>
           </div>
         </div>
