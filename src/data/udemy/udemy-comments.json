@@ -1,0 +1,72 @@
+[
+  {
+    "id": 101,
+    "commenterName": "Vijayalaxmi S.",
+    "commenterTitle": "Senior Software Developer",
+    "commentTime": "1d",
+    "commentText": "Amazing Lecture!",
+    "rating": 5,
+    "originalPostTitle": "Nodejs: All You Need to Know with Practical Project",
+    "commentedPost": "https://www.udemy.com/course/all-you-need-to-know-nodejs-with-practical-project"
+  },
+  {
+    "id": 102,
+    "commenterName": "Ahmed R.",
+    "commenterTitle": "UI/UX Designer",
+    "commentTime": "3mo",
+    "commentText": "I recently completed the MERN Stack course by Jahid Haron, and it was an excellent learning experience. His teaching style is clear and practical, making even complex topics easy to understand. The hands-on projects gave me real confidence to build applications. Jahid Sir is also very supportive and motivating throughout the course.",
+    "rating": 5,
+    "commentedPost": "https://www.udemy.com/course/all-you-need-to-know-mern-stack-with-practical-project/",
+    "originalPostTitle": "MERN Stack: All You Need to Know with Practical Project"
+  },
+  {
+    "id": 103,
+    "commenterName": "MD FIROZ A.",
+    "commenterTitle": "DevOps Enthusiast",
+    "commentTime": "4mo",
+    "commentText": "The lessons are clear, beginner-friendly, and up-to-date with modern React practices like hooks and functional components. The practical project ties everything together, making it easy to apply what you learn. ",
+    "rating": 5,
+    "commentedPost": "https://www.udemy.com/course/all-you-need-to-know-react-with-practical-project/",
+    "originalPostTitle": "React: All You Need to Know with Practical Project"
+  },
+  {
+    "id": 104,
+    "commenterName": "Chukwu E.",
+    "commenterTitle": "Full-Stack Trainee",
+    "commentTime": "6mo",
+    "commentText": "you're doing a good job man... I love your course",
+    "rating": 5,
+    "commentedPost": "https://www.udemy.com/course/all-you-need-to-know-nodejs-with-practical-project",
+    "originalPostTitle": "Nodejs: All You Need to Know with Practical Project"
+  },
+  {
+    "id": 107,
+    "commenterName": "Weera Deepakumara P.",
+    "commenterTitle": "DevOps Enthusiast",
+    "commentTime": "6mo",
+    "commentText": "Excellent teaching and updated practical content. Thanks Jahid, please keep it up more practical tricks and techniques.",
+    "rating": 4.5,
+    "commentedPost": "https://www.udemy.com/course/all-you-need-to-know-react-with-practical-project/",
+    "originalPostTitle": "React: All You Need to Know with Practical Project"
+  },
+  {
+    "id": 105,
+    "commenterName": "Pradip B.",
+    "commenterTitle": "Full-Stack Trainee",
+    "commentTime": "5mo",
+    "commentText": "Every Thing is good for the Free",
+    "rating": 5,
+    "commentedPost": "https://www.udemy.com/course/all-you-need-to-know-nodejs-with-practical-project",
+    "originalPostTitle": "Nodejs: All You Need to Know with Practical Project"
+  },
+  {
+    "id": 106,
+    "commenterName": "Abdirahmanhaji",
+    "commenterTitle": "Full-Stack Trainee",
+    "commentTime": "7mo",
+    "commentText": "This is an interesting and instructive course.",
+    "rating": 5,
+    "commentedPost": "https://www.udemy.com/course/all-you-need-to-know-nodejs-with-practical-project",
+    "originalPostTitle": "Nodejs: All You Need to Know with Practical Project"
+  }
+]

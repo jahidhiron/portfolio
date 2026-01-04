@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Github Repositories",
+    "subtitle": "GitHub",
+    "description": "I actively contribute to open-source projects and maintain several personal repositories showcasing my expertise in **TypeScript**, **Next.js**, and **Node.js**. Explore my work on building highly performant, type-safe APIs and modern component libraries. This is where the code lives!",
+    "link": "https://github.com/your-profile",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D562DAQEk4FJHXnZF_w/profile-treasury-image-shrink_480_480/profile-treasury-image-shrink_480_480/0/1728794457092?e=1765713600&v=beta&t=XfH7opvJ54-A1haGnggLvW8PxYcBRpM8RxzslzeO3_Q"
+  },
+  {
+    "title": "Dev.to & Medium Contributions",
+    "subtitle": "DEV Community",
+    "description": "Read my published articles and tutorials on advanced **React hooks**, **serverless architecture (AWS Lambda)**, and effective **Dockerization** for full-stack applications. I share practical insights and best practices learned over five years of professional experience.",
+    "link": "https://dev.to/your-profile",
+    "imageUrl": "https://media.licdn.com/dms/image/sync/v2/D5627AQHgYbnAhjW3gA/articleshare-shrink_480/articleshare-shrink_480/0/1728793498506?e=1765713600&v=beta&t=4JtezeFiAaKAau4uPRRhlivUwz5dYQKJFRLJ47JGwxQ"
+  }
+]

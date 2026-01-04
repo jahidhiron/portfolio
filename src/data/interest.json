@@ -1,0 +1,66 @@
+{
+  "Companies": [
+    {
+      "id": 1,
+      "name": "ChartVPS Technologies",
+      "followers": "38",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXxukD9ySIe_SVjijxzUnfdu0z6oUGCxryUg&s",
+      "isFollowing": false
+    },
+    {
+      "id": 2,
+      "name": "Randstad",
+      "followers": "4,186,846",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThMZQQtzzbfiyB_NAUoC-sKPraQgkOFX1z9A&s",
+      "isFollowing": true
+    }
+  ],
+  "Groups": [
+    {
+      "id": 3,
+      "name": "Software Development Best Practices",
+      "members": "500,000+",
+      "logoUrl": "https://img.freepik.com/premium-vector/software-solution-logo-design-tech-company_924522-94.jpg?semt=ais_hybrid&w=740&q=80",
+      "isFollowing": true
+    },
+    {
+      "id": 7,
+      "name": "Node.js Developers Community",
+      "members": "250,000",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHyWdnwn3qBpCVyQ_s7RG52R7ivswRM65ulg&s",
+      "isFollowing": false
+    }
+  ],
+  "Newsletters": [
+    {
+      "id": 4,
+      "name": "The Daily Byte",
+      "subscribers": "100,000",
+      "logoUrl": "https://m.media-amazon.com/images/I/71XddTTuLmL.png",
+      "isFollowing": false
+    },
+    {
+      "id": 8,
+      "name": "Frontend Focus Weekly",
+      "subscribers": "85,000",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoYXUb1kDWlNhlfHJrbr9Dl_9HlS3X9WlSMw&s",
+      "isFollowing": true
+    }
+  ],
+  "Schools": [
+    {
+      "id": 5,
+      "name": "Harvard University",
+      "followers": "1,500,000",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7EPSHBQRpd59LLpRPAWm_dVUf67zWNkjKiA&s",
+      "isFollowing": false
+    },
+    {
+      "id": 9,
+      "name": "Massachusetts Institute of Technology (MIT)",
+      "followers": "2,000,000",
+      "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKdY17qV_lzSsgv7fpZfCMob4c_8VTqoW_VA&s",
+      "isFollowing": true
+    }
+  ]
+}

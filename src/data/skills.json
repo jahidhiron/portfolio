@@ -1,0 +1,272 @@
+[
+  {
+    "skill": "Programming Languages (JavaScript, Vanilla JS, Modern JS, TypeScript, Python, Java, C#, C++, PHP/jQuery)",
+    "experience": ["Software Engineer at APSIS", "Course Instructor at Udemy"],
+    "projects": []
+  },
+  {
+    "skill": "SQLite",
+    "experience": [],
+    "projects": [
+      "NestJS REST API Starter – Clean Architecture & Best Practices"
+    ]
+  },
+  {
+    "skill": "Localization / I18n / react-i18next",
+    "experience": [],
+    "projects": [
+      "NestJS REST API Starter – Clean Architecture & Best Practices",
+      "Express TypeScript REST API Starter – Clean Architecture & Best Practices",
+      "React TypeScript Frontend – Scalable UI with Clean Architecture"
+    ]
+  },
+  {
+    "skill": "Supertest",
+    "experience": [],
+    "projects": [
+      "NestJS REST API Starter – Clean Architecture & Best Practices"
+    ]
+  },
+  {
+    "skill": "SQL / MySQL / PostgreSQL (pg)",
+    "experience": [
+      "Software Engineer at APSIS",
+      "Software Engineer at Teamlance"
+    ],
+    "projects": [
+      "Express TypeScript REST API Starter – Clean Architecture & Best Practices",
+      "InFlow",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Knex.js",
+    "experience": ["Software Engineer at APSIS"],
+    "projects": [
+      "Prime Bank ERP - Enterprise-Scale Microservices Ecosystem",
+      "BRAC Group ERP – Enterprise-Scale Microservices Ecosystem"
+    ]
+  },
+  {
+    "skill": "CI/CD / GitHub Actions / Jenkins",
+    "experience": ["Software Engineer at Teamlance"],
+    "projects": [
+      "Express TypeScript REST API Starter",
+      "React TypeScript Frontend",
+      "NestJS REST API Starter",
+      "Smart Jobs",
+      "Prime Bank ERP",
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Redux / Redux Toolkit / redux-actions / Redux Saga",
+    "experience": [
+      "Software Engineer at Teamlance",
+      "Software Engineer at Binary Bunon"
+    ],
+    "projects": [
+      "React TypeScript Frontend – Scalable UI with Clean Architecture",
+      "Alpha Search",
+      "Resono",
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Vite",
+    "experience": [],
+    "projects": [
+      "React TypeScript Frontend – Scalable UI with Clean Architecture"
+    ]
+  },
+  {
+    "skill": "JSON Web Token (JWT) / jsonwebtoken",
+    "experience": [],
+    "projects": [
+      "NestJS REST API Starter – Clean Architecture & Best Practices",
+      "Express TypeScript REST API Starter – Clean Architecture & Best Practices"
+    ]
+  },
+
+  {
+    "skill": "Tailwind CSS / Material-UI / SASS / Bootstrap / styled-components",
+    "experience": [],
+    "projects": [
+      "React TypeScript Frontend – Scalable UI with Clean Architecture"
+    ]
+  },
+  {
+    "skill": "Amazon Web Services (AWS) / S3 Bucket / Amazon EKS",
+    "experience": ["Software Engineer at Teamlance"],
+    "projects": [
+      "Express TypeScript REST API Starter",
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Redis / ioredis / BullMQ / Queues",
+    "experience": ["Software Engineer at Teamlance"],
+    "projects": [
+      "Express TypeScript REST API Starter",
+      "NestJS REST API Starter",
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Logging & Monitoring (Winston / Morgan / Kibana / Elasticsearch)",
+    "experience": ["Software Engineer at Teamlance"],
+    "projects": [
+      "Express TypeScript REST API Starter",
+      "NestJS REST API Starter"
+    ]
+  },
+  {
+    "skill": "Swagger API",
+    "experience": [],
+    "projects": [
+      "Express TypeScript REST API Starter",
+      "NestJS REST API Starter",
+      "Amani Forged - E-commerce"
+    ]
+  },
+  {
+    "skill": "EJS",
+    "experience": [],
+    "projects": [
+      "Express TypeScript REST API Starter – Clean Architecture & Best Practices"
+    ]
+  },
+  {
+    "skill": "Jest / ESLint / Prettier",
+    "experience": [],
+    "projects": [
+      "Express TypeScript REST API Starter",
+      "NestJS REST API Starter",
+      "React TypeScript Frontend"
+    ]
+  },
+  {
+    "skill": "Nginx / Deployment",
+    "experience": ["Software Engineer at Teamlance"],
+    "projects": []
+  },
+  {
+    "skill": "TypeORM / Sequelize",
+    "experience": ["Software Engineer at APSIS"],
+    "projects": [
+      "Express TypeScript REST API Starter",
+      "NestJS REST API Starter",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "NestJS",
+    "experience": ["Software Engineer at APSIS"],
+    "projects": ["NestJS REST API Starter", "Prime Bank ERP"]
+  },
+  {
+    "skill": "MERN Stack / MongoDB / Mongoose ODM",
+    "experience": [
+      "Software Engineer at Teamlance",
+      "Course Instructor at Udemy"
+    ],
+    "projects": ["Cloud Class Room"]
+  },
+  {
+    "skill": "Git",
+    "experience": ["Software Engineer at Teamlance"],
+    "projects": []
+  },
+  {
+    "skill": "RabbitMQ",
+    "experience": [],
+    "projects": []
+  },
+  {
+    "skill": "Microservices / Kubernetes",
+    "experience": ["Software Engineer at APSIS"],
+    "projects": []
+  },
+  {
+    "skill": "Docker",
+    "experience": [],
+    "projects": ["Smart Jobs", "Resono", "Amani Forged - E-commerce"]
+  },
+  {
+    "skill": "CS Fundamentals (HCI, Software Engineering, Data Structures, Algorithms, SDLC, Operating Systems, Discrete Math, Networking, Theory of Computation, Compiler Design)",
+    "experience": ["American International University-Bangladesh"],
+    "projects": []
+  },
+  {
+    "skill": "React / React.js",
+    "experience": [
+      "Course Instructor at Udemy",
+      "Software Engineer at Binary Bunon"
+    ],
+    "projects": [
+      "Resono",
+      "Cloud Class Room",
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Node.js / Express.js / REST APIs / Restful Web Services",
+    "experience": [
+      "Software Engineer at APSIS",
+      "Software Engineer at Teamlance",
+      "Course Instructor at Udemy"
+    ],
+    "projects": [
+      "Cloud Class Room",
+      "InFlow",
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Next.js / Nextjs",
+    "experience": [
+      "Software Engineer at Teamlance",
+      "Software Engineer at APSIS"
+    ],
+    "projects": [
+      "Online Certification School",
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+
+  {
+    "skill": "Django / Django REST Framework",
+    "experience": [],
+    "projects": []
+  },
+  {
+    "skill": "Socket.io",
+    "experience": [],
+    "projects": [
+      "Amani Forged - E-commerce",
+      "Tirematic - Multi Tenant E-commerce"
+    ]
+  },
+  {
+    "skill": "Web Scraping",
+    "experience": [],
+    "projects": ["Tirematic - Multi Tenant E-commerce"]
+  },
+  {
+    "skill": "React Query",
+    "experience": [],
+    "projects": []
+  },
+  {
+    "skill": "NoSQL",
+    "experience": [],
+    "projects": []
+  }
+]

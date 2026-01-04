@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "commenterName": "Alex R.",
+    "commenterTitle": "Senior Software Developer",
+    "commentTime": "1d",
+    "commentText": "This is a great tutorial! I particularly liked the section on using `use-client` correctly with server components. Thanks for sharing!",
+    "originalPostId": 4,
+    "originalPostTitle": "Next.js 14 Server Components Deep Dive"
+  },
+  {
+    "id": 102,
+    "commenterName": "Maria S.",
+    "commenterTitle": "UI/UX Designer",
+    "commentTime": "5h",
+    "commentText": "Awesome post on Tailwind responsiveness. The example for custom breakpoints was super helpful for my latest project.",
+    "originalPostId": 6,
+    "originalPostTitle": "Tailwind CSS Responsive Design Tutorial"
+  },
+  {
+    "id": 103,
+    "commenterName": "Ben K.",
+    "commenterTitle": "DevOps Enthusiast",
+    "commentTime": "3wk",
+    "commentText": "Interesting approach to the CI/CD pipeline! Why did you choose CodeBuild over GitLab CI for the deployment stage?",
+    "originalPostId": 3,
+    "originalPostTitle": "CI/CD with AWS and Docker: From Zero to Deployment"
+  },
+  {
+    "id": 104,
+    "commenterName": "Sara L.",
+    "commenterTitle": "Full-Stack Trainee",
+    "commentTime": "1mo",
+    "commentText": "I was struggling with the Mongoose `insertMany` method, but this video made it crystal clear. Saved me a ton of time!",
+    "originalPostId": 1,
+    "originalPostTitle": "Mongoose Add Multiple Document | All You Need to Know..."
+  }
+]

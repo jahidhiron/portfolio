@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer | Educator | Blogging...",
+    "time": "4mo",
+    "text": "Mongoose Add Multiple Document\nIn this video, you'll learn how to add... more",
+    "videoTitle": "Mongoose Add Multiple Document | All You Need to Know with Practical Project (Part 1)",
+    "link": "https://youtube.com/watch?v=6EO-34QG7Ag",
+    "videoId": "6EO-34QG7Ag",
+    "likes": 0,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 2,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer | Educator | Blogging...",
+    "time": "5mo",
+    "text": "Delete Multiple Documents | All You Need to Know with Practical Project\n... more",
+    "videoTitle": "Delete Multiple Documents | All You Need to Know with Practical Project",
+    "link": "https://youtube.com/watch?v=3Si50vo8VW0",
+    "videoId": "3Si50vo8VW0",
+    "likes": 1,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 3,
+    "name": "Jahid Hiron",
+    "title": "Full-Stack Developer | Instructor",
+    "time": "3mo",
+    "text": "Building a CI/CD Pipeline with AWS and Docker. Step-by-step guide for automation.",
+    "videoTitle": "CI/CD with AWS and Docker: From Zero to Deployment",
+    "link": "https://youtube.com/watch?v=1_AlV-FFxM8",
+    "videoId": "1_AlV-FFxM8",
+    "likes": 5,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 4,
+    "name": "Jahid Hiron",
+    "title": "Lead Developer | Tech Reviewer",
+    "time": "2wk",
+    "text": "Understanding the power of Next.js 14 server components vs. client components. A deep dive into performance metrics. Click for details...",
+    "videoTitle": "Next.js 14 Server Components Deep Dive",
+    "link": "https://blog.dev/link4",
+    "videoId": null,
+    "likes": 12,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 5,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer | Educator",
+    "time": "1mo",
+    "text": "A quick guide on using Prisma with PostgreSQL for secure and efficient data modeling. Includes schema setup. #database #prisma",
+    "videoTitle": "Prisma and PostgreSQL Integration Tutorial",
+    "link": "https://medium.com/link5",
+    "videoId": null,
+    "likes": 8,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 6,
+    "name": "Jahid Hiron",
+    "title": "Full-Stack Developer",
+    "time": "1wk",
+    "text": "New tutorial is out! Master **Tailwind CSS** responsive design with custom utility classes. Essential for modern UI. #webdev",
+    "videoTitle": "Tailwind CSS Responsive Design Tutorial",
+    "link": "https://youtube.com/watch?v=PuovsjZN11Y",
+    "videoId": "PuovsjZN11Y",
+    "likes": 22,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 7,
+    "name": "Jahid Hiron",
+    "title": "Instructor | Speaker",
+    "time": "3mo",
+    "text": "Deep dive into **JavaScript promises** vs. async/await. When and how to use them effectively for non-blocking operations.",
+    "videoTitle": "JavaScript Promises vs Async/Await",
+    "link": "https://dev.to/link7",
+    "videoId": null,
+    "likes": 40,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 8,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer",
+    "time": "2mo",
+    "text": "Just finished refactoring a legacy **Redux** codebase to use **Redux Toolkit** and RTK Query. Huge performance gains!",
+    "videoTitle": "Redux Toolkit Migration Guide",
+    "link": "https://medium.com/link8",
+    "videoId": null,
+    "likes": 15,
+    "avatarUrl": "/profile.png"
+  },
+  {
+    "id": 9,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer | Educator",
+    "time": "6mo",
+    "text": "A quick guide to securing your **Node.js API** using JWT and refresh tokens. Security first! #nodejs #security",
+    "videoTitle": "Node.js JWT Authentication and Refresh Tokens",
+    "link": "https://youtube.com/watch?v=XYjOteYbCMo",
+    "videoId": "XYjOteYbCMo",
+    "likes": 30,
+    "avatarUrl": "/profile.png"
+  }
+]

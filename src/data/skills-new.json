@@ -1,0 +1,301 @@
+[
+  {
+    "skill": "Programming Languages (JS, TS, Python, Java, C#, C++, PHP)",
+    "points": [
+      "Expertise in Modern JavaScript (ES6+) and Type-safe development with TypeScript.",
+      "Proficient in multi-paradigm programming including OOP and Functional patterns.",
+      "Deep understanding of memory management, concurrency, and language-specific runtimes.",
+      "Capable of switching between high-level scripting and low-level system logic."
+    ]
+  },
+  {
+    "skill": "SQLite",
+    "points": [
+      "Implementing lightweight, serverless database solutions for local storage and mobile apps.",
+      "Optimizing file-based data persistence for rapid read/write operations.",
+      "Managing embedded database schemas within Clean Architecture environments.",
+      "Ensuring ACID compliance for local data integrity in standalone applications."
+    ]
+  },
+  {
+    "skill": "Localization / I18n / react-i18next",
+    "points": [
+      "Architecting multi-language support for global-scale web applications.",
+      "Implementing dynamic translation loading and locale detection strategies.",
+      "Managing complex interpolation, pluralization, and formatting across cultures.",
+      "Integrating internationalization logic into both Frontend and Backend (Node/Nest) layers."
+    ]
+  },
+  {
+    "skill": "Supertest",
+    "points": [
+      "Automating HTTP assertions for rigorous API integration testing.",
+      "Testing RESTful endpoints for status codes, headers, and payload integrity.",
+      "Integrating Supertest with Jest to build robust CI/CD validation suites.",
+      "Mocking authenticated requests to validate secure API routes."
+    ]
+  },
+  {
+    "skill": "SQL / MySQL / PostgreSQL",
+    "points": [
+      "Designing relational schemas with complex relationships and constraints.",
+      "Optimizing query performance through indexing and execution plan analysis.",
+      "Managing data integrity through ACID-compliant transactions.",
+      "Architecting scalable database structures for multi-tenant e-commerce systems."
+    ]
+  },
+  {
+    "skill": "Knex.js",
+    "points": [
+      "Building dynamic, programmatically-generated SQL queries with a fluent interface.",
+      "Managing database migrations and seeding for consistent environments.",
+      "Connecting Microservices to relational data sources with connection pooling.",
+      "Ensuring type-safe database interactions in TypeScript-based backends."
+    ]
+  },
+  {
+    "skill": "CI/CD / GitHub Actions / Jenkins",
+    "points": [
+      "Automating build, test, and deployment workflows to eliminate manual errors.",
+      "Implementing automated deployment strategies for zero-downtime releases.",
+      "Managing environment-specific configurations and secret management.",
+      "Scaling delivery pipelines for enterprise-level microservices ecosystems."
+    ]
+  },
+  {
+    "skill": "Redux / Redux Toolkit / Redux Saga / redux-actions",
+    "points": [
+      "Managing predictable global state in large-scale React applications.",
+      "Handling complex side effects and asynchronous workflows using Redux Saga.",
+      "Standardizing action creators using redux-actions for cleaner codebases.",
+      "Implementing efficient data caching and synchronization with RTK Query."
+    ]
+  },
+  {
+    "skill": "Vite",
+    "points": [
+      "Optimizing frontend build times and HMR using Esbuild-backed tooling.",
+      "Configuring modern development environments for React and TypeScript.",
+      "Managing optimized production builds with advanced tree-shaking and bundling.",
+      "Integrating Vite with custom plugins to streamline the development workflow."
+    ]
+  },
+  {
+    "skill": "JSON Web Token (JWT) / Authentication",
+    "points": [
+      "Implementing stateless authentication for secure, scalable REST APIs.",
+      "Managing token signing, verification, and expiration logic (Access/Refresh tokens).",
+      "Integrating JWT with Passport.js and NestJS AuthGuards for endpoint protection.",
+      "Ensuring secure transport and storage of sensitive user credentials."
+    ]
+  },
+  {
+    "skill": "Tailwind CSS / MUI / SASS / Bootstrap / Styled-Components",
+    "points": [
+      "Building responsive, mobile-first interfaces with modern utility-first CSS.",
+      "Creating reusable component libraries with consistent design systems.",
+      "Implementing custom themes, mixins, and dark mode functionality.",
+      "Optimizing styles for fast rendering and minimal CSS bundle sizes."
+    ]
+  },
+  {
+    "skill": "AWS / S3 / Amazon EKS",
+    "points": [
+      "Managing cloud infrastructure and scalable storage solutions via S3.",
+      "Deploying production-grade Kubernetes clusters using Amazon EKS.",
+      "Configuring IAM roles and security groups for cloud resource protection.",
+      "Orchestrating cloud-native applications with focus on high availability."
+    ]
+  },
+  {
+    "skill": "Redis / BullMQ / Queues",
+    "points": [
+      "Implementing high-speed distributed caching to reduce database load.",
+      "Managing background task processing and delayed job execution with BullMQ.",
+      "Architecting event-driven systems using Redis Pub/Sub mechanisms.",
+      "Ensuring system reliability through message persistence and retry logic."
+    ]
+  },
+  {
+    "skill": "Logging & Monitoring (Winston / Morgan / ELK Stack)",
+    "points": [
+      "Implementing centralized logging for debugging in distributed systems.",
+      "Visualizing system health and performance metrics via Kibana dashboards.",
+      "Setting up real-time monitoring to catch critical system errors in production.",
+      "Analyzing traffic patterns and API usage through structured log data."
+    ]
+  },
+  {
+    "skill": "Swagger API",
+    "points": [
+      "Documenting APIs using OpenAPI standards for better developer collaboration.",
+      "Providing interactive sandboxes for testing API endpoints in real-time.",
+      "Automating documentation updates based on code decorators in NestJS.",
+      "Standardizing API responses and request schemas for frontend integration."
+    ]
+  },
+  {
+    "skill": "EJS (Embedded JavaScript Templates)",
+    "points": [
+      "Rendering dynamic, server-side HTML content for Node.js applications.",
+      "Implementing partials and layouts for modular, reusable UI structures.",
+      "Managing template logic for rapid prototyping and SEO-focused pages.",
+      "Integrating server-side data seamlessly into client-side views."
+    ]
+  },
+  {
+    "skill": "Jest / ESLint / Prettier",
+    "points": [
+      "Enforcing code quality and consistency across cross-functional teams.",
+      "Achieving high test coverage through Unit and Snapshot testing.",
+      "Automating static code analysis to prevent common runtime errors.",
+      "Streamlining development with auto-formatting and standardized linting rules."
+    ]
+  },
+  {
+    "skill": "Nginx / Deployment",
+    "points": [
+      "Configuring high-performance reverse proxies and load balancers.",
+      "Managing SSL/TLS certificates and enforcing HTTPS security protocols.",
+      "Optimizing static asset delivery and server-side caching strategies.",
+      "Handling production server maintenance and log rotation."
+    ]
+  },
+  {
+    "skill": "TypeORM / Sequelize",
+    "points": [
+      "Leveraging Data Mapper and ActiveRecord patterns for database abstraction.",
+      "Managing complex many-to-many and one-to-one relational mappings.",
+      "Implementing type-safe queries and automated database migrations.",
+      "Optimizing database interactions within NestJS and Express environments."
+    ]
+  },
+  {
+    "skill": "NestJS",
+    "points": [
+      "Architecting enterprise backends using Dependency Injection and Modules.",
+      "Implementing Hexagonal and Clean Architecture for maintainable codebases.",
+      "Building scalable Microservices with built-in NestJS transporters.",
+      "Utilizing Pipes, Guards, and Interceptors for cross-cutting concerns."
+    ]
+  },
+  {
+    "skill": "MERN Stack / MongoDB / Mongoose",
+    "points": [
+      "Developing full-stack applications with an end-to-end JavaScript ecosystem.",
+      "Architecting flexible document schemas for rapid feature evolution.",
+      "Utilizing Aggregation Pipelines for complex data processing and reporting.",
+      "Managing high-concurrency environments with MongoDB clusters."
+    ]
+  },
+  {
+    "skill": "RabbitMQ",
+    "points": [
+      "Implementing robust message brokering for decoupled microservices.",
+      "Managing work queues and message exchanges (Direct, Topic, Fanout).",
+      "Ensuring fault tolerance and reliability in distributed systems.",
+      "Coordinating complex workflows through event-driven architecture."
+    ]
+  },
+  {
+    "skill": "Microservices / Kubernetes",
+    "points": [
+      "Breaking down monoliths into scalable, independent service units.",
+      "Orchestrating containerized services with auto-scaling and self-healing.",
+      "Managing service discovery and load balancing within a K8s cluster.",
+      "Implementing secure inter-service communication and configuration."
+    ]
+  },
+  {
+    "skill": "Docker",
+    "points": [
+      "Containerizing applications for environment parity and portability.",
+      "Optimizing multi-stage builds for smaller, faster production images.",
+      "Managing complex service environments using Docker Compose.",
+      "Ensuring consistent development-to-production deployment cycles."
+    ]
+  },
+  {
+    "skill": "CS Fundamentals",
+    "points": [
+      "Applying advanced Data Structures and Algorithms for optimized problem-solving.",
+      "Deep understanding of Operating Systems, Networking, and SDLC methodologies.",
+      "Implementing Design Patterns (Singleton, Factory, Observer) to solve software challenges.",
+      "Conducting complexity analysis to ensure system scalability and performance."
+    ]
+  },
+  {
+    "skill": "React.js / Next.js",
+    "points": [
+      "Building high-performance, SEO-friendly applications using SSR and SSG.",
+      "Expertise in React Hooks API and performance optimization (Memo/Callback).",
+      "Implementing complex routing and middleware logic in Next.js.",
+      "Managing dynamic data fetching and caching for seamless user experiences."
+    ]
+  },
+  {
+    "skill": "Socket.io",
+    "points": [
+      "Developing real-time, bi-directional communication for chat and live features.",
+      "Managing room-based events and broadcasting for targeted user notifications.",
+      "Implementing fallback mechanisms for consistent connectivity.",
+      "Handling high-frequency updates in collaborative web environments.",
+      "Integrating WebSockets with Node.js/Express to build low-latency collaborative tools."
+    ]
+  },
+  {
+    "skill": "Web Scraping",
+    "points": [
+      "Automating data extraction from complex websites using Puppeteer/Cheerio.",
+      "Handling dynamic content, pagination, and anti-scraping measures.",
+      "Processing and cleaning large datasets for competitive analysis.",
+      "Building automated pipelines to monitor and store external data updates."
+    ]
+  },
+  {
+    "skill": "React Query",
+    "points": [
+      "Managing server-side state with auto-caching and background updates.",
+      "Implementing optimistic UI updates for a faster perceived performance.",
+      "Handling complex pagination and infinite scroll data fetching.",
+      "Simplifying error handling and loading states for API interactions."
+    ]
+  },
+  {
+    "skill": "Git",
+    "points": [
+      "Expertise in distributed version control and complex branching strategies (GitFlow/Feature Branching).",
+      "Managing collaborative workflows through Merge Requests, Code Reviews, and Conflict Resolution.",
+      "Utilizing advanced commands like Rebase, Cherry-pick, and Stash for clean commit histories.",
+      "Integrating Git hooks to automate pre-commit linting and testing processes."
+    ]
+  },
+  {
+    "skill": "Docker",
+    "points": [
+      "Containerizing full-stack applications to ensure environment parity across Dev, Staging, and Production.",
+      "Optimizing Dockerfiles with multi-stage builds to minimize image size and attack surface.",
+      "Orchestrating multi-container environments using Docker Compose for local development.",
+      "Managing persistent data volumes and bridge networking for isolated container communication."
+    ]
+  },
+  {
+    "skill": "Django / Django REST Framework",
+    "points": [
+      "Building robust, high-level web applications following the 'Batteries Included' philosophy.",
+      "Designing complex API schemas and serializers with Django REST Framework (DRF).",
+      "Leveraging Django ORM for secure database interactions and automated migrations.",
+      "Implementing custom Middlewares, Decorators, and Authentication backends."
+    ]
+  },
+
+  {
+    "skill": "Microservices",
+    "points": [
+      "Architecting distributed systems by decomposing monoliths into independent, scalable services.",
+      "Implementing inter-service communication via REST, gRPC, or Message Brokers (RabbitMQ).",
+      "Ensuring system resilience through Service Discovery, API Gateways, and Circuit Breakers.",
+      "Managing distributed data consistency and transaction patterns like Saga or Outbox."
+    ]
+  }
+]

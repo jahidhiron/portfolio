@@ -1,0 +1,50 @@
+[
+  {
+    "type": "linkedin",
+    "title": "LinkedIn",
+    "subtitle": "jahidhiron",
+    "link": "https://www.linkedin.com/in/jahidhiron/",
+    "iconClass": "text-white bg-blue-700",
+    "icon": "FaLinkedinIn"
+  },
+  {
+    "type": "medium",
+    "title": "Medium",
+    "subtitle": "@jahidhiron",
+    "link": "https://medium.com/@jahidhiron",
+    "iconClass": "text-white bg-black",
+    "icon": "FaMediumM"
+  },
+  {
+    "type": "github",
+    "title": "GitHub",
+    "subtitle": "jahidhiron",
+    "link": "https://github.com/jahidhiron",
+    "iconClass": "text-white bg-gray-900",
+    "icon": "FaGithub"
+  },
+  {
+    "type": "youtube",
+    "title": "YouTube",
+    "subtitle": "@jahid-academy",
+    "link": "https://www.youtube.com/@jahid-academy",
+    "iconClass": "text-white bg-red-600",
+    "icon": "FaYoutube"
+  },
+  {
+    "type": "twitter",
+    "title": "Twitter (X)",
+    "subtitle": "@jahid_hiron",
+    "link": "https://x.com/jahid_hiron",
+    "iconClass": "text-white bg-black",
+    "icon": "FaTwitter"
+  },
+  {
+    "type": "instagram",
+    "title": "Instagram",
+    "subtitle": "@jahid_hiron",
+    "link": "https://www.instagram.com/jahid_hiron",
+    "iconClass": "text-white bg-blue-600",
+    "icon": "FaInstagram"
+  }
+]

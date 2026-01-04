@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Software Engineer",
+    "company": "SmartVFS Technologies",
+    "companyUrl": "https://chartvps.com/",
+    "type": "Full time",
+    "duration": "Oct 2025 - Present",
+    "location": "Remote",
+    "companyAvatar": "/images/experiences/chartvps.png",
+    "description": "<p>Currently spearheading core software engineering initiatives at <strong>SmartVFS</strong>, focusing on the architecture and implementation of high-concurrency technology solutions.</p><ul><li>Architecting and maintaining scalable backend services using <strong>Node.js</strong> and <strong>NestJS</strong> to handle complex visa and financial service workflows.</li><li>Optimizing system performance by implementing advanced caching strategies and efficient database indexing, resulting in reduced API latency.</li><li>Collaborating with cross-functional teams to design microservices that ensure high availability and fault tolerance in a distributed environment.</li><li>Leading the integration of automated CI/CD pipelines and containerization strategies using <strong>Docker</strong> to streamline deployment cycles.</li></ul>",
+    "skills": []
+  },
+  {
+    "title": "Course Instructor",
+    "company": "Udemy",
+    "type": "Self-employed",
+    "duration": "Nov 2023 - Present · 2 yrs 3 mos",
+    "location": "Remote",
+    "companyUrl": "https://www.udemy.com/",
+    "companyAvatar": "/images/experiences/udemy.jpg",
+    "description": "<p>I have created comprehensive learning experiences with high-quality videos, lectures, quizzes, and supplementary materials that meet industry standards and best practices.</p><ul><li>Regularly update course materials to reflect the latest advancements.</li><li>Provide prompt and effective student support, addressing inquiries, clarifying concepts, and fostering a positive learning environment.</li></ul>",
+    "skills": [
+      "Nodejs",
+      "MongoDB",
+      "React",
+      "JavaScript",
+      "Mongoose ODM",
+      "REST APIs"
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "company": "APSIS",
+    "companyUrl": "https://apsissolutions.com/",
+    "type": "Full-time",
+    "duration": "Dec 2024 - Oct 2025 · 11 mos",
+    "location": "Dhaka, Bangladesh · On-site",
+    "companyAvatar": "/images/experiences/apsis.png",
+    "description": "<p>I'm currently working in the ERP department, contributing to the development of large-scale, microservices-based ERP systems for organizations like BRAC Group and Prime Bank.</p><p>I've been actively involved in building and maintaining core business modules, including:</p><ul><li>Budget Control</li><li>Central Dispatch</li><li>Fleet Management</li><li>Project Management</li></ul><p>Using technologies like Node.js, NestJS, Next.js, and SQL, I’ve developed scalable APIs and user interfaces that power critical workflows across the organization. I also collaborate closely with cross-functional teams to deploy and manage services using Docker and CI/CD pipelines, ensuring smooth delivery and continuous improvement.</p>",
+    "skills": [
+      "Node.js",
+      "TypeScript",
+      "NestJS",
+      "SQL",
+      "Knex.js",
+      "Next.js",
+      "Microservices",
+      "TypeORM"
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "company": "Teamlance",
+    "companyUrl": "https://teamlance.io/",
+    "type": "Full-time",
+    "duration": "Jun 2022 - Nov 2024 · 2 yrs 6 mos",
+    "location": "Bulgaria · Remote",
+    "companyAvatar": "/images/experiences/teamlance.png",
+    "description": "<p>Developed and maintained scalable software solutions for complex business needs, ensuring high performance and reliability.</p><ul><li>Led teams, made critical decisions, and mentored teams to deliver successful projects.</li><li>Collaborated with product managers, designers, and stakeholders to define project requirements and deliverables.</li></ul>",
+    "skills": [
+      "Redux",
+      "Microservices",
+      "Nodejs",
+      "Redux Saga",
+      "PostgreSQL",
+      "Queues",
+      "MongoDB",
+      "BullMQ",
+      "NestJS",
+      "Nginx",
+      "Elasticsearch",
+      "CI/CD",
+      "GitHub Actions",
+      "Express.js",
+      "AWS",
+      "MySQL",
+      "React",
+      "JavaScript",
+      "Nextjs",
+      "TypeORM",
+      "REST APIs",
+      "Deployment",
+      "MERN Stack",
+      "Git",
+      "TypeScript"
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "company": "Binary Bunon",
+    "companyUrl": "https://binarybunon.com/",
+    "type": "Full-time",
+    "duration": "Jun 2021 - May 2022 · 1 yr",
+    "location": "Dhaka, Bangladesh · On-site",
+    "companyAvatar": "/images/experiences/binarybunon.jpg",
+    "description": "<p>Investigated and resolved software issues on time to ensure smooth operation. I have followed the best practices in software development, which include performing code reviews, testing, and documentation. Participated in all stages of the software development life cycle.</p>",
+    "skills": [
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "JavaScript",
+      "Redux.js",
+      "Next.js"
+    ]
+  },
+  {
+    "title": "Junior Software Engineer",
+    "company": "Japahas",
+    "type": "Full-time",
+    "duration": "Jul 2020 - May 2021 · 11 mos",
+    "location": "Dhaka, Bangladesh · Hybrid",
+    "avatar": "/images/experiences/japahas.png",
+    "description": "<p>Developed and maintained software applications under the guidance of senior engineers.</p><ul><li>Participated in code reviews, contributing to a 20% increase in code quality adherence and the implementation of best practices.</li><li>Obtained valuable practical experience while working in an active and collaborative team environment.</li></ul>",
+    "skills": ["Nodejs", "MongoDB", "Express.js", "JavaScript"]
+  }
+]

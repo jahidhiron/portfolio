@@ -1,0 +1,92 @@
+[
+  {
+    "id": 101,
+    "commenterName": "Ariful Islam",
+    "commenterTitle": "Web Developer",
+    "commentTime": "2d",
+    "commentText": "Your explanation of Mongoose schemas is the best I've seen. Clear and easy to follow!",
+    "originalPostId": 7,
+    "originalPostTitle": "Schema Define | All You Need to Know with Practical Project"
+  },
+  {
+    "id": 102,
+    "commenterName": "Samantha J.",
+    "commenterTitle": "Junior Backend Dev",
+    "commentTime": "12h",
+    "commentText": "The sub-routing video helped me organize my Express app so much better. Thank you!",
+    "originalPostId": 1,
+    "originalPostTitle": "Sub Route | All You Need to Know with Practical Project"
+  },
+  {
+    "id": 103,
+    "commenterName": "Kevin Zhang",
+    "commenterTitle": "Computer Science Student",
+    "commentTime": "1wk",
+    "commentText": "Can you make a video on JWT authentication in the MERN stack? Love your teaching style.",
+    "originalPostId": 13,
+    "originalPostTitle": "Course Overview | All You Need to Know..."
+  },
+  {
+    "id": 104,
+    "commenterName": "Sara L.",
+    "commenterTitle": "Full-Stack Trainee",
+    "commentTime": "1mo",
+    "commentText": "I was struggling with the Mongoose `insertMany` method, but this video made it crystal clear. Saved me a ton of time!",
+    "originalPostId": 11,
+    "originalPostTitle": "Mongoose Add Multiple Document | All You Need to Know..."
+  },
+  {
+    "id": 105,
+    "commenterName": "Fahim Ahmed",
+    "commenterTitle": "Freelance Developer",
+    "commentTime": "3d",
+    "commentText": "The Postman demonstration for cookies was very helpful. I finally understand cookie-parser.",
+    "originalPostId": 12,
+    "originalPostTitle": "Cookies | All You Need to Know with Practical Project"
+  },
+  {
+    "id": 106,
+    "commenterName": "Liam W.",
+    "commenterTitle": "Frontend Engineer",
+    "commentTime": "5d",
+    "commentText": "Waiting for the React integration part of this MERN series. Great job so far!",
+    "originalPostId": 13,
+    "originalPostTitle": "Course Overview | All You Need to Know..."
+  },
+  {
+    "id": 107,
+    "commenterName": "Mehedi Hasan",
+    "commenterTitle": "Student",
+    "commentTime": "2wk",
+    "commentText": "Sir, your ODM explanation made my concepts very clear. Mongoose makes life so easy.",
+    "originalPostId": 11,
+    "originalPostTitle": "What is ODM | All You Need to Know with Practical Project"
+  },
+  {
+    "id": 108,
+    "commenterName": "Emily R.",
+    "commenterTitle": "UI Developer",
+    "commentTime": "4d",
+    "commentText": "This tutorial on Express servers is perfect for beginners. Keep up the good work!",
+    "originalPostId": 9,
+    "originalPostTitle": "First Express Server | All You Need to Know..."
+  },
+  {
+    "id": 109,
+    "commenterName": "Rajiv K.",
+    "commenterTitle": "Software Engineer",
+    "commentTime": "1mo",
+    "commentText": "Middlewares used to be confusing, but this video broke it down perfectly. Thanks!",
+    "originalPostId": 2,
+    "originalPostTitle": "How to Use Middleware | All You Need to Know..."
+  },
+  {
+    "id": 110,
+    "commenterName": "John Doe",
+    "commenterTitle": "Enthusiast",
+    "commentTime": "2mo",
+    "commentText": "Great content! Would love to see more practical projects like this Todo app.",
+    "originalPostId": 15,
+    "originalPostTitle": "Project Todo Overview | All You Need to Know..."
+  }
+]

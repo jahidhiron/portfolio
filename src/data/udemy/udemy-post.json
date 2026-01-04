@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer | Educator",
+    "courseTitle": "MERN Stack: All You Need to Know with Practical Project",
+    "description": "Learn MERN stack by building real-world applications with Node, Express, MongoDB, React...",
+    "rating": 4.2,
+    "ratingsCount": 431,
+    "totalHours": "22 total hours",
+    "lectures": 270,
+    "price": "$34.99",
+    "students": "34,450 students",
+    "avatarUrl": "/profile.png",
+    "thumbnailUrl": "/images/courses/mern.webp",
+    "courseLink": "https://www.udemy.com/course/all-you-need-to-know-mern-stack-with-practical-project/"
+  },
+  {
+    "id": 2,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer | Educator",
+    "courseTitle": "React: All You Need to Know with Practical Project",
+    "description": "Learn React by building real-world applications with React and integrating RESTful APIs...",
+    "rating": 4.4,
+    "ratingsCount": 264,
+    "totalHours": "11 total hours",
+    "lectures": 128,
+    "price": "$19.99",
+    "avatarUrl": "/profile.png",
+    "students": "29,078 students",
+    "thumbnailUrl": "/images/courses/reactjs.jpg",
+    "courseLink": "https://www.udemy.com/course/all-you-need-to-know-react-with-practical-project/"
+  },
+  {
+    "id": 3,
+    "name": "Jahid Hiron",
+    "title": "Software Engineer | Educator",
+    "courseTitle": "Nodejs: All You Need to Know with Practical Project",
+    "description": "Learn Nodejs by building real-world applications with Node, Express and MongoDB...",
+    "rating": 4.4,
+    "ratingsCount": 285,
+    "totalHours": "11.5 total hours",
+    "lectures": 159,
+    "price": "$19.99",
+    "students": "31,815 students",
+    "avatarUrl": "/profile.png",
+    "thumbnailUrl": "/images/courses/nodejs.png",
+    "courseLink": "https://www.udemy.com/course/all-you-need-to-know-nodejs-with-practical-project"
+  }
+]

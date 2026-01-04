@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Web Design"
+  },
+  {
+    "name": "Web Development"
+  },
+  {
+    "name": "Application Development"
+  },
+  {
+    "name": "Custom Software Development"
+  },
+  {
+    "name": "Educational Consulting"
+  },
+  {
+    "name": "Blogging"
+  },
+  {
+    "name": "API Development (REST/GraphQL)"
+  },
+  {
+    "name": "Cloud Deployment (AWS/Docker)"
+  },
+  {
+    "name": "Technical Consulting"
+  },
+  {
+    "name": "Front-End Performance Optimization"
+  },
+  {
+    "name": "UX/UI Prototyping"
+  }
+]

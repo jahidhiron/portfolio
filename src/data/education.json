@@ -1,0 +1,50 @@
+[
+  {
+    "institution": "American International University-Bangladesh",
+    "institutionUrl": "https://www.linkedin.com/school/american-international-university-bangladesh/",
+    "degree": "Bachelor of Science",
+    "fieldOfStudy": "BS, Computer Science",
+    "duration": "Sep 2014 - Feb 2018",
+    "grade": "3.69",
+    "avatar": "/images/education/aiub.png",
+    "description": "<p>I completed a <strong>Bachelor of Science in Computer Science</strong> at the American International University of Bangladesh (AIUB), where I gained a strong foundation in computer science principles and practices.</p><ul><li>Studied several programming languages, such as <strong>C, C++, Java, C#, JavaScript, and Python</strong>.</li><li>Developed skills in writing and debugging code to solve different computational problems.</li><li>Studied fundamental <strong>data structures and algorithms</strong> and how to apply them to software development and problem-solving.</li><li>Learned about software design principles, development methodologies, version control systems, and best practices for building and maintaining software systems.</li><li>Gained knowledge in managing and manipulating data by learning about <strong>database management systems, relational database design, SQL querying, and database administration</strong>.</li><li>Gained foundational knowledge in computer networks, including protocols, routing, and security.</li></ul>",
+    "skills": [
+      "Theory of Computation",
+      "Programming",
+      "Data Structures",
+      "Networking",
+      "Software Development Life Cycle (SDLC)",
+      "Discrete Mathematics",
+      "Operating Systems",
+      "Compiler Design",
+      "Algorithms"
+    ]
+  },
+  {
+    "institution": "Dhaka City College",
+    "degree": "Higher School Certificate",
+    "fieldOfStudy": "HSC, Science",
+    "duration": "Jul 2011 - Jun 2013",
+    "grade": null,
+    "avatar": "/images/education/city.png",
+    "institutionUrl": "https://www.dhakacitycollege.edu.bd/",
+    "description": "<p>Completed a comprehensive curriculum in the science department, achieving excellence in subjects such as <strong>mathematics, physics, chemistry, and biology</strong>.</p><ul><li>Engaged in hands-on laboratory experiments, projects, and safety protocols.</li><li>Developed and delivered presentations on scientific topics, enhancing communication skills.</li></ul>",
+    "skills": [
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Scientific Analysis"
+    ]
+  },
+  {
+    "institution": "Islampur Nekjahan Govt Model Pilot High School",
+    "degree": "Secondary School Certificate",
+    "fieldOfStudy": "SSC, Science",
+    "duration": "Jan 2006 - Feb 2011",
+    "grade": null,
+    "avatar": "/images/education/school.jpg",
+    "description": "<p>Achieved a <strong>Secondary School Certificate</strong> with a focus on science subjects.</p><ul><li>Conducted laboratory experiments and developed practical skills in scientific analysis.</li><li>Actively engaged in extracurricular science clubs and activities.</li></ul>",
+    "skills": ["Science", "Scientific Analysis", "Laboratory Practice"]
+  }
+]
