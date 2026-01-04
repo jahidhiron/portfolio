@@ -27,6 +27,7 @@ interface ProjectEntry {
   description: string;
   liveLink: string;
   demoVideoLink: string;
+  projectAvatar: string;
   skills: string[];
   contributorAvatars: ContributorEntity[];
 }
@@ -116,6 +117,12 @@ const ProjectsSection: React.FC = () => {
           <div className='text-sm text-gray-800 mt-3'>
             <span className='font-semibold'>Skills: {skillsString}</span>
           </div>
+        )}
+        {entry.projectAvatar && (
+          <img
+            className='my-5 max-w-[150px] max-h-[80px] border border-gray-300'
+            src={entry.projectAvatar}
+          />
         )}
 
         {/* Contributors Section */}

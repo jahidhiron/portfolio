@@ -6,13 +6,17 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { IconButton } from "@mui/material";
 import { RxCross2 } from "react-icons/rx";
-import { FaCheckCircle } from "react-icons/fa"; // Added for professional bullet points
 import data from "../../data/skills-new.json";
 
-// --- Updated Type Definitions for your new JSON ---
-interface SkillEntry {
-  skill: string;
-  points: string[]; // Changed from experience/projects to points
+// --- Updated Types to match your nested JSON ---
+interface Skill {
+  name: string;
+  desc: string;
+}
+
+interface SkillCategory {
+  category: string;
+  skills: Skill[];
 }
 
 const style = {
@@ -24,7 +28,7 @@ const style = {
   boxShadow: 24,
   p: 4,
   borderRadius: 3,
-  width: { xs: "90%", sm: 550 },
+  width: { xs: "95%", sm: 600 },
   outline: "none",
 };
 
@@ -37,28 +41,30 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // Helper to render the updated detailed entry
-  const renderSkillEntry = (entry: SkillEntry, index: number) => {
+  // Cast the imported data safely
+  const skillCategories = (data as SkillCategory[]) || [];
+
+  const renderCategory = (cat: SkillCategory, index: number) => {
     return (
       <div key={index} className='py-6 border-b border-gray-100 last:border-0'>
-        <h3 className='text-md font-bold text-black mb-3 tracking-tight'>
-          {entry.skill}
+        {/* Category Header */}
+        <h3 className='text-md font-bold text-gray-800 uppercase tracking-widest mb-4'>
+          {cat.category}
         </h3>
 
-        <div className='space-y-3'>
-          {/* Mapping over the new "points" array */}
-          {entry.points.map((point, i) => (
-            <div
+        <ul className='space-y-4 ml-5'>
+          {/* Nested Map: This was causing your error */}
+          {cat.skills?.map((item, i) => (
+            <li
               key={i}
-              className='flex items-start text-sm text-gray-700 leading-relaxed'
+              className='list-disc list-outside text-sm text-gray-800 leading-relaxed'
             >
-              <span className='mr-3 text-green-500 mt-1 shrink-0'>
-                <FaCheckCircle className='w-3.5 h-3.5' />
-              </span>
-              <span>{point}</span>
-            </div>
+              <span className='font-bold'>{item.name}</span>
+              <span className='mx-2 text-gray-400'>—</span>
+              <span className='text-gray-600'>{item.desc}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     );
   };
@@ -88,7 +94,7 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
         <Box sx={style}>
           <div className='flex justify-between items-center sticky top-0 bg-white pb-4 mb-2 z-10 border-b border-gray-100'>
             <Typography variant='h6' className='font-bold text-gray-800'>
-              {title}
+              {title}s
             </Typography>
             <IconButton onClick={handleClose} size='small'>
               <RxCross2 />
@@ -96,10 +102,10 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
           </div>
 
           {/* Scrollable Container */}
-          <div className='max-h-[60vh] overflow-y-auto '>
-            <div className='divide-y divide-gray-100'>
-              {data?.map((entry, index) =>
-                renderSkillEntry(entry as any, index)
+          <div className='max-h-[70vh] overflow-y-auto pr-2'>
+            <div className='divide-y divide-gray-50'>
+              {skillCategories.map((category, index) =>
+                renderCategory(category, index)
               )}
             </div>
           </div>

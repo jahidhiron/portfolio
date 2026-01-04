@@ -20,7 +20,8 @@ const style = {
   boxShadow: 24,
   p: 5,
   borderRadius: 2,
-  width: 980,
+  width: { xs: "95%", sm: "80%" },
+  outline: "none",
 };
 
 type SkillsModalProps = {

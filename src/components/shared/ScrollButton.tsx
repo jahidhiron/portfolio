@@ -11,7 +11,7 @@ const ScrollButton = () => {
       style={{
         right: 20,
         bottom: 20,
-        backgroundColor: "#1447E6",
+        backgroundColor: "#262956",
         border: "1px solid #e0e0e0",
         borderRadius: "50%",
       }}

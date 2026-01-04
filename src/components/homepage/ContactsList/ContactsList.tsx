@@ -88,7 +88,7 @@ const ContactMethodsList: React.FC<ContactMethodsListProps> = () => {
   return (
     <div className=' mx-auto bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200'>
       <div className='p-5 flex items-center border-b border-gray-200'>
-        <div className='w-1 h-8 bg-blue-700 mr-4 rounded-full hidden sm:block'></div>
+        <div className='w-1 h-8 bg-[#262956] mr-4 rounded-full hidden sm:block'></div>
         <h2 className='text-xl font-semibold text-gray-800'>Social Links</h2>
       </div>
 

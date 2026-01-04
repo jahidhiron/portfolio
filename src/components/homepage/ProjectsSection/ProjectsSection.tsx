@@ -27,6 +27,7 @@ interface ProjectEntry {
   description: string;
   liveLink: string;
   demoVideoLink: string;
+  projectAvatar: string;
   skills: string[];
   contributorAvatars: ContributorEntity[];
 }
@@ -138,7 +139,12 @@ const ProjectsSection: React.FC = () => {
             )}
           </div>
         )}
-
+        {entry.projectAvatar && (
+          <img
+            className='my-5 max-w-[150px] max-h-[80px] border border-gray-300'
+            src={entry.projectAvatar}
+          />
+        )}
         {entry.contributorAvatars?.length > 1 && (
           <>
             <p className='text-sm text-gray-700 mt-3 mb-1'>

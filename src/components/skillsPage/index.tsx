@@ -6,7 +6,7 @@ const SkillsSectionDetailsPage = () => {
       <div className='md:w-[750px] w-full'>
         <SkillsSectionDetails />
       </div>
-      <div className='md:w-[350px] w-full'></div>
+      {/* <div className='md:w-[350px] w-full'></div> */}
     </div>
   );
 };

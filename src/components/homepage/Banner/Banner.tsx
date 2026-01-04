@@ -241,7 +241,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
 
         {/* Action Buttons */}
         <div className='flex gap-2'>
-          <button className='mt-5 font-semibold text-sm flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full cursor-pointer hover:bg-blue-700 transition-colors'>
+          <button className='mt-5 font-semibold text-sm flex items-center gap-2 bg-[#262956] text-white px-4 py-1.5 rounded-full cursor-pointer hover:bg-blue-900 transition-colors'>
             <IoIosSend className='text-lg' /> Contact Me
           </button>
 
@@ -251,7 +251,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
             className={`mt-5 font-semibold text-sm flex items-center gap-2 px-4 py-1.5 rounded-full border transition-all duration-300 ${
               isDownloading
                 ? "bg-gray-100 text-gray-400 border-gray-200 cursor-wait"
-                : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white cursor-pointer"
+                : "border-[#262956] text-[#262956] hover:bg-[#262956] hover:text-white cursor-pointer"
             }`}
           >
             {isDownloading ? (

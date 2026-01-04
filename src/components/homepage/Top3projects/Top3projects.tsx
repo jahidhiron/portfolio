@@ -42,7 +42,7 @@ const Top3ProjectsSection: React.FC = () => {
     >
       {/* 1. Unified Header (Same as Language Section) */}
       <div className='p-5 flex items-center border-b border-gray-200'>
-        <div className='w-1 h-8 bg-blue-700 mr-4 rounded-full hidden sm:block'></div>
+        <div className='w-1 h-8 bg-[#262956] mr-4 rounded-full hidden sm:block'></div>
         <h2 className='text-xl font-semibold text-gray-800'>Top 3 Projects</h2>
       </div>
 
@@ -71,18 +71,22 @@ const Top3ProjectsSection: React.FC = () => {
                   {entry.startDate} - {entry.endDate}
                 </p>
                 <div className='flex items-center gap-3'>
-                  <VideoModal
-                    source={entry.source}
-                    videoLink={entry.demoVideoLink}
-                  />
-                  <Link
-                    href={entry.liveLink}
-                    target='_blank'
-                    className='flex items-center gap-2 border px-3 rounded-full hover:bg-blue-600 hover:text-white hover:border-white text-sm cursor-pointer'
-                  >
-                    <TbWorld />
-                    Live Site
-                  </Link>
+                  {entry.demoVideoLink && (
+                    <VideoModal
+                      source={entry.source}
+                      videoLink={entry.demoVideoLink}
+                    />
+                  )}
+                  {entry?.liveLink && (
+                    <Link
+                      href={entry?.liveLink}
+                      target='_blank'
+                      className='flex items-center gap-2 border px-3 rounded-full hover:bg-blue-600 hover:text-white hover:border-white text-sm cursor-pointer'
+                    >
+                      <TbWorld />
+                      Live Site
+                    </Link>
+                  )}
                 </div>
               </div>
 

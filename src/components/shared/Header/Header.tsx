@@ -5,7 +5,7 @@ const Header = () => {
         <div className='flex items-center space-x-2'>
           <a
             href={"/#home"}
-            className='text-blue-700 sm:text-3xl text-2xl font-bold'
+            className='text-[#262956] sm:text-3xl text-2xl font-bold'
           >
             Jahid Hiron
           </a>
