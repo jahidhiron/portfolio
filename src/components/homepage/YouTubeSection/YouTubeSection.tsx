@@ -10,6 +10,7 @@ import {
   FaPaperPlane,
   FaEllipsisH,
   FaPlayCircle,
+  FaArrowRight,
 } from "react-icons/fa";
 import { MdInsertComment } from "react-icons/md";
 import { IoPlayCircleOutline } from "react-icons/io5";
@@ -24,19 +25,19 @@ interface CommentCardProps {
 }
 
 // --- 1. Comment Card Component (Responsive) ---
-const CommentCard: React.FC<CommentCardProps> = ({ comment }) => {
+const CommentCard: React.FC<any> = ({ comment }) => {
   return (
-    <div className='flex-shrink-0 w-full sm:w-80 h-[300px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm p-4 space-y-3'>
+    <div className='flex-shrink-0 w-full sm:w-80 h-[258px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm p-4 space-y-3'>
       <div className='flex items-start justify-between'>
         <div className='flex items-center space-x-2'>
-          <div className='w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-semibold text-lg'>
+          <div className='w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold text-lg'>
             {comment.commenterName.charAt(0)}
           </div>
           <div>
             <p className='text-sm font-semibold text-gray-800'>
               {comment.commenterName}
             </p>
-            <p className='text-xs text-gray-500'>{comment.commenterTitle}</p>
+            {/* <p className='text-xs text-gray-500'>{comment.commenterTitle}</p> */}
           </div>
         </div>
         <div className='text-xs text-gray-500 flex items-center space-x-1'>
@@ -51,22 +52,28 @@ const CommentCard: React.FC<CommentCardProps> = ({ comment }) => {
 
       <div className='pt-2'>
         <p className='text-xs text-gray-600 font-medium'>Commenting on:</p>
-        <a
-          href='#'
-          className='text-sm text-blue-600 truncate hover:underline block'
-        >
-          {comment.originalPostTitle}
-        </a>
+        {comment.videolink ? (
+          <a
+            href={comment.videolink}
+            className='text-sm text-primary hover:text-blue-600 truncate hover:underline block'
+          >
+            {comment.originalPostTitle}
+          </a>
+        ) : (
+          <p className='text-sm  truncate  hover:underline block'>
+            {comment.originalPostTitle}
+          </p>
+        )}
       </div>
 
-      <div className='flex justify-around items-center pt-2 text-gray-600 border-t pt-4'>
+      {/* <div className='flex justify-around items-center pt-2 text-gray-600 border-t pt-4'>
         <button className='flex items-center space-x-1 hover:text-blue-600 text-xs'>
           <FaThumbsUp className='w-4 h-4' /> <span>Like</span>
         </button>
         <button className='flex items-center space-x-1 hover:text-blue-600 text-xs'>
           <FaCommentDots className='w-4 h-4' /> <span>Reply</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -85,7 +92,7 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ post }) => {
     : "external.link";
 
   return (
-    <div className='flex-shrink-0 w-full sm:w-80 h-[380px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm'>
+    <div className='flex-shrink-0 w-full sm:w-80 h-[345px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm'>
       <div className='p-4 space-y-3'>
         <div className='flex items-start justify-between'>
           <div className='flex items-center space-x-2'>
@@ -110,7 +117,7 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ post }) => {
         </p>
 
         <div className='bg-gray-100 rounded-lg overflow-hidden border border-gray-300'>
-          <a
+          <Link
             href={post.link}
             target='_blank'
             rel='noopener noreferrer'
@@ -132,14 +139,14 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ post }) => {
                 </span>
               )}
             </div>
-          </a>
-          <div className='p-2 text-xs'>
-            <p className='font-medium truncate'>{post.videoTitle}</p>
-            <p className='text-gray-500'>{linkHost}</p>
-          </div>
+            <div className='p-2 text-xs'>
+              <p className='font-medium truncate'>{post.videoTitle}</p>
+              <p className='text-gray-500'>{linkHost}</p>
+            </div>
+          </Link>
         </div>
 
-        <div className='flex justify-between items-center'>
+        {/* <div className='flex justify-between items-center'>
           <div className='flex justify-around flex-grow pt-0 text-gray-600'>
             <button className='flex items-center space-x-1 hover:text-blue-600'>
               <div className='text-xs text-gray-600 flex items-center space-x-1 pb-1'>
@@ -175,7 +182,7 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ post }) => {
               <FaPaperPlane className='w-4 h-4' />
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -217,110 +224,99 @@ const YoutubeSection: React.FC = () => {
   };
 
   return (
-    <div className='bg-white border mt-7 border-gray-300 rounded-lg shadow-sm p-4 md:p-6 space-y-4 relative'>
-      <style global jsx>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
+    <div className='border mt-7 border-gray-300 rounded-lg shadow-sm bg-white'>
+      <div className=' p-4 md:p-6 space-y-4  relative'>
+        <style global jsx>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
 
-      <div>
-        <h2 className='text-xl font-semibold text-gray-800'>Youtube</h2>
-        <p className='text-sm text-gray-500'>93 subscribers • 74 videos</p>
-      </div>
-
-      <div className='flex border-b border-gray-200'>
-        {["Videos", "Comments"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 cursor-pointer text-sm font-semibold ${
-              activeTab === tab
-                ? "text-black border-b-2 border-black"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div className='relative'>
-        <div
-          ref={scrollRef}
-          className='flex overflow-x-scroll no-scrollbar space-x-4 pb-4'
-          style={{ scrollSnapType: "x mandatory" }}
-        >
-          {activeTab === "Videos" &&
-            activeData.map((post, index) => (
-              <div
-                key={`${post.id}-${index}`}
-                className='w-full flex-shrink-0 sm:w-auto'
-                style={{ scrollSnapAlign: "start" }}
-              >
-                <YoutubeCard post={post as any} />
-              </div>
-            ))}
-
-          {activeTab === "Comments" &&
-            activeData.map((comment) => (
-              <div
-                key={comment.id}
-                className='w-full flex-shrink-0 md:w-auto'
-                style={{ scrollSnapAlign: "start" }}
-              >
-                <CommentCard comment={comment as any} />
-              </div>
-            ))}
+        <div>
+          <h2 className='text-xl font-semibold text-gray-800'>Youtube</h2>
+          <p className='text-sm text-gray-500'>93 subscribers • 74 videos</p>
         </div>
 
-        {activeData.length > 0 && (
-          <>
+        <div className='flex border-b border-gray-200'>
+          {["Videos", "Comments"].map((tab) => (
             <button
-              onClick={() => scroll("left")}
-              className='absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border border-gray-300 z-10 flex items-center justify-center'
-              style={{ marginLeft: "-12px" }}
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-4 py-2 cursor-pointer text-sm font-semibold ${
+                activeTab === tab
+                  ? "text-black border-b-2 border-black"
+                  : "text-gray-500 hover:text-gray-700"
+              }`}
             >
-              <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+              {tab}
             </button>
+          ))}
+        </div>
 
-            <button
-              onClick={() => scroll("right")}
-              className='absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border border-gray-300 z-10 flex items-center justify-center'
-              style={{ marginRight: "-12px" }}
-            >
-              <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
-            </button>
-          </>
-        )}
-      </div>
-
-      <div className='border-t border-gray-200 mt-4 pt-3 text-center'>
-        <Link
-          target='_blank'
-          href={"https://www.youtube.com/@jahid-academy"}
-          className='text-gray-600 text-sm font-semibold hover:underline flex justify-center items-center w-full'
-        >
-          Show all
-          <svg
-            className='w-4 h-4 ml-1 mt-0.5'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
+        <div className='relative'>
+          <div
+            ref={scrollRef}
+            className='flex overflow-x-scroll no-scrollbar space-x-4 pb-4'
+            style={{ scrollSnapType: "x mandatory" }}
           >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M17 8l4 4m0 0l-4 4m4-4H3'
-            />
-          </svg>
-        </Link>
+            {activeTab === "Videos" &&
+              activeData.map((post, index) => (
+                <div
+                  key={`${post.id}-${index}`}
+                  className='w-full flex-shrink-0 sm:w-auto'
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <YoutubeCard post={post as any} />
+                </div>
+              ))}
+
+            {activeTab === "Comments" &&
+              activeData.map((comment) => (
+                <div
+                  key={comment.id}
+                  className='w-full flex-shrink-0 md:w-auto'
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <CommentCard comment={comment as any} />
+                </div>
+              ))}
+          </div>
+
+          {activeData.length > 0 && (
+            <>
+              <button
+                onClick={() => scroll("left")}
+                className='absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border cursor-pointer border-gray-300 z-10 flex items-center justify-center'
+                style={{ marginLeft: "-12px" }}
+              >
+                <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+              </button>
+
+              <button
+                onClick={() => scroll("right")}
+                className='absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border cursor-pointer border-gray-300 z-10 flex items-center justify-center'
+                style={{ marginRight: "-12px" }}
+              >
+                <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+              </button>
+            </>
+          )}
+        </div>
       </div>
+      <Link
+        target='_blank'
+        href={"https://www.youtube.com/@jahid-academy"}
+        className='block border-t rounded-b-lg  hover:bg-gray-100 border-gray-200 py-3 text-center'
+      >
+        <span className='text-gray-700 gap-2 text-sm font-bold  flex justify-center items-center w-full'>
+          Show all
+          <FaArrowRight className='' />
+        </span>
+      </Link>
     </div>
   );
 };

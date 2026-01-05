@@ -41,7 +41,7 @@ const AboutSection: React.FC = () => {
       </h2>
 
       {/* --- Main Content --- */}
-      <div className='text-sm text-gray-700 leading-relaxed'>
+      <div className='text-sm  text-gray-900 leading-relaxed'>
         {isExpanded ? (
           <div
             className='prose-custom'
@@ -55,12 +55,12 @@ const AboutSection: React.FC = () => {
           />
         )}
 
-        <button
+        <span
           onClick={() => setIsExpanded(!isExpanded)}
-          className='text-blue-600 font-semibold hover:underline mt-2 inline-block'
+          className=' hover:text-blue-600 text-gray-600 cursor-pointer hover:underline mt-2 inline-block'
         >
           {isExpanded ? "see less" : "see more"}
-        </button>
+        </span>
       </div>
 
       {/* --- Top Skills Card --- */}

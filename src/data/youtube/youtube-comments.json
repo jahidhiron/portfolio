@@ -6,7 +6,8 @@
     "commentTime": "2d",
     "commentText": "Your explanation of Mongoose schemas is the best I've seen. Clear and easy to follow!",
     "originalPostId": 7,
-    "originalPostTitle": "Schema Define | All You Need to Know with Practical Project"
+    "originalPostTitle": "Schema Define | All You Need to Know with Practical Project",
+    "videolink": "http://youtube.com/watch?v=xze3O7LZpwI"
   },
   {
     "id": 102,
@@ -15,7 +16,8 @@
     "commentTime": "12h",
     "commentText": "The sub-routing video helped me organize my Express app so much better. Thank you!",
     "originalPostId": 1,
-    "originalPostTitle": "Sub Route | All You Need to Know with Practical Project"
+    "originalPostTitle": "Sub Route | All You Need to Know with Practical Project",
+    "videolink": "https://youtube.com/watch?v=7bqAm04x8EQ"
   },
   {
     "id": 103,
@@ -24,7 +26,8 @@
     "commentTime": "1wk",
     "commentText": "Can you make a video on JWT authentication in the MERN stack? Love your teaching style.",
     "originalPostId": 13,
-    "originalPostTitle": "Course Overview | All You Need to Know..."
+    "originalPostTitle": "Course Overview | All You Need to Know...",
+    "videolink": "https://www.youtube.com/watch?v=Ua8QcIX6ItE"
   },
   {
     "id": 104,
@@ -33,7 +36,8 @@
     "commentTime": "1mo",
     "commentText": "I was struggling with the Mongoose `insertMany` method, but this video made it crystal clear. Saved me a ton of time!",
     "originalPostId": 11,
-    "originalPostTitle": "Mongoose Add Multiple Document | All You Need to Know..."
+    "originalPostTitle": "Add Single Document using Mongoose #backenddevelopment #education #mernstack",
+    "videolink": "https://youtube.com/watch?v=nG_sdG46gao"
   },
   {
     "id": 105,
@@ -42,7 +46,8 @@
     "commentTime": "3d",
     "commentText": "The Postman demonstration for cookies was very helpful. I finally understand cookie-parser.",
     "originalPostId": 12,
-    "originalPostTitle": "Cookies | All You Need to Know with Practical Project"
+    "originalPostTitle": "Cookies | All You Need to Know with Practical Project",
+    "videolink": "https://www.youtube.com/watch?v=aE1ol2XXfV4"
   },
   {
     "id": 106,
@@ -51,7 +56,8 @@
     "commentTime": "5d",
     "commentText": "Waiting for the React integration part of this MERN series. Great job so far!",
     "originalPostId": 13,
-    "originalPostTitle": "Course Overview | All You Need to Know..."
+    "originalPostTitle": "Course Overview | All You Need to Know...",
+    "videolink": "https://www.youtube.com/watch?v=Ua8QcIX6ItE"
   },
   {
     "id": 107,
@@ -60,7 +66,8 @@
     "commentTime": "2wk",
     "commentText": "Sir, your ODM explanation made my concepts very clear. Mongoose makes life so easy.",
     "originalPostId": 11,
-    "originalPostTitle": "What is ODM | All You Need to Know with Practical Project"
+    "originalPostTitle": "What is ODM | All You Need to Know with Practical Project",
+    "videolink": "http://youtube.com/watch?v=xze3O7LZpwI"
   },
   {
     "id": 108,
@@ -69,7 +76,8 @@
     "commentTime": "4d",
     "commentText": "This tutorial on Express servers is perfect for beginners. Keep up the good work!",
     "originalPostId": 9,
-    "originalPostTitle": "First Express Server | All You Need to Know..."
+    "originalPostTitle": "First Express Server | All You Need to Know...",
+    "videolink": "https://youtube.com/watch?v=uWCGTI50HZY"
   },
   {
     "id": 109,
@@ -78,7 +86,8 @@
     "commentTime": "1mo",
     "commentText": "Middlewares used to be confusing, but this video broke it down perfectly. Thanks!",
     "originalPostId": 2,
-    "originalPostTitle": "How to Use Middleware | All You Need to Know..."
+    "originalPostTitle": "How to Use Middleware | All You Need to Know...",
+    "videolink": "https://youtube.com/watch?v=prh0MQhLSSs"
   },
   {
     "id": 110,
@@ -87,6 +96,7 @@
     "commentTime": "2mo",
     "commentText": "Great content! Would love to see more practical projects like this Todo app.",
     "originalPostId": 15,
-    "originalPostTitle": "Project Todo Overview | All You Need to Know..."
+    "originalPostTitle": "Project Todo Overview | All You Need to Know...",
+    "videolink": "http://youtube.com/watch?v=xze3O7LZpwI"
   }
 ]

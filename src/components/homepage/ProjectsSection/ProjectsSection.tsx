@@ -8,6 +8,8 @@ import { Avatar } from "@mui/material";
 import { TbWorld } from "react-icons/tb";
 import Link from "next/link";
 import VideoModal from "@/components/modals/VideoModal";
+import { FaArrowRight, FaGithub } from "react-icons/fa";
+import { IoDiamondOutline } from "react-icons/io5";
 
 interface ContributorEntity {
   avatar: string;
@@ -28,6 +30,7 @@ interface ProjectEntry {
   liveLink: string;
   demoVideoLink: string;
   projectAvatar: string;
+  githubLink: string;
   skills: string[];
   contributorAvatars: ContributorEntity[];
 }
@@ -72,11 +75,22 @@ const ProjectsSection: React.FC = () => {
               <Link
                 href={entry.liveLink}
                 target='_blank'
-                className='flex items-center gap-2 border px-3 rounded-full hover:bg-blue-600 hover:text-white hover:border-white text-sm cursor-pointer'
+                className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
               >
                 <TbWorld />
 
                 <p className=' pt-0.3'>Live Site</p>
+              </Link>
+            )}
+            {entry.githubLink && (
+              <Link
+                href={entry.githubLink}
+                target='_blank'
+                className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
+              >
+                <FaGithub />
+
+                <p className=' pt-0.3'>Source Code</p>
               </Link>
             )}
           </div>
@@ -110,30 +124,30 @@ const ProjectsSection: React.FC = () => {
         {/* --- HTML Description Rendering --- */}
         <div className='mt-2'>
           <div
-            className={`text-sm text-gray-800 ${
+            className={`text-sm text-gray-900 ${
               !isDescriptionExpanded ? "line-clamp-2" : ""
             }`}
             dangerouslySetInnerHTML={{ __html: entry.description }}
           />
           <span
-            className='text-blue-600 text-sm font-medium cursor-pointer hover:underline'
+            className='hover:text-blue-600 text-sm text-gray-600 cursor-pointer hover:underline  inline-block'
             onClick={() =>
               setShowMoreDescription(isDescriptionExpanded ? null : entry.id)
             }
           >
-            {isDescriptionExpanded ? "less" : "more"}
+            {isDescriptionExpanded ? "...less" : "...more"}
           </span>
         </div>
 
         {entry.skills?.length > 1 && (
-          <div className='text-sm text-gray-800 flex gap-1 mt-2.5'>
-            <span className='font-semibold'>
-              {displayedSkills.join(", ")} and +
-            </span>
+          <div className='text-sm text-gray-800 flex items-center gap-1 mt-2.5'>
+            <IoDiamondOutline />
             {hiddenSkillCount > 0 && (
               <SkillsModal
                 data={entry.skills}
-                buttonText={`${hiddenSkillCount} skills`}
+                buttonText={`${displayedSkills.join(
+                  ", "
+                )} and +${hiddenSkillCount} skills`}
                 title='All Skills'
               />
             )}
@@ -182,33 +196,21 @@ const ProjectsSection: React.FC = () => {
   return (
     <div
       id='projects'
-      className='bg-white mt-7 scroll-mt-20 border border-gray-300 rounded-lg shadow-sm p-6'
+      className='border  scroll-mt-20 mt-7 border-gray-300 rounded-lg shadow-sm bg-white'
     >
-      <h2 className='text-xl font-semibold text-gray-800 mb-4'>Projects</h2>
-      {projectsList?.slice(0, 2).map(renderProjectEntry)}
-
-      <div className='border-t border-gray-200 mt-4 pt-4 text-center'>
-        <Link
-          href={"/projects"}
-          className='text-gray-600 text-base font-semibold hover:bg-gray-100 py-1.5 px-3 rounded-md flex justify-center items-center w-full'
-        >
-          Show all
-          <svg
-            className='w-4 h-4 ml-2'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M14 5l7 7m0 0l-7 7m7-7H3'
-            />
-          </svg>
-        </Link>
+      <div className=' p-4 md:p-6 space-y-4  relative'>
+        <h2 className='text-xl font-semibold text-gray-800 mb-4'>Projects</h2>
+        {projectsList?.slice(0, 2).map(renderProjectEntry)}
       </div>
+      <Link
+        href={"/projects"}
+        className='block border-t rounded-b-lg  hover:bg-gray-100 border-gray-200 py-3 text-center'
+      >
+        <span className='text-gray-700 gap-2 text-sm font-bold  flex justify-center items-center w-full'>
+          Show all
+          <FaArrowRight className='' />
+        </span>
+      </Link>
     </div>
   );
 };

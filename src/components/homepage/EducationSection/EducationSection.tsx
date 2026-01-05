@@ -68,7 +68,7 @@ const EducationSection: React.FC = () => {
 
           // Skill Logic
           const skills = edu.skills || [];
-          const displayedSkills = skills.slice(0, 3);
+          const displayedSkills = skills.slice(0, 2);
           const hiddenSkillCount = skills.length - displayedSkills.length;
 
           return (
@@ -102,7 +102,7 @@ const EducationSection: React.FC = () => {
                     <Link
                       href={edu.institutionUrl}
                       target='_blank'
-                      className='text-blue-600 hover:underline'
+                      className='text-gray-900 hover:text-blue-600 hover:underline'
                     >
                       {edu.institution}
                     </Link>
@@ -112,46 +112,41 @@ const EducationSection: React.FC = () => {
                 </p>
                 <p className='text-sm text-gray-600'>
                   {edu.degree} ·{" "}
-                  <span className='text-gray-500'>{edu.fieldOfStudy}</span>
+                  <span className='text-gray-600'>{edu.fieldOfStudy}</span>
                 </p>
-                <p className='text-xs text-gray-500'>{edu.duration}</p>
+                <p className='text-xs text-gray-600'>{edu.duration}</p>
 
                 {edu.grade && (
-                  <p className='text-xs text-gray-500 mt-1'>
+                  <p className='text-xs text-gray-600 mt-1'>
                     Grade: <span className='font-semibold'>{edu.grade}</span>
                   </p>
                 )}
 
                 {/* Maintained design while using HTML rendering */}
-                <div className='text-sm text-gray-700 mt-2'>
+                <div className='text-sm text-gray-900 mt-2'>
                   <div
                     className={!isDescriptionExpanded ? "line-clamp-2" : ""}
                     dangerouslySetInnerHTML={{ __html: edu.description }}
                   />
                   <span
                     onClick={() => toggleDescription(index)}
-                    className='text-blue-600 cursor-pointer hover:underline font-semibold'
+                    className='hover:text-blue-600 text-gray-600 cursor-pointer hover:underline  inline-block'
                   >
-                    {isDescriptionExpanded ? "less" : "more"}
+                    {isDescriptionExpanded ? "...less" : "...more"}
                   </span>
                 </div>
 
                 {/* Skills Section */}
                 {skills.length > 0 && (
-                  <div className='flex items-center flex-wrap gap-1 mt-3'>
-                    <span className='text-sm font-semibold text-gray-800'>
-                      Skills: {displayedSkills.join(" · ")}
-                    </span>
-                    {hiddenSkillCount > 0 && (
-                      <span className='text-sm flex items-center gap-1'>
-                        and
-                        <SkillsModal
-                          data={skills}
-                          buttonText={`${hiddenSkillCount} skills`}
-                          title='Education Skills'
-                        />
-                      </span>
-                    )}
+                  <div className='mt-3 flex items-center gap-2 text-xs md:text-sm text-gray-600'>
+                    Skills :
+                    <SkillsModal
+                      data={skills}
+                      buttonText={`${displayedSkills.join(
+                        ", "
+                      )} and + ${hiddenSkillCount} skills`}
+                      title='Education Skills'
+                    />
                   </div>
                 )}
               </div>

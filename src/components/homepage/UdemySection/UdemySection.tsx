@@ -3,8 +3,15 @@ import React, { useState, useRef, useEffect } from "react";
 import udemyData from "../../../data/udemy/udemy-post.json";
 import commentData from "../../../data/udemy/udemy-comments.json";
 import courseData from "../../../data/udemy/udemy-post.json";
-import { FaAngleLeft, FaAngleRight, FaStar, FaEllipsisH } from "react-icons/fa";
+import {
+  FaAngleLeft,
+  FaAngleRight,
+  FaStar,
+  FaEllipsisH,
+  FaArrowRight,
+} from "react-icons/fa";
 import Link from "next/link";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 interface CourseCardProps {
   course: (typeof courseData)[0];
@@ -21,7 +28,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
         />
         <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
-        <div className='absolute top-3 left-3 flex items-center space-x-2'>
+        {/* <div className='absolute top-3 left-3 flex items-center space-x-2'>
           <img
             src={course.avatarUrl}
             alt={course.name}
@@ -30,7 +37,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           <span className='text-white text-[11px] font-medium drop-shadow-md'>
             {course.name}
           </span>
-        </div>
+        </div> */}
         <h4 className='absolute bottom-3 left-3 right-3 text-white font-bold text-sm line-clamp-2 leading-tight drop-shadow-md'>
           {course.courseTitle}
         </h4>
@@ -44,7 +51,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           <Link
             href={course.courseLink}
             target='_blank'
-            className='text-sm text-blue-600 hover:underline line-clamp-2 font-medium leading-snug'
+            className='text-sm text-primary hover:text-blue-600 hover:underline line-clamp-2 font-medium leading-snug'
           >
             {course.description}
           </Link>
@@ -72,10 +79,10 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         </div>
 
         <div className='mt-auto border-t pt-3'>
-          <p className='text-[11px] text-gray-500 mb-1'>
+          <p className='text-[13px] text-gray-700 mb-1'>
             {course.totalHours} • {course.lectures} lectures
           </p>
-          <p className='text-lg font-bold text-gray-900'>{course.students}</p>
+          <p className='text-[13px] text-gray-900'>{course.students}</p>
         </div>
       </div>
     </div>
@@ -88,7 +95,7 @@ const CommentCard: React.FC<{ comment: any }> = ({ comment }) => {
     <div className='flex-shrink-0 w-full md:w-80 h-[300px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm p-4 space-y-3'>
       <div className='flex items-start justify-between'>
         <div className='flex items-center space-x-2'>
-          <div className='w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-semibold text-lg'>
+          <div className='w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold text-lg'>
             {comment.commenterName.charAt(0)}
           </div>
           <div>
@@ -119,12 +126,18 @@ const CommentCard: React.FC<{ comment: any }> = ({ comment }) => {
       </div>
       <div className='pt-2'>
         <p className='text-xs text-gray-600 font-medium'>Commenting on:</p>
-        <a
-          href={comment.commentedPost}
-          className='text-sm text-blue-600 truncate hover:underline cursor-pointer block'
-        >
-          {comment.originalPostTitle}
-        </a>
+        {comment.commentedPost ? (
+          <a
+            href={comment.commentedPost}
+            className='text-sm text-primary hover:text-blue-600 truncate hover:underline cursor-pointer block'
+          >
+            {comment.originalPostTitle}
+          </a>
+        ) : (
+          <p className='text-sm  truncate  cursor-pointer block'>
+            {comment.originalPostTitle}
+          </p>
+        )}
       </div>
     </div>
   );
@@ -166,97 +179,98 @@ const UdemySection: React.FC = () => {
   };
 
   return (
-    <div className='bg-white border mt-7 border-gray-300 rounded-lg shadow-sm p-4 md:p-6 space-y-4 relative'>
-      <style global jsx>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
+    <div className='border mt-7 border-gray-300 rounded-lg shadow-sm bg-white'>
+      <div className=' p-4 md:p-6 space-y-4  relative'>
+        <style global jsx>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
 
-      <div>
-        <h2 className='text-xl font-semibold text-gray-800'>Udemy</h2>
-        <p className='text-sm text-gray-500'>64,753 learners • 980 Reviews</p>
-      </div>
-
-      <div className='flex border-b border-gray-200'>
-        {["Courses", "Comments"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 cursor-pointer text-sm font-semibold transition-colors ${
-              activeTab === tab
-                ? "text-black border-b-2 border-black"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div className='relative'>
-        <div
-          ref={scrollRef}
-          className='flex overflow-x-scroll no-scrollbar space-x-4 pb-4'
-          style={{ scrollSnapType: "x mandatory" }}
-        >
-          {activeTab === "Courses" &&
-            activeData.map((course: any) => (
-              <div
-                key={course.id}
-                className='w-full flex-shrink-0 md:w-auto'
-                style={{ scrollSnapAlign: "start" }}
-              >
-                <CourseCard course={course} />
-              </div>
-            ))}
-
-          {activeTab === "Comments" &&
-            activeData.map((comment: any) => (
-              <div
-                key={comment.id}
-                className='w-full flex-shrink-0 md:w-auto'
-                style={{ scrollSnapAlign: "start" }}
-              >
-                <CommentCard comment={comment} />
-              </div>
-            ))}
+        <div>
+          <h2 className='text-xl font-semibold text-gray-800'>Udemy</h2>
+          <p className='text-sm text-gray-500'>64,753 learners • 980 Reviews</p>
         </div>
 
-        {activeData.length > 0 && (
-          <>
+        <div className='flex border-b border-gray-200'>
+          {["Courses", "Comments"].map((tab) => (
             <button
-              onClick={() => scroll("left")}
-              className='absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border border-gray-300 z-10 flex items-center justify-center'
-              aria-label='Scroll Left'
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-4 py-2 cursor-pointer text-sm font-semibold transition-colors ${
+                activeTab === tab
+                  ? "text-black border-b-2 border-black"
+                  : "text-gray-500 hover:text-gray-700"
+              }`}
             >
-              <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+              {tab}
             </button>
-            <button
-              onClick={() => scroll("right")}
-              className='absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border border-gray-300 z-10 flex items-center justify-center'
-              aria-label='Scroll Right'
-            >
-              <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
-            </button>
-          </>
-        )}
-      </div>
+          ))}
+        </div>
 
-      <div className='border-t border-gray-200 mt-4 pt-3 text-center'>
-        <Link
-          target='_blank'
-          href={"https://www.udemy.com/user/jahid-hiron/"}
-          className='text-gray-600 text-sm font-semibold hover:underline flex justify-center items-center w-full'
-        >
-          Show all
-          <FaAngleRight className='ml-1 w-3 h-3' />
-        </Link>
+        <div className='relative'>
+          <div
+            ref={scrollRef}
+            className='flex overflow-x-scroll no-scrollbar space-x-4 pb-4'
+            style={{ scrollSnapType: "x mandatory" }}
+          >
+            {activeTab === "Courses" &&
+              activeData.map((course: any) => (
+                <div
+                  key={course.id}
+                  className='w-full flex-shrink-0 md:w-auto'
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <CourseCard course={course} />
+                </div>
+              ))}
+
+            {activeTab === "Comments" &&
+              activeData.map((comment: any) => (
+                <div
+                  key={comment.id}
+                  className='w-full flex-shrink-0 md:w-auto'
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <CommentCard comment={comment} />
+                </div>
+              ))}
+          </div>
+
+          {activeData.length > 0 && (
+            <>
+              <button
+                onClick={() => scroll("left")}
+                className='absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 cursor-pointer shadow-md border border-gray-300 z-10 flex items-center justify-center'
+                aria-label='Scroll Left'
+              >
+                <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                className='absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 cursor-pointer shadow-md border border-gray-300 z-10 flex items-center justify-center'
+                aria-label='Scroll Right'
+              >
+                <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+              </button>
+            </>
+          )}
+        </div>
       </div>
+      <Link
+        target='_blank'
+        href={"https://www.udemy.com/user/jahid-hiron/"}
+        className='block border-t rounded-b-lg hover:bg-gray-100 border-gray-200 py-3 text-center'
+      >
+        <span className='text-gray-700 gap-2 text-sm font-bold  flex justify-center items-center w-full'>
+          Show all
+          <FaArrowRight className='' />
+        </span>
+      </Link>
     </div>
   );
 };

@@ -12,7 +12,7 @@
     "price": "$34.99",
     "students": "34,450 students",
     "avatarUrl": "/profile.png",
-    "thumbnailUrl": "/images/courses/mern.webp",
+    "thumbnailUrl": "/images/courses/mern.png",
     "courseLink": "https://www.udemy.com/course/all-you-need-to-know-mern-stack-with-practical-project/"
   },
   {
@@ -28,7 +28,7 @@
     "price": "$19.99",
     "avatarUrl": "/profile.png",
     "students": "29,078 students",
-    "thumbnailUrl": "/images/courses/reactjs.jpg",
+    "thumbnailUrl": "/images/courses/react.png",
     "courseLink": "https://www.udemy.com/course/all-you-need-to-know-react-with-practical-project/"
   },
   {

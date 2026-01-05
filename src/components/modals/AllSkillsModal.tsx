@@ -7,6 +7,7 @@ import Modal from "@mui/material/Modal";
 import { IconButton } from "@mui/material";
 import { RxCross2 } from "react-icons/rx";
 import data from "../../data/skills-new.json";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 // --- Updated Types to match your nested JSON ---
 interface Skill {
@@ -48,7 +49,7 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
     return (
       <div key={index} className='py-6 border-b border-gray-100 last:border-0'>
         {/* Category Header */}
-        <h3 className='text-md font-bold text-gray-800 uppercase tracking-widest mb-4'>
+        <h3 className='text-[13px] font-bold text-gray-800 uppercase tracking-widest mb-4'>
           {cat.category}
         </h3>
 
@@ -59,7 +60,7 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
               key={i}
               className='list-disc list-outside text-sm text-gray-800 leading-relaxed'
             >
-              <span className='font-bold'>{item.name}</span>
+              <span className='font-semibold'>{item.name}</span>
               <span className='mx-2 text-gray-400'>—</span>
               <span className='text-gray-600'>{item.desc}</span>
             </li>
@@ -73,21 +74,9 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
     <>
       <div
         onClick={handleOpen}
-        className='text-gray-400 group-hover:text-gray-600 transition-colors cursor-pointer'
+        className='text-gray-400 hover:bg-gray-300 rounded-full p-1 group-hover:text-gray-600 transition-colors cursor-pointer'
       >
-        <svg
-          className='w-5 h-5 text-gray-600'
-          fill='none'
-          stroke='currentColor'
-          viewBox='0 0 24 24'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={2}
-            d='M17 8l4 4m0 0l-4 4m4-4H3'
-          />
-        </svg>
+        <IoMdArrowRoundForward />
       </div>
 
       <Modal open={open} onClose={handleClose}>

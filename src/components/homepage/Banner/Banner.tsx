@@ -1,5 +1,6 @@
 "use client";
 
+import ContactModal from "@/components/modals/ContactModal";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BiDownArrowAlt, BiLoaderAlt } from "react-icons/bi";
@@ -71,7 +72,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
           h-32 md:h-40 lg:h-48 rounded-t-lg relative
           bg-no-repeat bg-center bg-black
           /* Mobile: contain | Desktop (md+): cover */
-          bg-contain md:bg-cover
+          bg-cover
         `}
         style={dynamicBg}
       >
@@ -135,7 +136,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
 
               {data.currentJobUrl ? (
                 <Link
-                  className='hover:underline text-blue-600 font-medium'
+                  className='hover:underline hover:text-blue-600 text-gray-700 font-medium'
                   href={data.currentJobUrl}
                   target='_blank'
                 >
@@ -164,7 +165,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
                 )}
                 {data.currentEductionUrl ? (
                   <Link
-                    className='hover:underline text-blue-600 font-medium'
+                    className='hover:underline hover:text-blue-600 text-gray-700 font-medium'
                     href={data.currentEductionUrl}
                     target='_blank'
                   >
@@ -241,9 +242,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
 
         {/* Action Buttons */}
         <div className='flex gap-2'>
-          <button className='mt-5 font-semibold text-sm flex items-center gap-2 bg-[#262956] text-white px-4 py-1.5 rounded-full cursor-pointer hover:bg-blue-900 transition-colors'>
-            <IoIosSend className='text-lg' /> Contact Me
-          </button>
+          <ContactModal />
 
           <button
             onClick={handleDownload}

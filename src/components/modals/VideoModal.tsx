@@ -37,7 +37,7 @@ export default function VideoModal({ source, videoLink }: SkillsModalProps) {
     <div>
       <button
         onClick={() => setOpen(true)}
-        className='flex items-center gap-2 border px-3 rounded-full hover:bg-blue-600 hover:text-white hover:border-white text-sm cursor-pointer'
+        className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
       >
         <FaRegEye />
         <p className=' pt-0.3'>View Demo</p>

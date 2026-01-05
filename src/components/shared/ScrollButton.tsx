@@ -6,6 +6,7 @@ const ScrollButton = () => {
   return (
     <ScrollToTop
       smooth
+      width='18'
       color='#ffff'
       className='flex items-center justify-center transition-all'
       style={{

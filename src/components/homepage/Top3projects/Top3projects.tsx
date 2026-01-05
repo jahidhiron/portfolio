@@ -8,6 +8,8 @@ import { Avatar } from "@mui/material";
 import { TbWorld } from "react-icons/tb";
 import Link from "next/link";
 import VideoModal from "@/components/modals/VideoModal";
+import { FaGithub } from "react-icons/fa";
+import { IoDiamondOutline } from "react-icons/io5";
 
 // --- Types ---
 interface ContributorEntity {
@@ -28,6 +30,7 @@ interface ProjectEntry {
   description: string;
   liveLink: string;
   demoVideoLink: string;
+  githubLink?: string;
   skills: string[];
   contributorAvatars: ContributorEntity[];
 }
@@ -87,6 +90,17 @@ const Top3ProjectsSection: React.FC = () => {
                       Live Site
                     </Link>
                   )}
+                  {entry.githubLink && (
+                    <Link
+                      href={entry.githubLink}
+                      target='_blank'
+                      className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
+                    >
+                      <FaGithub />
+
+                      <p className=' pt-0.3'>Source Code</p>
+                    </Link>
+                  )}
                 </div>
               </div>
 
@@ -109,19 +123,20 @@ const Top3ProjectsSection: React.FC = () => {
               </div>
 
               {/* Skills Footer */}
-              <div className='text-sm text-gray-800 flex items-center gap-1 mt-3'>
-                <span className='font-semibold'>Skills:</span>
-                <span className='text-gray-700'>
-                  {displayedSkills.join(", ")}
-                </span>
-                {hiddenSkillCount > 0 && (
-                  <SkillsModal
-                    data={entry.skills}
-                    buttonText={`+${hiddenSkillCount} more`}
-                    title='Project Skills'
-                  />
-                )}
-              </div>
+              {entry.skills?.length > 1 && (
+                <div className='text-sm text-gray-800 flex items-center gap-1 mt-2.5'>
+                  <IoDiamondOutline />
+                  {hiddenSkillCount > 0 && (
+                    <SkillsModal
+                      data={entry.skills}
+                      buttonText={`${displayedSkills.join(
+                        ", "
+                      )} and +${hiddenSkillCount} skills`}
+                      title='All Skills'
+                    />
+                  )}
+                </div>
+              )}
 
               {/* Contributors */}
               {entry.contributorAvatars.length > 0 && (

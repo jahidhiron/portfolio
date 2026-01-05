@@ -8,7 +8,22 @@
     "location": "Remote",
     "companyAvatar": "/images/experiences/chartvps.png",
     "description": "<p>Currently spearheading core software engineering initiatives at <strong>SmartVFS</strong>, focusing on the architecture and implementation of high-concurrency technology solutions.</p><ul><li>Architecting and maintaining scalable backend services using <strong>Node.js</strong> and <strong>NestJS</strong> to handle complex visa and financial service workflows.</li><li>Optimizing system performance by implementing advanced caching strategies and efficient database indexing, resulting in reduced API latency.</li><li>Collaborating with cross-functional teams to design microservices that ensure high availability and fault tolerance in a distributed environment.</li><li>Leading the integration of automated CI/CD pipelines and containerization strategies using <strong>Docker</strong> to streamline deployment cycles.</li></ul>",
-    "skills": []
+    "skills": [
+      "TypeScript",
+      "Prisma ORM",
+      "NestJS",
+      "Socket.io",
+      "React",
+      "Redux",
+      "Redux Saga",
+      "CI/CD",
+      "Deployment",
+      "Nginx",
+      "Redis",
+      "Swagger API",
+      "Supertest",
+      "Jest"
+    ]
   },
   {
     "title": "Course Instructor",

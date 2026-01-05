@@ -67,7 +67,7 @@ const ContactMethodsList: React.FC<ContactMethodsListProps> = () => {
           href={contact.link || "#"}
           target='_blank'
           rel='noopener noreferrer'
-          className='text-blue-600 hover:underline break-all'
+          className='hover:text-blue-600 text-gray-700 hover:underline break-all'
         >
           {contact.subtitle}
         </a>

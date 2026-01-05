@@ -4,6 +4,7 @@ import experienceData from "../../../data/experience.json";
 import SkillsModal from "@/components/modals/SkillsModal";
 import { Avatar } from "@mui/material";
 import Link from "next/link";
+import { IoDiamondOutline } from "react-icons/io5";
 
 interface JobExperience {
   id: number;
@@ -112,7 +113,7 @@ const ExperienceSection: React.FC = () => {
                 <p className='text-[13px] md:text-sm text-gray-600 mt-0.5'>
                   {job.companyUrl ? (
                     <Link
-                      className='hover:underline text-blue-600 font-medium'
+                      className='hover:underline text-primary font-medium'
                       href={job?.companyUrl!}
                       target='_blank'
                     >
@@ -135,7 +136,7 @@ const ExperienceSection: React.FC = () => {
                 )}
 
                 {job.description && (
-                  <div className='text-[13px] md:text-sm text-gray-700 mt-2.5 whitespace-pre-line leading-relaxed'>
+                  <div className='text-[13px] md:text-sm text-gray-900 mt-2.5 whitespace-pre-line leading-relaxed'>
                     <div
                       dangerouslySetInnerHTML={{
                         __html: isDescriptionExpanded
@@ -148,42 +149,25 @@ const ExperienceSection: React.FC = () => {
                     {needsDescriptionToggle && (
                       <button
                         onClick={() => toggleDescription(job.id)}
-                        className='inline-block ml-1 text-blue-600 cursor-pointer hover:underline font-semibold focus:outline-none'
+                        className=' hover:text-blue-600 text-gray-600 cursor-pointer hover:underline  inline-block'
                       >
-                        {isDescriptionExpanded ? " ...less" : " ...more"}
+                        {isDescriptionExpanded ? "...less" : "...more"}
                       </button>
                     )}
                   </div>
                 )}
 
                 {job.skills && job.skills.length > 0 && (
-                  <div className='mt-3 flex items-start text-xs md:text-sm text-gray-600'>
-                    <svg
-                      className='w-3.5 h-3.5 md:w-4 md:h-4 mr-2 mt-0.5 text-gray-400 shrink-0'
-                      fill='currentColor'
-                      viewBox='0 0 20 20'
-                    >
-                      <path d='M10 12a2 2 0 100-4 2 2 0 000 4z'></path>
-                      <path
-                        fillRule='evenodd'
-                        d='M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z'
-                        clipRule='evenodd'
-                      ></path>
-                    </svg>
+                  <div className='mt-3 flex items-center gap-2 text-xs md:text-sm text-gray-600'>
+                    <IoDiamondOutline />
                     <div className='flex flex-wrap gap-x-1 items-center'>
-                      <span className='font-semibold text-gray-700'>
-                        {displayedSkills.join(", ")}
-                      </span>
-                      {hiddenSkillCount > 0 && (
-                        <>
-                          <span className='text-gray-400'>and</span>
-                          <SkillsModal
-                            data={job.skills}
-                            buttonText={`+${hiddenSkillCount} skills`}
-                            title='All Skills'
-                          />
-                        </>
-                      )}
+                      <SkillsModal
+                        data={job.skills}
+                        buttonText={`${displayedSkills.join(
+                          ", "
+                        )} and +${hiddenSkillCount} skills`}
+                        title='All Skills'
+                      />
                     </div>
                   </div>
                 )}

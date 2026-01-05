@@ -38,7 +38,7 @@ export default function SkillsModal({
   return (
     <div>
       <span
-        className='text-blue-600 font-bold cursor-pointer'
+        className='text-gray-700 hover:text-blue-600 hover:underline font-semibold cursor-pointer'
         onClick={() => setOpen(true)}
       >
         {buttonText}

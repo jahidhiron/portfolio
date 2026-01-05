@@ -10,7 +10,7 @@ const Header = () => {
             Jahid Hiron
           </a>
         </div>
-        <ul className='flex sm:space-x-6 space-x-4 text-gray-700 text-sm'>
+        <ul className='flex sm:space-x-6 space-x-4 text-gray-900 text-sm'>
           <li className='text-center hover:text-gray-900 cursor-pointer'>
             <a href='/#experience' className='sm:text-sm text-xs'>
               Experience

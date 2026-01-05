@@ -8,6 +8,7 @@ import { Avatar } from "@mui/material";
 import { TbWorld } from "react-icons/tb";
 import Link from "next/link";
 import VideoModal from "@/components/modals/VideoModal";
+import { FaGithub } from "react-icons/fa";
 
 interface ContributorEntity {
   avatar: string;
@@ -28,6 +29,7 @@ interface ProjectEntry {
   liveLink: string;
   demoVideoLink: string;
   projectAvatar: string;
+  githubLink: string;
   skills: string[];
   contributorAvatars: ContributorEntity[];
 }
@@ -69,10 +71,22 @@ const ProjectsSection: React.FC = () => {
               <Link
                 href={entry.liveLink}
                 target='_blank'
-                className='flex items-center gap-2 border px-3 rounded-full hover:bg-blue-600 hover:text-white hover:border-white text-sm cursor-pointer'
+                className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
               >
                 <TbWorld />
-                Live Site
+
+                <p className=' pt-0.3'>Live Site</p>
+              </Link>
+            )}
+            {entry.githubLink && (
+              <Link
+                href={entry.githubLink}
+                target='_blank'
+                className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
+              >
+                <FaGithub />
+
+                <p className=' pt-0.3'>Source Code</p>
               </Link>
             )}
           </div>

@@ -29,7 +29,7 @@ const SkillsSectionDetails: React.FC = () => {
       <div className='flex flex-col gap-8'>
         {(categories || []).map((cat, index) => (
           <div key={index} className='flex flex-col'>
-            <h3 className='text-lg font-bold text-black mb-4'>
+            <h3 className='text-[15px] font-bold text-black mb-4'>
               {cat.category}
             </h3>
 
@@ -39,7 +39,7 @@ const SkillsSectionDetails: React.FC = () => {
                   key={i}
                   className='list-disc list-outside text-gray-800 text-sm leading-relaxed'
                 >
-                  <span className='font-bold'>{item.name}</span>
+                  <span className='font-semibold'>{item.name}</span>
                   <span className='mx-2'>—</span>
                   <span className='text-gray-600'>{item.desc}</span>
                 </li>
