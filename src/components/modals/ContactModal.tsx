@@ -33,14 +33,19 @@ export default function ContactModal() {
     setLoading(true);
 
     const form = e.currentTarget;
+    const nameInput = form.elements.namedItem("name") as HTMLInputElement;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+    const messageInput = form.elements.namedItem(
+      "message"
+    ) as HTMLTextAreaElement;
 
     await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value,
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value,
       }),
     });
 
