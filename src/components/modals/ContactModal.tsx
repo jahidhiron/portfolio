@@ -10,6 +10,7 @@ import { RxCross2 } from "react-icons/rx";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import { LuLoaderCircle } from "react-icons/lu";
+import { toast } from "react-toastify";
 
 const style = {
   position: "absolute",
@@ -39,19 +40,23 @@ export default function ContactModal() {
       "message"
     ) as HTMLTextAreaElement;
 
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: nameInput.value,
-        email: emailInput.value,
-        message: messageInput.value,
-      }),
-    });
-
-    setLoading(false);
-    setOpen(false);
-    form.reset();
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: nameInput.value,
+          email: emailInput.value,
+          message: messageInput.value,
+        }),
+      });
+      toast.success(" Message sent successfully!");
+      setLoading(false);
+      setOpen(false);
+      form.reset();
+    } catch (error) {
+      toast.error("Something went wrong");
+    }
   };
 
   return (

@@ -1,4 +1,4 @@
-import AllProjectsPage from "./Details/Details";
+import AllProjectsPage from "./List/List";
 
 const ProjectDetailsPage = () => {
   return (

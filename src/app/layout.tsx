@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/shared/Header/Header";
 import ThemeRegistry from "@/components/shared/Theme/ThemeRegistry";
 import ScrollButton from "@/components/shared/ScrollButton";
+import { Bounce, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +36,19 @@ export default function RootLayout({
           <Header />
           {children}
           <ScrollButton />
+          <ToastContainer
+            position='bottom-right'
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme='light'
+            transition={Bounce}
+          />
         </ThemeRegistry>
       </body>
     </html>

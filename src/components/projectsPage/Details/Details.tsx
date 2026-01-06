@@ -1,75 +1,79 @@
 "use client";
 
 import React from "react";
+import { useParams, useRouter } from "next/navigation";
 import projectsData from "../../../data/projects.json";
-import ContributorsModal from "@/components/modals/ContributorsModal";
-import SkillsModal from "@/components/modals/SkillsModal";
-import { Avatar } from "@mui/material";
-import { TbWorld } from "react-icons/tb";
+import { Avatar, Breadcrumbs, Typography } from "@mui/material";
 import Link from "next/link";
-import VideoModal from "@/components/modals/VideoModal";
+import { TbWorld, TbArrowLeft } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
+import VideoModal from "@/components/modals/VideoModal";
 
-interface ContributorEntity {
-  avatar: string;
-  name: string;
-  profileLink: string;
-  subtitle: string;
-}
+const ProjectDetailPage = () => {
+  const { id } = useParams();
+  const router = useRouter();
 
-interface ProjectEntry {
-  id: number;
-  title: string;
-  startDate: string;
-  endDate: string;
-  associatedWith: string;
-  associatedImage: string;
-  source: string;
-  description: string;
-  liveLink: string;
-  demoVideoLink: string;
-  projectAvatar: string;
-  githubLink: string;
-  skills: string[];
-  contributorAvatars: ContributorEntity[];
-}
+  // Find the specific project by ID
+  const project = projectsData.find((p) => p.id.toString() === id);
 
-const projectsList: ProjectEntry[] = projectsData as any[];
-
-const ProjectsSection: React.FC = () => {
-  const renderProjectEntry = (entry: ProjectEntry) => {
-    // Exact design requires displaying all skills as a bolded string
-    const skillsString = entry.skills.join(" · ");
-
-    const visibleAvatars = entry.contributorAvatars?.slice(0, 2) || [];
-    const hiddenContributorCount =
-      (entry.contributorAvatars?.length || 0) - visibleAvatars.length;
-
+  if (!project) {
     return (
-      <div
-        key={entry.id}
-        className='pb-8 pt-4 border-t border-gray-100 last:border-b-0'
-      >
-        {/* Title */}
-        <h3 className='text-base font-semibold text-gray-900 leading-snug'>
-          {entry.title}
-        </h3>
+      <div className='flex flex-col items-center justify-center min-h-[60vh]'>
+        <h2 className='text-2xl font-bold'>Project not found</h2>
+        <button
+          onClick={() => router.back()}
+          className='mt-4 text-blue-600 underline'
+        >
+          Go Back
+        </button>
+      </div>
+    );
+  }
 
-        {/* Date and Links */}
-        <div className='flex flex-col sm:flex-row  sm:items-center sm:gap-5 gap-3 my-2'>
-          <p className='text-sm text-gray-700 mt-0.5'>
-            {entry.startDate} - {entry.endDate}
-          </p>
-          <div className='text-sm flex items-center gap-2 text-gray-700 mt-0.5'>
-            {entry.demoVideoLink && (
+  const skillsString = project.skills.join(" · ");
+
+  return (
+    <div className='max-w-6xl mx-auto px-4 py-10 animate-in fade-in duration-500'>
+      {/* Navigation / Breadcrumbs */}
+      <button
+        onClick={() => router.back()}
+        className='flex items-center gap-2 text-sm text-gray-600 hover:text-[#262956] mb-6 transition-colors'
+      >
+        <TbArrowLeft /> Back to Projects
+      </button>
+
+      <div className='bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm'>
+        {/* Header Section */}
+        <div className='p-8 border-b border-gray-100 bg-white'>
+          {project.projectAvatar && (
+            <img
+              src={project.projectAvatar}
+              alt={project.title}
+              className='h-44 object-contain  bg-white rounded-xl p-2'
+            />
+          )}
+          <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
+            <div className='flex items-center gap-5'>
+              <div>
+                <h1 className='text-3xl font-bold text-gray-900'>
+                  {project.title}
+                </h1>
+                <p className='text-gray-500 font-medium mt-1'>
+                  {project.startDate} — {project.endDate}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='text-sm flex items-center gap-2 text-gray-700 mt-5'>
+            {project.demoVideoLink && (
               <VideoModal
-                source={entry.source}
-                videoLink={entry.demoVideoLink}
+                source={project.source}
+                videoLink={project.demoVideoLink}
               />
             )}
-            {entry.liveLink && (
+            {project.liveLink && (
               <Link
-                href={entry.liveLink}
+                href={project.liveLink}
                 target='_blank'
                 className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
               >
@@ -78,9 +82,9 @@ const ProjectsSection: React.FC = () => {
                 <p className=' pt-0.3'>Live Site</p>
               </Link>
             )}
-            {entry.githubLink && (
+            {project.githubLink && (
               <Link
-                href={entry.githubLink}
+                href={project.githubLink}
                 target='_blank'
                 className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
               >
@@ -92,101 +96,87 @@ const ProjectsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Association Badge */}
-        <div className='flex items-center text-sm text-gray-700 mt-2'>
-          {entry.associatedWith && (
-            <>
-              {entry.associatedImage ? (
-                <img
-                  src={entry.associatedImage}
-                  className='w-4 h-4 mr-2 rounded-full'
-                  alt={entry.associatedWith}
-                />
-              ) : (
-                <span className='flex items-center justify-center w-4 h-4 mr-2 bg-gray-100 rounded-sm text-[10px] font-bold text-gray-700 border border-gray-200'>
-                  {entry.associatedWith.charAt(0).toUpperCase()}
-                </span>
-              )}
+        {/* Content Body */}
+        <div className='p-8 space-y-8'>
+          <div className='flex items-center text-sm text-gray-700 mt-3'>
+            {project.associatedWith && (
+              <>
+                {project.associatedImage ? (
+                  <img
+                    src={project.associatedImage}
+                    className='w-4 h-4 mr-2 rounded-full'
+                    alt={project.associatedWith}
+                  />
+                ) : (
+                  <span className='flex items-center justify-center w-4 h-4 mr-2 bg-gray-100 rounded-sm text-sm font-bold text-gray-700'>
+                    {project?.associatedWith?.charAt(0)?.toUpperCase()}
+                  </span>
+                )}
 
-              <span className='text-sm'>
-                Associated with{" "}
-                <strong className='font-semibold text-gray-900'>
-                  {entry.associatedWith}
-                </strong>
-              </span>
-            </>
+                <span className='text-sm'>
+                  Associated with{" "}
+                  <strong className='font-semibold'>
+                    {project.associatedWith}
+                  </strong>
+                </span>
+              </>
+            )}
+          </div>
+
+          {/* Detailed Description - RESTORED HTML RENDER */}
+          <div>
+            <h2 className='text-lg font-bold text-gray-900 mb-3 border-b pb-2'>
+              Description
+            </h2>
+            <div
+              className='prose prose-sm max-w-none text-gray-800 leading-relaxed'
+              dangerouslySetInnerHTML={{ __html: project.description }}
+            />
+          </div>
+
+          {project.skills?.length > 0 && (
+            <div>
+              <h2 className='text-lg font-bold text-gray-900 mb-3 border-b pb-2'>
+                Technologies & Skills
+              </h2>
+              <div className='text-gray-800 bg-gray-50 p-4 rounded-xl border border-gray-100'>
+                <span className='font-semibold text-[#262956]'>Skills: </span>
+                <span className='leading-loose'>{skillsString}</span>
+              </div>
+            </div>
+          )}
+
+          {/* Full Contributors List */}
+          {project.contributorAvatars?.length > 0 && (
+            <div>
+              <h2 className='text-lg font-bold text-gray-900 mb-4 border-b pb-2'>
+                Team
+              </h2>
+              <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                {project.contributorAvatars.map((person, idx) => (
+                  <Link
+                    href={person.profileLink}
+                    key={idx}
+                    className='flex items-center gap-3 p-3 border border-gray-100 rounded-xl'
+                  >
+                    <Avatar src={person.avatar} sx={{ width: 48, height: 48 }}>
+                      {person.name.charAt(0)}
+                    </Avatar>
+                    <div>
+                      <p className='text-sm font-bold text-gray-900'>
+                        {person.name}
+                      </p>
+                      <p className='text-xs text-gray-500'>{person.subtitle}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           )}
         </div>
-
-        {/* Full HTML Description (No clamp, No "more" button) */}
-        <div className='mt-2'>
-          <div
-            className='text-sm text-gray-800 leading-normal prose-li:list-disc'
-            dangerouslySetInnerHTML={{ __html: entry.description }}
-          />
-        </div>
-
-        {/* Skills - Exact bold string design */}
-        {entry.skills?.length > 0 && (
-          <div className='text-sm text-gray-800 mt-3'>
-            <span className='font-semibold'>Skills: {skillsString}</span>
-          </div>
-        )}
-        {entry.projectAvatar && (
-          <img
-            className='my-5 max-w-[150px] max-h-[80px] border border-gray-300'
-            src={entry.projectAvatar}
-          />
-        )}
-
-        {/* Contributors Section */}
-        {entry.contributorAvatars?.length > 0 && (
-          <div className='mt-4'>
-            <p className='text-sm text-gray-700 mb-2'>Other contributors</p>
-            <div className='flex items-center'>
-              {visibleAvatars.map((url, index) => (
-                <Avatar
-                  src={url.avatar}
-                  key={index}
-                  alt={url.name}
-                  sx={{ width: 32, height: 32 }}
-                  className={`border-2 border-white ${
-                    index > 0 ? "-ml-2" : ""
-                  }`}
-                >
-                  {url.name.charAt(0)}
-                </Avatar>
-              ))}
-
-              {hiddenContributorCount > 0 && (
-                <div className='ml-1'>
-                  <ContributorsModal
-                    data={entry.contributorAvatars}
-                    buttonText={`+ ${hiddenContributorCount}`}
-                    title='All Contributors'
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  return (
-    <div
-      id='projects'
-      className='bg-white mt-7 scroll-mt-20 border border-gray-300 rounded-lg shadow-sm p-6 max-w-4xl mx-auto'
-    >
-      <h2 className='text-xl font-semibold text-gray-800 mb-4'>Projects</h2>
-
-      {/* Displaying ALL projects from JSON */}
-      <div className='flex flex-col'>
-        {projectsList.map(renderProjectEntry)}
       </div>
     </div>
   );
 };
 
-export default ProjectsSection;
+export default ProjectDetailPage;

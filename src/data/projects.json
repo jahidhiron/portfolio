@@ -1,6 +1,6 @@
 [
   {
-    "id": 3,
+    "id": 1,
     "title": "ServerIQ — Server Monitoring & Hosting Management Platform",
     "startDate": "Sep 2025",
     "endDate": "Present",
@@ -30,7 +30,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 1,
+    "id": 2,
     "title": "BRAC Group ERP - Enterprise-Scale Microservices Ecosystem",
     "startDate": "Apr 2025",
     "endDate": "Present",
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Prime Bank ERP - Enterprise-Scale Microservices Ecosystem",
     "startDate": "Dec 2024",
     "endDate": "Present",
@@ -112,12 +112,13 @@
     ]
   },
   {
-    "id": 6,
+    "id": 4,
     "title": "Amani Forged - E-commerce",
     "startDate": "Jan 2024",
     "endDate": "Nov 2025",
-
+    "associatedWith": "APSIS",
     "liveLink": "https://amaniforged.com/",
+    "githubLink": "https://amaniforged.com/",
     "source": "gdrive",
     "demoVideoLink": "1swO5LpgmvAxxs5w-DmeI0laCxyFkPWw5",
     "associatedImage": "/images/experiences/developerstroop.webp",
@@ -159,7 +160,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "Autoverge - Multi Tenant E-commerce",
     "startDate": "Feb 2024",
     "endDate": "Dec 2025",
@@ -207,7 +208,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 6,
     "title": "NestJS Boilerplate Template",
     "startDate": "Oct 2025",
     "endDate": "Nov 2025",
@@ -229,7 +230,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 3,
+    "id": 7,
     "title": "NestJS REST API Starter – Clean Architecture & Best Practices",
     "startDate": "Jun 2025",
     "endDate": "Jul 2025",
@@ -260,7 +261,7 @@
   },
 
   {
-    "id": 4,
+    "id": 8,
     "title": "React TypeScript Frontend – Scalable UI with Clean Architecture",
     "startDate": "May 2025",
     "endDate": "Jun 2025",
@@ -294,7 +295,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 5,
+    "id": 9,
     "title": "Express TypeScript REST API Starter – Clean Architecture & Best Practices",
     "startDate": "Apr 2025",
     "endDate": "May  2025",
@@ -331,7 +332,7 @@
   },
 
   {
-    "id": 7,
+    "id": 10,
     "title": "InFlow",
     "startDate": "Jun 2023",
     "endDate": "Nov 2024",
@@ -354,7 +355,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 8,
+    "id": 11,
     "title": "Resono",
     "startDate": "Feb 2023",
     "endDate": "Apr 2024",
@@ -377,7 +378,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 9,
+    "id": 12,
     "title": "Smart Jobs",
     "startDate": "Dec 2022",
     "endDate": "Jan 2024",
@@ -400,7 +401,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 10,
+    "id": 13,
     "title": "Alpha Search",
     "startDate": "Jun 2022",
     "endDate": "Jun 2023",
@@ -422,7 +423,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 11,
+    "id": 14,
     "title": "Cloud Class Room",
     "startDate": "Jun 2021",
     "endDate": "May 2022",
@@ -437,7 +438,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 12,
+    "id": 15,
     "title": "Online Certification School",
     "startDate": "Jul 2020",
     "endDate": "May 2021",
@@ -452,7 +453,7 @@
     "contributorAvatars": []
   },
   {
-    "id": 13,
+    "id": 16,
     "title": "Raw Nodejs project",
     "startDate": "Jan 2019",
     "endDate": "Mar 2019",
@@ -461,6 +462,7 @@
     "source": "",
     "demoVideoLink": "",
     "associatedImage": "",
+    "githubLink": "https://github.com/jahidhiron/raw-nodejs-project",
     "projectAvatar": "/images/projects/node.jpg",
     "description": "<p>A backend service built with pure Node.js without external NPM modules, utilizing the File System for data storage.</p><ul><li>Features custom authentication, token generation, and a custom query engine.</li><li>Includes an automated response service for user state changes.</li></ul>",
     "skills": [],
