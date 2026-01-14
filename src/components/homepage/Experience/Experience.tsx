@@ -54,13 +54,13 @@ const ExperienceSection: React.FC = () => {
   return (
     <div
       id='experience'
-      className='bg-white mt-7 scroll-mt-20 border border-gray-300 rounded-lg shadow-sm p-4 md:p-6'
+      className='bg-theme mt-7 scroll-mt-20 border border-theme rounded-lg shadow-sm p-4 md:p-6'
     >
-      <h2 className='text-lg md:text-xl font-semibold text-gray-800 mb-4'>
+      <h2 className='text-lg md:text-xl font-semibold text-theme-primary mb-4'>
         Experience
       </h2>
 
-      <div className='divide-y divide-gray-200'>
+      <div className='divide-y divide-theme'>
         {jobsToDisplay.map((job) => {
           const isDescriptionExpanded = expandedJobId === job.id;
 
@@ -99,44 +99,46 @@ const ExperienceSection: React.FC = () => {
                     fontSize: { xs: "0.9rem", md: "1.2rem" },
                     textTransform: "uppercase",
                   }}
-                  className='rounded-md border border-gray-100  shadow-sm object-cover'
+                  className='rounded-md border border-theme shadow-sm object-cover'
                 >
                   {job.company.charAt(0)}
                 </Avatar>
               </div>
 
               <div className='flex-grow min-w-0'>
-                <p className='text-sm md:text-base font-semibold text-gray-800 leading-tight md:leading-snug truncate md:whitespace-normal'>
+                <p className='text-sm md:text-base font-semibold text-theme-primary leading-tight md:leading-snug truncate md:whitespace-normal'>
                   {job.title}
                 </p>
 
-                <p className='text-[13px] md:text-sm text-gray-600 mt-0.5'>
+                <p className='text-[13px] md:text-sm text-theme-secondary mt-0.5'>
                   {job.companyUrl ? (
                     <Link
-                      className='hover:underline text-primary font-medium'
+                      className='hover:underline hover:text-blue-600 text-primary font-medium'
                       href={job?.companyUrl!}
                       target='_blank'
                     >
                       {job.company}
                     </Link>
                   ) : (
-                    <span className='text-gray-800 font-medium'>
+                    <span className='text-theme-primary font-medium'>
                       {job.company}
                     </span>
                   )}{" "}
-                  <span className='text-gray-400 mx-1'>·</span>
-                  <span className='text-gray-500'>{job.type}</span>
+                  <span className='text-theme-secondary mx-1'>·</span>
+                  <span className='text-theme-secondary'>{job.type}</span>
                 </p>
 
-                <p className='text-xs text-gray-500 mt-1 md:mt-0'>
+                <p className='text-xs text-theme-secondary mt-1 md:mt-0'>
                   {job.duration}
                 </p>
                 {job.location && (
-                  <p className='text-xs text-gray-400 mt-0.5'>{job.location}</p>
+                  <p className='text-xs text-theme-secondary mt-0.5'>
+                    {job.location}
+                  </p>
                 )}
 
                 {job.description && (
-                  <div className='text-[13px] md:text-sm text-gray-900 mt-2.5 whitespace-pre-line leading-relaxed'>
+                  <div className='text-[13px] md:text-sm text-theme-primary mt-2.5 whitespace-pre-line leading-relaxed'>
                     <div
                       dangerouslySetInnerHTML={{
                         __html: isDescriptionExpanded
@@ -149,7 +151,7 @@ const ExperienceSection: React.FC = () => {
                     {needsDescriptionToggle && (
                       <button
                         onClick={() => toggleDescription(job.id)}
-                        className=' hover:text-blue-600 text-gray-600 cursor-pointer hover:underline  inline-block'
+                        className=' hover:text-blue-600 text-theme-secondary cursor-pointer hover:underline inline-block'
                       >
                         {isDescriptionExpanded ? "...less" : "...more"}
                       </button>
@@ -158,7 +160,7 @@ const ExperienceSection: React.FC = () => {
                 )}
 
                 {job.skills && job.skills.length > 0 && (
-                  <div className='mt-3 flex items-center gap-2 text-xs md:text-sm text-gray-600'>
+                  <div className='mt-3 flex items-center gap-2 text-xs md:text-sm text-theme-secondary'>
                     <IoDiamondOutline />
                     <div className='flex flex-wrap gap-x-1 items-center'>
                       <SkillsModal
@@ -178,10 +180,10 @@ const ExperienceSection: React.FC = () => {
       </div>
 
       {needsShowAllButton && (
-        <div className='border-t border-gray-200 mt-2 pt-4 text-center'>
+        <div className='border-t border-theme mt-2 pt-4 text-center'>
           <button
             onClick={toggleShowAllList}
-            className='text-gray-600 text-sm md:text-base font-semibold hover:bg-gray-50 active:bg-gray-100 py-2 px-3 rounded-md transition-colors flex justify-center items-center w-full'
+            className='text-theme-secondary text-sm md:text-base font-semibold hover:bg-theme-secondary active:bg-theme py-2 px-3 rounded-md transition-colors flex justify-center items-center w-full'
           >
             Show all ({typedExperienceData.length} items)
             <svg

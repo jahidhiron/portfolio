@@ -32,8 +32,12 @@ const ProjectDetailPage = () => {
 
   const skillsString = project.skills.join(" · ");
 
+  const dynamicBg = {
+    backgroundImage: `url(${project.projectAvatar})`,
+  };
+
   return (
-    <div className='max-w-6xl mx-auto px-4 py-10 animate-in fade-in duration-500'>
+    <div className='max-w-4xl mx-auto px-4 py-6 animate-in fade-in duration-500'>
       {/* Navigation / Breadcrumbs */}
       <button
         onClick={() => router.back()}
@@ -41,24 +45,32 @@ const ProjectDetailPage = () => {
       >
         <TbArrowLeft /> Back to Projects
       </button>
-
-      <div className='bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm'>
+      <div
+        className={`
+         h-72 md:h-96  rounded-t-2xl relative
+          bg-no-repeat bg-center bg-black
+          /* Mobile: contain | Desktop (md+): cover */
+          bg-contain
+        `}
+        style={dynamicBg}
+      ></div>
+      <div className='bg-white border border-gray-200 rounded-b-2xl overflow-hidden shadow-sm'>
         {/* Header Section */}
         <div className='p-8 border-b border-gray-100 bg-white'>
-          {project.projectAvatar && (
+          {/* {project.projectAvatar && (
             <img
               src={project.projectAvatar}
               alt={project.title}
               className='h-44 object-contain  bg-white rounded-xl p-2'
             />
-          )}
+          )} */}
           <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
             <div className='flex items-center gap-5'>
               <div>
-                <h1 className='text-3xl font-bold text-gray-900'>
+                <h1 className='text-xl font-bold text-gray-900'>
                   {project.title}
                 </h1>
-                <p className='text-gray-500 font-medium mt-1'>
+                <p className='text-gray-500 text-xs  font-medium mt-1'>
                   {project.startDate} — {project.endDate}
                 </p>
               </div>
@@ -125,21 +137,21 @@ const ProjectDetailPage = () => {
 
           {/* Detailed Description - RESTORED HTML RENDER */}
           <div>
-            <h2 className='text-lg font-bold text-gray-900 mb-3 border-b pb-2'>
+            <h2 className='text-md font-bold text-gray-900 mb-3 border-b pb-2'>
               Description
             </h2>
             <div
-              className='prose prose-sm max-w-none text-gray-800 leading-relaxed'
+              className='prose prose-xs text-sm max-w-none text-gray-800 leading-relaxed'
               dangerouslySetInnerHTML={{ __html: project.description }}
             />
           </div>
 
           {project.skills?.length > 0 && (
             <div>
-              <h2 className='text-lg font-bold text-gray-900 mb-3 border-b pb-2'>
+              <h2 className='text-md font-bold text-gray-900 mb-3 border-b pb-2'>
                 Technologies & Skills
               </h2>
-              <div className='text-gray-800 bg-gray-50 p-4 rounded-xl border border-gray-100'>
+              <div className='text-gray-800 bg-gray-50 p-4 text-sm rounded-xl border border-gray-100'>
                 <span className='font-semibold text-[#262956]'>Skills: </span>
                 <span className='leading-loose'>{skillsString}</span>
               </div>
@@ -156,6 +168,7 @@ const ProjectDetailPage = () => {
                 {project.contributorAvatars.map((person, idx) => (
                   <Link
                     href={person.profileLink}
+                    target='_blank'
                     key={idx}
                     className='flex items-center gap-3 p-3 border border-gray-100 rounded-xl'
                   >

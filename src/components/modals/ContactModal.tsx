@@ -11,6 +11,7 @@ import { FaEnvelopeOpenText } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import { LuLoaderCircle } from "react-icons/lu";
 import { toast } from "react-toastify";
+import TextEditor from "../ui/texteditor/TextEditor";
 
 const style = {
   position: "absolute",
@@ -21,13 +22,14 @@ const style = {
   boxShadow: 24,
   p: 4,
   borderRadius: 2,
-  width: { xs: "95%", sm: 420 },
+  width: { xs: "95%", sm: 620 },
   outline: "none",
 };
 
 export default function ContactModal() {
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+  const [message, setMessage] = React.useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,9 +38,11 @@ export default function ContactModal() {
     const form = e.currentTarget;
     const nameInput = form.elements.namedItem("name") as HTMLInputElement;
     const emailInput = form.elements.namedItem("email") as HTMLInputElement;
-    const messageInput = form.elements.namedItem(
-      "message"
-    ) as HTMLTextAreaElement;
+    if (!message || message.replace(/<(.|\n)*?>/g, "").trim() === "") {
+      toast.error("Message is required");
+      setLoading(false);
+      return;
+    }
 
     try {
       await fetch("/api/contact", {
@@ -47,13 +51,14 @@ export default function ContactModal() {
         body: JSON.stringify({
           name: nameInput.value,
           email: emailInput.value,
-          message: messageInput.value,
+          message,
         }),
       });
       toast.success(" Message sent successfully!");
       setLoading(false);
       setOpen(false);
       form.reset();
+      setMessage("");
     } catch (error) {
       toast.error("Something went wrong");
     }
@@ -63,7 +68,7 @@ export default function ContactModal() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className='mt-5 font-semibold text-sm flex items-center gap-2 bg-[#262956] text-white px-4 py-1.5 rounded-full cursor-pointer hover:bg-blue-900 transition-colors'
+        className='mt-5 font-semibold text-sm flex items-center border gap-2 bg-theme text-theme-primary px-4 py-1.5 rounded-full cursor-pointer hover:bg-theme-secondary transition-colors'
       >
         <IoIosSend className='text-lg' /> Contact Me
       </button>
@@ -100,20 +105,14 @@ export default function ContactModal() {
               sx={{ mt: 3 }}
             />
 
-            <TextField
-              name='message'
-              label='Message'
-              size='small'
-              fullWidth
-              multiline
-              rows={4}
-              required
-              sx={{ mt: 3 }}
-            />
+            <div className='mt-3'>
+              <label className='text-sm font-medium mb-2 block'>Message</label>
+              <TextEditor setValue={setMessage} value={message} />
+            </div>
 
             <button
               type='submit'
-              className='bg-primary cursor-pointer text-white w-full mt-5 py-1 rounded-full'
+              className='bg-theme text-theme-primary cursor-pointer w-full mt-5 py-1 rounded-full hover:bg-theme-secondary transition-colors'
               disabled={loading}
             >
               {loading ? (

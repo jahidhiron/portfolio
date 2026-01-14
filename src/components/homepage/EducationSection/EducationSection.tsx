@@ -37,7 +37,7 @@ const getPlaceholderIcon = (institutionName: string) => {
 
   return (
     <div
-      className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold ${color} border border-gray-300`}
+      className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold ${color} border border-theme`}
     >
       {institutionName.charAt(0)}
     </div>
@@ -59,10 +59,12 @@ const EducationSection: React.FC = () => {
   };
 
   return (
-    <div className='bg-white mt-7 border border-gray-300 rounded-lg shadow-sm p-6'>
-      <h2 className='text-xl font-semibold text-gray-800 mb-4'>Education</h2>
+    <div className='bg-theme mt-7 border border-theme rounded-lg shadow-sm p-6'>
+      <h2 className='text-xl font-semibold text-theme-primary mb-4'>
+        Education
+      </h2>
 
-      <div className='divide-y divide-gray-200'>
+      <div className='divide-y divide-theme'>
         {listToDisplay.map((edu, index) => {
           const isDescriptionExpanded = expandedDescriptionId === index;
 
@@ -90,19 +92,19 @@ const EducationSection: React.FC = () => {
                     fontWeight: "bold",
                     textTransform: "uppercase",
                   }}
-                  className={`w-8 h-8  rounded-full border-2 border-gray-200 object-cover`}
+                  className={`w-8 h-8 rounded-full border-2 border-theme object-cover`}
                 >
                   {edu.institution.charAt(0)}
                 </Avatar>
               </div>
 
               <div className='flex-grow'>
-                <p className='text-base font-semibold text-gray-800 leading-snug'>
+                <p className='text-base font-semibold text-theme-primary leading-snug'>
                   {edu.institutionUrl ? (
                     <Link
                       href={edu.institutionUrl}
                       target='_blank'
-                      className='text-gray-900 hover:text-blue-600 hover:underline'
+                      className='text-theme-primary hover:text-blue-600 hover:underline'
                     >
                       {edu.institution}
                     </Link>
@@ -110,27 +112,29 @@ const EducationSection: React.FC = () => {
                     <span>{edu.institution}</span>
                   )}
                 </p>
-                <p className='text-sm text-gray-600'>
+                <p className='text-sm text-theme-secondary'>
                   {edu.degree} ·{" "}
-                  <span className='text-gray-600'>{edu.fieldOfStudy}</span>
+                  <span className='text-theme-secondary'>
+                    {edu.fieldOfStudy}
+                  </span>
                 </p>
-                <p className='text-xs text-gray-600'>{edu.duration}</p>
+                <p className='text-xs text-theme-secondary'>{edu.duration}</p>
 
                 {edu.grade && (
-                  <p className='text-xs text-gray-600 mt-1'>
+                  <p className='text-xs text-theme-secondary mt-1'>
                     Grade: <span className='font-semibold'>{edu.grade}</span>
                   </p>
                 )}
 
                 {/* Maintained design while using HTML rendering */}
-                <div className='text-sm text-gray-900 mt-2'>
+                <div className='text-sm text-theme-primary mt-2'>
                   <div
                     className={!isDescriptionExpanded ? "line-clamp-2" : ""}
                     dangerouslySetInnerHTML={{ __html: edu.description }}
                   />
                   <span
                     onClick={() => toggleDescription(index)}
-                    className='hover:text-blue-600 text-gray-600 cursor-pointer hover:underline  inline-block'
+                    className='hover:text-blue-600 text-theme-secondary cursor-pointer hover:underline inline-block'
                   >
                     {isDescriptionExpanded ? "...less" : "...more"}
                   </span>
@@ -138,7 +142,7 @@ const EducationSection: React.FC = () => {
 
                 {/* Skills Section */}
                 {skills.length > 0 && (
-                  <div className='mt-3 flex items-center gap-2 text-xs md:text-sm text-gray-600'>
+                  <div className='mt-3 flex items-center gap-2 text-xs md:text-sm text-theme-secondary'>
                     Skills :
                     <SkillsModal
                       data={skills}
@@ -156,10 +160,10 @@ const EducationSection: React.FC = () => {
       </div>
 
       {data.length > initialItemsToShow && !showAllList && (
-        <div className='border-t border-gray-200 mt-4 pt-4'>
+        <div className='border-t border-theme mt-4 pt-4'>
           <button
             onClick={() => setShowAllList(true)}
-            className='text-gray-600 text-base font-semibold hover:bg-gray-100 py-2 px-3 rounded-md flex justify-center items-center w-full transition-colors'
+            className='text-theme-secondary text-base font-semibold hover:bg-theme-secondary py-2 px-3 rounded-md flex justify-center items-center w-full transition-colors'
           >
             Show all {data.length} education entries
           </button>

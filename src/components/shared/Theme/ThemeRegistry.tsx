@@ -3,6 +3,7 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import theme from "@/theme";
+import { TailwindThemeProvider } from "./TailwindThemeProvider";
 
 export default function ThemeRegistry({
   children,
@@ -12,8 +13,10 @@ export default function ThemeRegistry({
   return (
     <AppRouterCacheProvider>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
+        <TailwindThemeProvider>
+          <CssBaseline />
+          {children}
+        </TailwindThemeProvider>
       </ThemeProvider>
     </AppRouterCacheProvider>
   );

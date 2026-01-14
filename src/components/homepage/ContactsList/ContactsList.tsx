@@ -23,7 +23,7 @@ const IconRenderer: React.FC<IconRendererProps> = ({ iconName, iconClass }) => {
   if (!IconComponent) {
     return (
       <div
-        className={`w-8 h-8 flex items-center justify-center rounded-full bg-gray-400 text-white`}
+        className={`w-8 h-8 flex items-center justify-center rounded-full bg-theme-secondary text-theme-primary`}
       >
         ?
       </div>
@@ -56,7 +56,7 @@ const ContactMethodsList: React.FC<ContactMethodsListProps> = () => {
           {/* <p className='text-sm text-gray-700'>
             {contact.link ? contact.link.replace("https://", "") : ""}
           </p> */}
-          <p className='text-sm text-gray-500'>{contact.subtitle}</p>
+          <p className='text-sm text-theme-secondary'>{contact.subtitle}</p>
         </>
       );
     }
@@ -67,7 +67,7 @@ const ContactMethodsList: React.FC<ContactMethodsListProps> = () => {
           href={contact.link || "#"}
           target='_blank'
           rel='noopener noreferrer'
-          className='hover:text-blue-600 text-gray-700 hover:underline break-all'
+          className='hover:text-blue-600 text-theme-primary hover:underline break-all'
         >
           {contact.subtitle}
         </a>
@@ -86,34 +86,19 @@ const ContactMethodsList: React.FC<ContactMethodsListProps> = () => {
   };
 
   return (
-    <div className=' mx-auto bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200'>
-      <div className='p-5 flex items-center border-b border-gray-200'>
+    <div className=' mx-auto bg-theme rounded-xl shadow-sm overflow-hidden border border-theme'>
+      <div className='p-5 flex items-center border-b border-theme'>
         <div className='w-1 h-8 bg-[#262956] mr-4 rounded-full hidden sm:block'></div>
-        <h2 className='text-xl font-semibold text-gray-800'>Social Links</h2>
+        <h2 className='text-xl font-semibold text-theme-primary'>
+          Social Links
+        </h2>
       </div>
 
-      <div className='divide-y divide-gray-200'>
-        {/* {primaryContact && (
-          <div className='flex items-start justify-between p-4 hover:bg-gray-50 transition duration-150'>
-            <div className='flex items-start'>
-              <IconRenderer
-                iconName={primaryContact.icon}
-                iconClass={primaryContact.iconClass}
-              />
-              <div className='ml-4'>
-                <p className='text-base font-semibold text-gray-800'>
-                  {primaryContact.title}
-                </p>
-                {formatSubtitle(primaryContact)}
-              </div>
-            </div>
-          </div>
-        )} */}
-
+      <div className='divide-y divide-gray-50 dark:divide-gray-700'>
         {otherContacts.map((contact, index) => (
           <div
             key={index}
-            className='flex items-start justify-between p-4 hover:bg-gray-50 transition duration-150'
+            className='flex items-start justify-between p-4 hover:bg-theme-secondary transition duration-150'
           >
             <div className='flex items-start'>
               <IconRenderer
@@ -121,7 +106,9 @@ const ContactMethodsList: React.FC<ContactMethodsListProps> = () => {
                 iconClass={contact.iconClass}
               />
               <div className='ml-4 text-sm'>
-                <p className='font-semibold text-gray-800'>{contact.title}</p>
+                <p className='font-semibold text-theme-primary'>
+                  {contact.title}
+                </p>
                 {formatSubtitle(contact)}
               </div>
             </div>

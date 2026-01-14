@@ -30,7 +30,7 @@ const HomePage = () => {
         <SkillsSection />
         {/* <InterestsSection /> */}
       </div>
-      <div className='lg:w-[350px] lg:block hidden w-full'>
+      <div className='lg:w-[350px] h-[5500px]  lg:block hidden w-full'>
         <ContactMethodsList />
         <Top3ProjectsSection />
       </div>

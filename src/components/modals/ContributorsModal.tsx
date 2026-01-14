@@ -47,7 +47,7 @@ export default function ContributorsModal({
     <div>
       {/* Trigger */}
       <span
-        className='flex  items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-xs font-semibold text-gray-700 border border-gray-200 cursor-pointer'
+        className='flex  items-center justify-center w-8 h-8 rounded-full bg-theme-secondary text-theme-primary text-xs font-semibold border border-theme cursor-pointer'
         onClick={() => setOpen(true)}
       >
         {buttonText}
@@ -93,6 +93,7 @@ export default function ContributorsModal({
                     <Link
                       className='text-blue-600 hover:underline'
                       href={contributor.profileLink}
+                      target='_blank'
                     >
                       {contributor.name}
                     </Link>{" "}

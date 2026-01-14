@@ -45,31 +45,46 @@ const ProjectsSection: React.FC = () => {
     const hiddenContributorCount =
       (entry.contributorAvatars?.length || 0) - visibleAvatars.length;
 
+    const handleChildClick = (e: React.MouseEvent) => {
+      e.stopPropagation();
+    };
+
     return (
-      <Link
-        href={`projects/${entry.id}`}
+      <div
         key={entry.id}
-        className='flex flex-col bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition-shadow duration-300 h-full'
+        className='flex group hover:border-gray-500 flex-col bg-white border border-gray-200 rounded-xl md:p-5 p-3 hover:shadow-lg transition-shadow duration-300 h-full'
       >
-        <div className='mb-4 flex justify-center items-center bg-gray-50 rounded-lg h-32 border border-gray-100 overflow-hidden'>
+        <Link
+          href={`projects/${entry.id}`}
+          target='_blank'
+          className='mb-4 flex justify-center items-center bg-gray-50 rounded-lg h-32 border border-gray-100 overflow-hidden'
+        >
           <img
             src={entry.projectAvatar ?? "./not-found.png"}
             alt={entry.title}
-            className='w-full h-full object-cover'
+            className='w-full h-full   transition-transform duration-500 ease-out  group-hover:scale-120 object-cover'
           />
-        </div>
+        </Link>
 
         {/* Title & Dates */}
         <div className='mb-2'>
-          <h3 className='text-base font-bold text-gray-900 line-clamp-1'>
-            {entry.title}
-          </h3>
+          <Link
+            href={`projects/${entry.id}`}
+            target='_blank'
+            className='hover:text-blue-600 hover:underline'
+          >
+            <h3 className='text-base font-bold line-clamp-1'>{entry.title}</h3>
+          </Link>
+
           <p className='text-[12px] text-gray-500 font-medium'>
             {entry.startDate} - {entry.endDate}
           </p>
         </div>
 
-        <div className='text-sm flex items-center gap-2 text-gray-700 mt-0.5'>
+        <div
+          className='text-sm flex items-center gap-2 text-gray-700 mt-0.5'
+          onClick={handleChildClick}
+        >
           {entry.demoVideoLink && (
             <VideoModal source={entry.source} videoLink={entry.demoVideoLink} />
           )}
@@ -174,7 +189,7 @@ const ProjectsSection: React.FC = () => {
             </div>
           )}
         </div>
-      </Link>
+      </div>
     );
   };
 

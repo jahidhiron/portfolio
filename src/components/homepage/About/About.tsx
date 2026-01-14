@@ -35,13 +35,13 @@ const AboutSection: React.FC = () => {
   const previewText = getPreviewText(data.fullAboutHTML, data.previewLength);
 
   return (
-    <div className='bg-white mt-7 border border-gray-300 rounded-lg shadow-sm p-6 space-y-4'>
-      <h2 className='text-xl font-semibold text-gray-800'>
+    <div className='bg-theme mt-7 border border-theme rounded-lg shadow-sm p-6 space-y-4'>
+      <h2 className='text-xl font-semibold text-theme-primary'>
         {data.sectionTitle}
       </h2>
 
       {/* --- Main Content --- */}
-      <div className='text-sm  text-gray-900 leading-relaxed'>
+      <div className='text-sm text-theme-primary leading-relaxed'>
         {isExpanded ? (
           <div
             className='prose-custom'
@@ -57,16 +57,16 @@ const AboutSection: React.FC = () => {
 
         <span
           onClick={() => setIsExpanded(!isExpanded)}
-          className=' hover:text-blue-600 text-gray-600 cursor-pointer hover:underline mt-2 inline-block'
+          className=' hover:text-blue-600 text-theme-secondary cursor-pointer hover:underline mt-2 inline-block'
         >
           {isExpanded ? "see less" : "see more"}
         </span>
       </div>
 
       {/* --- Top Skills Card --- */}
-      <div className='border border-gray-300 rounded-lg p-4 flex justify-between items-center mt-4 bg-gray-50/30 hover:bg-gray-50 transition-colors cursor-pointer group'>
+      <div className='border border-theme rounded-lg p-4 flex justify-between items-center mt-4 bg-theme-secondary hover:bg-theme transition-colors cursor-pointer group'>
         <div className='flex items-center'>
-          <div className='mr-3 text-gray-500'>
+          <div className='mr-3 text-theme-secondary'>
             {/* Gem/Skill Icon */}
             <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20'>
               <path
@@ -77,8 +77,12 @@ const AboutSection: React.FC = () => {
             </svg>
           </div>
           <div>
-            <h3 className='font-semibold text-sm text-gray-800'>Top skills</h3>
-            <p className='text-sm text-gray-600'>{data.skills.join(" • ")}</p>
+            <h3 className='font-semibold text-sm text-theme-primary'>
+              Top skills
+            </h3>
+            <p className='text-sm text-theme-secondary'>
+              {data.skills.join(" • ")}
+            </p>
           </div>
         </div>
 

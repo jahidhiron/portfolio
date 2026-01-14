@@ -64,7 +64,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
   return (
     <div
       id='home'
-      className='bg-white scroll-mt-20 border border-gray-300 rounded-lg shadow-sm'
+      className='bg-theme scroll-mt-20 border border-theme rounded-lg shadow-sm'
     >
       {/* --- Banner Background Section --- */}
       <div
@@ -76,14 +76,14 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
         `}
         style={dynamicBg}
       >
-        <div className='absolute top-2 right-2 p-1 bg-black/50 rounded-full cursor-pointer'></div>
+        {/* <div className='absolute top-2 right-2 p-1 bg-black/50 rounded-full cursor-pointer'></div> */}
       </div>
 
       {/* --- Profile Info Section --- */}
       <div className='px-4 pb-4 sm:px-6'>
         <div className='relative flex items-end'>
           <img
-            className='w-24 h-24 bg-white sm:w-32 sm:h-32 rounded-full border-4 border-gray-100 -mt-12 sm:-mt-16 object-cover'
+            className='w-24 h-24 bg-theme sm:w-32 sm:h-32 rounded-full border-4 border-theme -mt-12 sm:-mt-16 object-cover'
             src={data.avatarUrl}
             alt={data.name}
           />
@@ -92,16 +92,16 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
         {/* Name and Professional Links */}
         <div className='mt-2 flex flex-col sm:flex-row justify-between items-start'>
           <div>
-            <h1 className='text-xl sm:text-2xl font-semibold text-gray-800'>
+            <h1 className='text-xl sm:text-2xl font-semibold text-theme-primary'>
               {data.name}
             </h1>
 
-            <p className='text-sm sm:text-base text-gray-700 mt-1 font-medium'>
+            <p className='text-sm sm:text-base text-theme-secondary mt-1 font-medium'>
               {data.headline}
             </p>
 
             {/* Foundation Link Logic */}
-            <div className='text-xs sm:text-sm text-gray-500 mt-1'>
+            <div className='text-xs sm:text-sm text-theme-secondary mt-1'>
               {data.foundation}
               {data.foundationUrl ? (
                 <a
@@ -121,7 +121,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
           {/* Side Links (Current Job & Education) */}
           <div className='hidden sm:block'>
             {/* Current Job */}
-            <div className='flex items-center gap-1 text-sm text-gray-600 pt-1'>
+            <div className='flex items-center gap-1 text-sm text-theme-secondary pt-1'>
               {data?.currentJobImageUrl ? (
                 <img
                   className='w-5 h-5 object-contain'
@@ -129,14 +129,14 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
                   alt={data.currentJob}
                 />
               ) : (
-                <div className='w-5 h-5 rounded-full bg-gray-300 text-gray-700 flex items-center justify-center text-[10px] font-semibold'>
+                <div className='w-5 h-5 rounded-full bg-theme-secondary text-theme-primary flex items-center justify-center text-[10px] font-semibold'>
                   {data?.currentJob?.charAt(0)?.toUpperCase()}
                 </div>
               )}
 
               {data.currentJobUrl ? (
                 <Link
-                  className='hover:underline hover:text-blue-600 text-gray-700 font-medium'
+                  className='hover:underline hover:text-blue-600 text-theme-primary font-medium'
                   href={data.currentJobUrl}
                   target='_blank'
                 >
@@ -151,7 +151,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
 
             {/* Current Education */}
             {data.currentEducation && (
-              <div className='flex items-center gap-1 mt-2 text-sm text-gray-600'>
+              <div className='flex items-center gap-1 mt-2 text-sm text-theme-secondary'>
                 {data?.currentEducationImageUrl ? (
                   <img
                     className='w-5 h-5 object-contain'
@@ -165,7 +165,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
                 )}
                 {data.currentEductionUrl ? (
                   <Link
-                    className='hover:underline hover:text-blue-600 text-gray-700 font-medium'
+                    className='hover:underline hover:text-blue-600 text-theme-primary font-medium'
                     href={data.currentEductionUrl}
                     target='_blank'
                   >
@@ -182,8 +182,8 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
         </div>
 
         {/* Mobile View Education */}
-        <div className='text-xs text-gray-600 mt-2 sm:hidden'>
-          <div className='flex items-center gap-1 text-sm text-gray-600 pt-1'>
+        <div className='text-xs text-theme-secondary mt-2 sm:hidden'>
+          <div className='flex items-center gap-1 text-sm text-theme-secondary pt-1'>
             {data?.currentJobImageUrl ? (
               <img
                 className='w-5 h-5 object-contain'
@@ -191,7 +191,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
                 alt={data.currentJob}
               />
             ) : (
-              <div className='w-5 h-5 rounded-full bg-gray-300 text-gray-700 flex items-center justify-center text-[10px] font-semibold'>
+              <div className='w-5 h-5 rounded-full bg-theme-secondary text-theme-primary flex items-center justify-center text-[10px] font-semibold'>
                 {data?.currentJob?.charAt(0)?.toUpperCase()}
               </div>
             )}
@@ -211,7 +211,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
 
           {/* Current Education */}
           {data.currentEducation && (
-            <div className='flex items-center gap-1 mt-2 text-sm text-gray-600'>
+            <div className='flex items-center gap-1 mt-2 text-sm text-theme-secondary'>
               {data?.currentEducationImageUrl ? (
                 <img
                   className='w-5 h-5 object-contain'
@@ -219,7 +219,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
                   alt={data.currentEducation}
                 />
               ) : (
-                <div className='w-5 h-5 rounded-full bg-gray-300 text-gray-700 flex items-center justify-center text-[10px] font-semibold'>
+                <div className='w-5 h-5 rounded-full bg-theme-secondary text-theme-primary flex items-center justify-center text-[10px] font-semibold'>
                   {data?.currentEducation?.charAt(0)?.toUpperCase()}
                 </div>
               )}
@@ -249,7 +249,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
             disabled={isDownloading}
             className={`mt-5 font-semibold text-sm flex items-center gap-2 px-4 py-1.5 rounded-full border transition-all duration-300 ${
               isDownloading
-                ? "bg-gray-100 text-gray-400 border-gray-200 cursor-wait"
+                ? "bg-theme-secondary text-theme-secondary border-theme cursor-wait"
                 : "border-[#262956] text-[#262956] hover:bg-[#262956] hover:text-white cursor-pointer"
             }`}
           >

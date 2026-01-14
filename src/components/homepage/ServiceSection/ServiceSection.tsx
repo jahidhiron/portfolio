@@ -2,18 +2,18 @@ import React from "react";
 import servicesData from "../../../data/service.json";
 
 const ServicesSection: React.FC = () => (
-  <div className='bg-white mt-7 border border-gray-300 rounded-lg shadow-sm p-6 space-y-4'>
+  <div className='bg-theme mt-7 border border-theme rounded-lg shadow-sm p-6 space-y-4'>
     {/* --- Services Header --- */}
-    <h2 className='text-xl font-semibold text-gray-800'>Services</h2>
+    <h2 className='text-xl font-semibold text-theme-primary'>Services</h2>
 
     {/* --- Services List (Rendered dynamically) --- */}
-    <p className='text-sm text-gray-700 leading-relaxed'>
+    <p className='text-sm text-theme-secondary leading-relaxed'>
       {servicesData.map((service, index) => (
         <React.Fragment key={service.name}>
-          <span className='font-medium'>{service.name}</span>
+          <span className='font-medium text-theme-primary'>{service.name}</span>
           {/* Add bullet point separator between services */}
           {index < servicesData.length - 1 && (
-            <span className='text-gray-400'> • </span>
+            <span className='text-theme-secondary'> • </span>
           )}
         </React.Fragment>
       ))}
@@ -25,8 +25,8 @@ const ServicesSection: React.FC = () => (
     </button>
 
     {/* --- Show All Link --- */}
-    <div className='border-t border-gray-200 mt-4 pt-3 text-center'>
-      <button className='text-gray-600 text-sm font-semibold hover:underline flex justify-center items-center w-full'>
+    <div className='border-t border-theme mt-4 pt-3 text-center'>
+      <button className='text-theme-secondary text-sm font-semibold hover:underline flex justify-center items-center w-full'>
         Show all
         <svg
           className='w-4 h-4 ml-1 mt-0.5'

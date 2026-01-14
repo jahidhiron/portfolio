@@ -41,16 +41,18 @@ const Top3ProjectsSection: React.FC = () => {
   return (
     <div
       id='projects'
-      className='bg-white mt-7 scroll-mt-20 border border-gray-300 rounded-lg shadow-sm'
+      className='bg-theme mt-7 scroll-mt-20 border border-theme rounded-lg shadow-sm sticky top-16'
     >
       {/* 1. Unified Header (Same as Language Section) */}
-      <div className='p-5 flex items-center border-b border-gray-200'>
+      <div className='p-5 flex items-center border-b border-theme'>
         <div className='w-1 h-8 bg-[#262956] mr-4 rounded-full hidden sm:block'></div>
-        <h2 className='text-xl font-semibold text-gray-800'>Top 3 Projects</h2>
+        <h2 className='text-xl font-semibold text-theme-primary'>
+          Top 3 Projects
+        </h2>
       </div>
 
       {/* 2. Content List */}
-      <div className='divide-y divide-gray-200 p-6'>
+      <div className='divide-y divide-theme p-6'>
         {projectsList?.slice(0, 3).map((entry, index) => {
           const displayedSkills = entry.skills.slice(0, 2);
           const hiddenSkillCount = entry.skills.length - displayedSkills.length;
@@ -64,13 +66,13 @@ const Top3ProjectsSection: React.FC = () => {
               className={`flex flex-col py-6 ${index === 0 ? "pt-0" : ""}`}
             >
               {/* Project Title */}
-              <h3 className='text-base font-semibold text-gray-800 leading-snug'>
+              <h3 className='text-base font-semibold text-theme-primary leading-snug'>
                 {entry.title}
               </h3>
 
               {/* Date & Links Row */}
               <div className='flex flex-wrap items-center gap-4 my-2'>
-                <p className='text-sm text-gray-600 font-medium'>
+                <p className='text-sm text-theme-secondary font-medium'>
                   {entry.startDate} - {entry.endDate}
                 </p>
                 <div className='flex items-center gap-3'>
@@ -105,14 +107,14 @@ const Top3ProjectsSection: React.FC = () => {
               </div>
 
               {/* Association Row */}
-              <div className='flex items-center text-sm text-gray-600 mb-2'>
+              <div className='flex items-center text-sm text-theme-secondary mb-2'>
                 {entry.associatedImage ? (
                   <img
                     src={entry.associatedImage}
-                    className='w-4 h-4 mr-2 rounded-full border border-gray-200'
+                    className='w-4 h-4 mr-2 rounded-full border border-theme'
                   />
                 ) : (
-                  <span className='flex items-center justify-center w-4 h-4 mr-2 bg-gray-100 rounded text-[10px] font-bold text-gray-500 border border-gray-200'>
+                  <span className='flex items-center justify-center w-4 h-4 mr-2 bg-theme-secondary rounded text-[10px] font-bold text-theme-primary border border-theme'>
                     {entry?.associatedWith?.charAt(0)?.toUpperCase()}
                   </span>
                 )}
@@ -124,7 +126,7 @@ const Top3ProjectsSection: React.FC = () => {
 
               {/* Skills Footer */}
               {entry.skills?.length > 1 && (
-                <div className='text-sm text-gray-800 flex items-center gap-1 mt-2.5'>
+                <div className='text-sm text-theme-primary flex items-center gap-1 mt-2.5'>
                   <IoDiamondOutline />
                   {hiddenSkillCount > 0 && (
                     <SkillsModal
@@ -147,7 +149,7 @@ const Top3ProjectsSection: React.FC = () => {
                         src={url.avatar}
                         key={idx}
                         sx={{ width: 32, height: 32 }}
-                        className={`border-2 border-white ${
+                        className={`border-2 border-theme ${
                           idx > 0 ? "-ml-2" : ""
                         }`}
                       />

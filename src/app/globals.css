@@ -3,6 +3,21 @@
 :root {
   --primary: #262956;
   --foreground: #171717;
+  --background: #ffffff;
+  --background-secondary: #f9f9f9;
+  --text-primary: #262956;
+  --text-secondary: #666666;
+  --border: #e5e5e5;
+}
+
+.dark {
+  --primary: #262956;
+  --foreground: #ededed;
+  --background: #0a0a0a;
+  --background-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border: #333333;
 }
 
 @layer utilities {
@@ -12,11 +27,20 @@
   .text-primary {
     color: var(--primary);
   }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .bg-theme {
+    background-color: var(--background);
+  }
+  .bg-theme-secondary {
+    background-color: var(--background-secondary);
+  }
+  .text-theme-primary {
+    color: var(--text-primary);
+  }
+  .text-theme-secondary {
+    color: var(--text-secondary);
+  }
+  .border-theme {
+    border-color: var(--border);
   }
 }
 

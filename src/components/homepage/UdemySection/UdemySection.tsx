@@ -20,8 +20,8 @@ interface CourseCardProps {
 // --- 1. Course Card Component (Responsive) ---
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   return (
-    <div className='flex-shrink-0 w-full ml-3 md:w-80 h-[380px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm flex flex-col group'>
-      <div className='h-44 relative overflow-hidden bg-gray-200'>
+    <div className='flex-shrink-0 w-full ml-3 md:w-80 h-[380px] border border-theme rounded-lg bg-theme overflow-hidden shadow-sm flex flex-col group'>
+      <div className='h-44 relative overflow-hidden bg-theme-secondary'>
         <img
           src={course.thumbnailUrl}
           alt={course.courseTitle}
@@ -44,7 +44,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
       </div>
 
       <div className='p-4 flex flex-col flex-grow space-y-2'>
-        <p className='text-[10px] text-gray-500 font-bold uppercase tracking-widest'>
+        <p className='text-[10px] text-theme-secondary font-bold uppercase tracking-widest'>
           Course
         </p>
         {course.courseLink ? (
@@ -56,13 +56,13 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             {course.description}
           </Link>
         ) : (
-          <p className='text-sm text-gray-600 line-clamp-2 font-medium leading-snug'>
+          <p className='text-sm text-theme-secondary line-clamp-2 font-medium leading-snug'>
             {course.description}
           </p>
         )}
 
         <div className='flex items-center space-x-1 text-yellow-500 text-sm'>
-          <span className='font-bold text-gray-800'>{course.rating}</span>
+          <span className='font-bold text-theme-primary'>{course.rating}</span>
           <div className='flex text-[10px]'>
             {[...Array(5)].map((_, i) => (
               <FaStar
@@ -75,14 +75,16 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               />
             ))}
           </div>
-          <span className='text-gray-400 text-xs'>({course.ratingsCount})</span>
+          <span className='text-theme-secondary text-xs'>
+            ({course.ratingsCount})
+          </span>
         </div>
 
-        <div className='mt-auto border-t pt-3'>
-          <p className='text-[13px] text-gray-700 mb-1'>
+        <div className='mt-auto border-t border-theme pt-3'>
+          <p className='text-[13px] text-theme-secondary mb-1'>
             {course.totalHours} • {course.lectures} lectures
           </p>
-          <p className='text-[13px] text-gray-900'>{course.students}</p>
+          <p className='text-[13px] text-theme-primary'>{course.students}</p>
         </div>
       </div>
     </div>
@@ -92,14 +94,14 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
 // --- 2. Comment Card (Responsive) ---
 const CommentCard: React.FC<{ comment: any }> = ({ comment }) => {
   return (
-    <div className='flex-shrink-0 w-full md:w-80 h-[300px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm p-4 space-y-3'>
+    <div className='flex-shrink-0 w-full md:w-80 h-[300px] border border-theme rounded-lg bg-theme overflow-hidden shadow-sm p-4 space-y-3'>
       <div className='flex items-start justify-between'>
         <div className='flex items-center space-x-2'>
           <div className='w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold text-lg'>
             {comment.commenterName.charAt(0)}
           </div>
           <div>
-            <p className='text-sm font-semibold text-gray-800'>
+            <p className='text-sm font-semibold text-theme-primary'>
               {comment.commenterName}
             </p>
             <div className='flex items-center space-x-1 text-yellow-500 text-sm'>
@@ -115,17 +117,23 @@ const CommentCard: React.FC<{ comment: any }> = ({ comment }) => {
                   />
                 ))}
               </div>
-              <span className='text-gray-400 text-xs'>({comment.rating})</span>
+              <span className='text-theme-secondary text-xs'>
+                ({comment.rating})
+              </span>
             </div>
           </div>
         </div>
-        <FaEllipsisH className='w-4 h-4 text-gray-400' />
+        <FaEllipsisH className='w-4 h-4 text-theme-secondary' />
       </div>
-      <div className='bg-gray-50 p-3 rounded-lg border border-gray-200 min-h-36 max-h-36 overflow-y-auto'>
-        <p className='text-sm text-gray-800 italic'>"{comment.commentText}"</p>
+      <div className='bg-theme-secondary p-3 rounded-lg border border-theme min-h-36 max-h-36 overflow-y-auto'>
+        <p className='text-sm text-theme-primary italic'>
+          "{comment.commentText}"
+        </p>
       </div>
       <div className='pt-2'>
-        <p className='text-xs text-gray-600 font-medium'>Commenting on:</p>
+        <p className='text-xs text-theme-secondary font-medium'>
+          Commenting on:
+        </p>
         {comment.commentedPost ? (
           <a
             href={comment.commentedPost}
@@ -179,7 +187,7 @@ const UdemySection: React.FC = () => {
   };
 
   return (
-    <div className='border mt-7 border-gray-300 rounded-lg shadow-sm bg-white'>
+    <div className='border mt-7 border-theme rounded-lg shadow-sm bg-theme'>
       <div className=' p-4 md:p-6 space-y-4  relative'>
         <style global jsx>{`
           .no-scrollbar::-webkit-scrollbar {
@@ -192,19 +200,21 @@ const UdemySection: React.FC = () => {
         `}</style>
 
         <div>
-          <h2 className='text-xl font-semibold text-gray-800'>Udemy</h2>
-          <p className='text-sm text-gray-500'>64,753 learners • 980 Reviews</p>
+          <h2 className='text-xl font-semibold text-theme-primary'>Udemy</h2>
+          <p className='text-sm text-theme-secondary'>
+            64,753 learners • 980 Reviews
+          </p>
         </div>
 
-        <div className='flex border-b border-gray-200'>
+        <div className='flex border-b border-theme'>
           {["Courses", "Comments"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 cursor-pointer text-sm font-semibold transition-colors ${
                 activeTab === tab
-                  ? "text-black border-b-2 border-black"
-                  : "text-gray-500 hover:text-gray-700"
+                  ? "text-theme-primary border-b-2 border-theme-primary"
+                  : "text-theme-secondary hover:text-theme-primary"
               }`}
             >
               {tab}
@@ -245,17 +255,17 @@ const UdemySection: React.FC = () => {
             <>
               <button
                 onClick={() => scroll("left")}
-                className='absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 cursor-pointer shadow-md border border-gray-300 z-10 flex items-center justify-center'
+                className='absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 cursor-pointer shadow-md border border-theme z-10 flex items-center justify-center'
                 aria-label='Scroll Left'
               >
-                <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+                <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />
               </button>
               <button
                 onClick={() => scroll("right")}
-                className='absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 cursor-pointer shadow-md border border-gray-300 z-10 flex items-center justify-center'
+                className='absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 cursor-pointer shadow-md border border-theme z-10 flex items-center justify-center'
                 aria-label='Scroll Right'
               >
-                <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+                <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />
               </button>
             </>
           )}
@@ -264,9 +274,9 @@ const UdemySection: React.FC = () => {
       <Link
         target='_blank'
         href={"https://www.udemy.com/user/jahid-hiron/"}
-        className='block border-t rounded-b-lg hover:bg-gray-100 border-gray-200 py-3 text-center'
+        className='block border-t rounded-b-lg hover:bg-theme-secondary border-theme py-3 text-center'
       >
-        <span className='text-gray-700 gap-2 text-sm font-bold  flex justify-center items-center w-full'>
+        <span className='text-theme-secondary gap-2 text-sm font-bold  flex justify-center items-center w-full'>
           Show all
           <FaArrowRight className='' />
         </span>

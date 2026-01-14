@@ -67,12 +67,12 @@ const InterestsSection: React.FC = () => {
 
           {/* Name and Followers */}
           <p
-            className='text-sm font-semibold text-gray-900 truncate w-full'
+            className='text-sm font-semibold text-theme-primary truncate w-full'
             title={item.name}
           >
             {item.name}
           </p>
-          <p className='text-xs text-gray-700 mb-2'>{statText}</p>
+          <p className='text-xs text-theme-secondary mb-2'>{statText}</p>
 
           {/* Follow Button */}
           <button
@@ -81,8 +81,8 @@ const InterestsSection: React.FC = () => {
               flex items-center justify-center px-4 py-1.5 text-sm font-semibold rounded-full border transition-colors duration-150 w-full max-w-[120px]
               ${
                 isFollowing
-                  ? "bg-white text-gray-700 border-gray-400 hover:bg-gray-100"
-                  : "bg-white text-blue-700 border-blue-700 hover:bg-blue-50"
+                  ? "bg-theme text-theme-primary border-theme hover:bg-theme-secondary"
+                  : "bg-theme text-blue-700 border-blue-700 hover:bg-blue-50"
               }
             `}
           >
@@ -100,11 +100,13 @@ const InterestsSection: React.FC = () => {
   const currentItems = data[activeTab] || [];
 
   return (
-    <div className='bg-white mt-7 border border-gray-300 rounded-lg shadow-sm p-6'>
-      <h2 className='text-xl font-semibold text-gray-800 mb-4'>Interests</h2>
+    <div className='bg-theme mt-7 border border-theme rounded-lg shadow-sm p-6'>
+      <h2 className='text-xl font-semibold text-theme-primary mb-4'>
+        Interests
+      </h2>
 
       {/* Tab Navigation */}
-      <div className='border-b border-gray-300 mb-4'>
+      <div className='border-b border-theme mb-4'>
         <nav className='flex space-x-6'>
           {tabs.map((tab) => (
             <button
@@ -114,8 +116,8 @@ const InterestsSection: React.FC = () => {
                 pb-2 text-sm font-semibold transition-colors duration-150
                 ${
                   activeTab === tab
-                    ? "text-gray-900 border-b-2 border-gray-900"
-                    : "text-gray-600 hover:text-gray-900 hover:border-b-2 hover:border-gray-300"
+                    ? "text-theme-primary border-b-2 border-theme-primary"
+                    : "text-theme-secondary hover:text-theme-primary hover:border-b-2 hover:border-theme"
                 }
               `}
             >
@@ -131,14 +133,14 @@ const InterestsSection: React.FC = () => {
 
         {/* If the current tab has no items */}
         {currentItems.length === 0 && (
-          <p className='text-sm text-gray-500 w-full px-3 py-4'>
+          <p className='text-sm text-theme-secondary w-full px-3 py-4'>
             No interests found for this category.
           </p>
         )}
       </div>
 
       {/* Show all button */}
-      <div className='pt-4 text-center border-t border-gray-200 mt-4'>
+      <div className='pt-4 text-center border-t border-theme mt-4'>
         <a href='#' className='text-blue-700 font-semibold hover:underline'>
           Show all &rarr;
         </a>

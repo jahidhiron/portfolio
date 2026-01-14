@@ -54,17 +54,17 @@ const ProjectsSection: React.FC = () => {
     return (
       <div
         key={entry.id}
-        className='pb-8 pt-4 border-t border-gray-100 last:border-b-0 last:mb-0'
+        className='pb-8 pt-4 border-t border-theme last:border-b-0 last:mb-0'
       >
-        <h3 className='text-base font-semibold text-gray-900 leading-snug'>
+        <h3 className='text-base font-semibold text-theme-primary leading-snug'>
           {entry.title}
         </h3>
 
         <div className='flex flex-col sm:flex-row  sm:items-center sm:gap-5 gap-3 my-2'>
-          <p className='text-sm text-gray-700 mt-0.5'>
+          <p className='text-sm text-theme-secondary mt-0.5'>
             {entry.startDate} - {entry.endDate}
           </p>
-          <div className='text-sm flex items-center gap-2 text-gray-700 mt-0.5'>
+          <div className='text-sm flex items-center gap-2 text-theme-secondary mt-0.5'>
             {entry.demoVideoLink && (
               <VideoModal
                 source={entry.source}
@@ -96,7 +96,7 @@ const ProjectsSection: React.FC = () => {
           </div>
         </div>
 
-        <div className='flex items-center text-sm text-gray-700 mt-2'>
+        <div className='flex items-center text-sm text-theme-secondary mt-2'>
           {entry.associatedWith && (
             <>
               {entry.associatedImage ? (
@@ -106,7 +106,7 @@ const ProjectsSection: React.FC = () => {
                   alt={entry.associatedWith}
                 />
               ) : (
-                <span className='flex items-center justify-center w-4 h-4 mr-2 bg-gray-100 rounded-sm text-xs font-bold text-gray-700'>
+                <span className='flex items-center justify-center w-4 h-4 mr-2 bg-theme-secondary rounded-sm text-xs font-bold text-theme-primary'>
                   {entry?.associatedWith?.charAt(0)?.toUpperCase()}
                 </span>
               )}
@@ -124,13 +124,13 @@ const ProjectsSection: React.FC = () => {
         {/* --- HTML Description Rendering --- */}
         <div className='mt-2'>
           <div
-            className={`text-sm text-gray-900 ${
+            className={`text-sm text-theme-primary ${
               !isDescriptionExpanded ? "line-clamp-2" : ""
             }`}
             dangerouslySetInnerHTML={{ __html: entry.description }}
           />
           <span
-            className='hover:text-blue-600 text-sm text-gray-600 cursor-pointer hover:underline  inline-block'
+            className='hover:text-blue-600 text-sm text-theme-secondary cursor-pointer hover:underline inline-block'
             onClick={() =>
               setShowMoreDescription(isDescriptionExpanded ? null : entry.id)
             }
@@ -140,7 +140,7 @@ const ProjectsSection: React.FC = () => {
         </div>
 
         {entry.skills?.length > 1 && (
-          <div className='text-sm text-gray-800 flex items-center gap-1 mt-2.5'>
+          <div className='text-sm text-theme-primary flex items-center gap-1 mt-2.5'>
             <IoDiamondOutline />
             {hiddenSkillCount > 0 && (
               <SkillsModal
@@ -155,13 +155,13 @@ const ProjectsSection: React.FC = () => {
         )}
         {entry.projectAvatar && (
           <img
-            className='my-5 max-w-[150px] max-h-[80px] border border-gray-300'
+            className='my-5 max-w-[150px] max-h-[80px] border border-theme'
             src={entry.projectAvatar}
           />
         )}
         {entry.contributorAvatars?.length > 1 && (
           <>
-            <p className='text-sm text-gray-700 mt-3 mb-1'>
+            <p className='text-sm text-theme-secondary mt-3 mb-1'>
               Other contributors
             </p>
             <div className='flex items-center'>
@@ -171,7 +171,7 @@ const ProjectsSection: React.FC = () => {
                   key={index}
                   alt={url.name}
                   sx={{ width: 40, height: 40 }}
-                  className={`w-8 h-8 rounded-full border-2 border-white object-cover ${
+                  className={`w-8 h-8 rounded-full border-2 border-theme object-cover ${
                     index > 0 ? "-ml-2" : ""
                   }`}
                 >
@@ -196,17 +196,20 @@ const ProjectsSection: React.FC = () => {
   return (
     <div
       id='projects'
-      className='border  scroll-mt-20 mt-7 border-gray-300 rounded-lg shadow-sm bg-white'
+      className='border  scroll-mt-20 mt-7 border-theme rounded-lg shadow-sm bg-theme'
     >
       <div className=' p-4 md:p-6 space-y-4  relative'>
-        <h2 className='text-xl font-semibold text-gray-800 mb-4'>Projects</h2>
+        <h2 className='text-xl font-semibold text-theme-primary mb-4'>
+          Projects
+        </h2>
         {projectsList?.slice(0, 2).map(renderProjectEntry)}
       </div>
       <Link
         href={"/projects"}
-        className='block border-t rounded-b-lg  hover:bg-gray-100 border-gray-200 py-3 text-center'
+        className='block border-t rounded-b-lg  hover:bg-theme-secondary border-theme py-3 text-center'
+        target='_blank'
       >
-        <span className='text-gray-700 gap-2 text-sm font-bold  flex justify-center items-center w-full'>
+        <span className='text-theme-secondary gap-2 text-sm font-bold  flex justify-center items-center w-full'>
           Show all
           <FaArrowRight className='' />
         </span>

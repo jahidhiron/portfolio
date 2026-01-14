@@ -25,12 +25,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
+  bgcolor: "var(--background)",
   boxShadow: 24,
   p: 4,
   borderRadius: 3,
   width: { xs: "95%", sm: 600 },
   outline: "none",
+  border: "1px solid var(--border)",
 };
 
 type SkillsModalProps = {
@@ -47,22 +48,24 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
 
   const renderCategory = (cat: SkillCategory, index: number) => {
     return (
-      <div key={index} className='py-6 border-b border-gray-100 last:border-0'>
+      <div key={index} className='py-6 border-b border-theme/30 last:border-0'>
         {/* Category Header */}
-        <h3 className='text-[13px] font-bold text-gray-800 uppercase tracking-widest mb-4'>
+        <h3 className='text-[13px] font-bold text-theme-primary uppercase tracking-widest mb-4'>
           {cat.category}
         </h3>
 
-        <ul className='space-y-4 ml-5'>
+        <ul className='space-y-3 ml-5'>
           {/* Nested Map: This was causing your error */}
           {cat.skills?.map((item, i) => (
             <li
               key={i}
-              className='list-disc list-outside text-sm text-gray-800 leading-relaxed'
+              className='list-disc list-outside text-sm text-theme-primary leading-relaxed'
             >
-              <span className='font-semibold'>{item.name}</span>
-              <span className='mx-2 text-gray-400'>—</span>
-              <span className='text-gray-600'>{item.desc}</span>
+              <span className='font-semibold text-theme-primary'>
+                {item.name}
+              </span>
+              <span className='mx-2 text-theme-secondary'>—</span>
+              <span className='text-theme-secondary'>{item.desc}</span>
             </li>
           ))}
         </ul>
@@ -74,15 +77,15 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
     <>
       <div
         onClick={handleOpen}
-        className='text-gray-400 hover:bg-gray-300 rounded-full p-1 group-hover:text-gray-600 transition-colors cursor-pointer'
+        className='text-theme-secondary hover:bg-theme-secondary hover:text-theme-primary rounded-full p-2 transition-all duration-200 cursor-pointer hover:scale-110'
       >
         <IoMdArrowRoundForward />
       </div>
 
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
-          <div className='flex justify-between items-center sticky top-0 bg-white pb-4 mb-2 z-10 border-b border-gray-100'>
-            <Typography variant='h6' className='font-bold text-gray-800'>
+          <div className='flex justify-between items-center sticky top-0 bg-theme/95 backdrop-blur-sm pb-4 mb-2 z-10 border-b border-theme'>
+            <Typography variant='h6' className='font-bold text-theme-primary'>
               {title}s
             </Typography>
             <IconButton onClick={handleClose} size='small'>
@@ -92,7 +95,7 @@ export default function AllSkillsModal({ title }: SkillsModalProps) {
 
           {/* Scrollable Container */}
           <div className='max-h-[70vh] overflow-y-auto pr-2'>
-            <div className='divide-y divide-gray-50'>
+            <div className='divide-y divide-theme/20'>
               {skillCategories.map((category, index) =>
                 renderCategory(category, index)
               )}

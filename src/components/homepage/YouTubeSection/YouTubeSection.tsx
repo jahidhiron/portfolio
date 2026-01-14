@@ -27,31 +27,35 @@ interface CommentCardProps {
 // --- 1. Comment Card Component (Responsive) ---
 const CommentCard: React.FC<any> = ({ comment }) => {
   return (
-    <div className='flex-shrink-0 w-full sm:w-80 h-[258px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm p-4 space-y-3'>
+    <div className='flex-shrink-0 w-full sm:w-80 h-[258px] border border-theme rounded-lg bg-theme overflow-hidden shadow-sm p-4 space-y-3'>
       <div className='flex items-start justify-between'>
         <div className='flex items-center space-x-2'>
           <div className='w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold text-lg'>
             {comment.commenterName.charAt(0)}
           </div>
           <div>
-            <p className='text-sm font-semibold text-gray-800'>
+            <p className='text-sm font-semibold text-theme-primary'>
               {comment.commenterName}
             </p>
             {/* <p className='text-xs text-gray-500'>{comment.commenterTitle}</p> */}
           </div>
         </div>
-        <div className='text-xs text-gray-500 flex items-center space-x-1'>
+        <div className='text-xs text-theme-secondary flex items-center space-x-1'>
           <span>{comment.commentTime}</span>
           <FaEllipsisH className='w-4 h-4' />
         </div>
       </div>
 
-      <div className='bg-gray-50 p-3 rounded-lg border border-gray-200 h-28 overflow-hidden'>
-        <p className='text-sm text-gray-800 italic'>"{comment.commentText}"</p>
+      <div className='bg-theme-secondary p-3 rounded-lg border border-theme h-28 overflow-hidden'>
+        <p className='text-sm text-theme-primary italic'>
+          "{comment.commentText}"
+        </p>
       </div>
 
       <div className='pt-2'>
-        <p className='text-xs text-gray-600 font-medium'>Commenting on:</p>
+        <p className='text-xs text-theme-secondary font-medium'>
+          Commenting on:
+        </p>
         {comment.videolink ? (
           <a
             href={comment.videolink}
@@ -92,7 +96,7 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ post }) => {
     : "external.link";
 
   return (
-    <div className='flex-shrink-0 w-full sm:w-80 h-[345px] border border-gray-200 rounded-lg bg-white overflow-hidden shadow-sm'>
+    <div className='flex-shrink-0 w-full sm:w-80 h-[345px] border border-theme rounded-lg bg-theme overflow-hidden shadow-sm'>
       <div className='p-4 space-y-3'>
         <div className='flex items-start justify-between'>
           <div className='flex items-center space-x-2'>
@@ -102,21 +106,23 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ post }) => {
               className='w-10 h-10 rounded-full bg-blue-900'
             />
             <div>
-              <p className='text-sm font-semibold text-gray-800'>{post.name}</p>
-              <p className='text-xs text-gray-500'>{post.title}</p>
+              <p className='text-sm font-semibold text-theme-primary'>
+                {post.name}
+              </p>
+              <p className='text-xs text-theme-secondary'>{post.title}</p>
             </div>
           </div>
-          <div className='text-xs text-gray-500 flex items-center space-x-1'>
+          <div className='text-xs text-theme-secondary flex items-center space-x-1'>
             <span>{post.time}</span>
             <FaEllipsisH className='w-4 h-4' />
           </div>
         </div>
 
-        <p className='text-sm text-gray-800 whitespace-pre-line line-clamp-2'>
+        <p className='text-sm text-theme-primary whitespace-pre-line line-clamp-2'>
           {post.text}
         </p>
 
-        <div className='bg-gray-100 rounded-lg overflow-hidden border border-gray-300'>
+        <div className='bg-theme-secondary rounded-lg overflow-hidden border border-theme'>
           <Link
             href={post.link}
             target='_blank'
@@ -140,8 +146,10 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ post }) => {
               )}
             </div>
             <div className='p-2 text-xs'>
-              <p className='font-medium truncate'>{post.videoTitle}</p>
-              <p className='text-gray-500'>{linkHost}</p>
+              <p className='font-medium truncate text-theme-primary'>
+                {post.videoTitle}
+              </p>
+              <p className='text-theme-secondary'>{linkHost}</p>
             </div>
           </Link>
         </div>
@@ -224,7 +232,7 @@ const YoutubeSection: React.FC = () => {
   };
 
   return (
-    <div className='border mt-7 border-gray-300 rounded-lg shadow-sm bg-white'>
+    <div className='border mt-7 border-theme rounded-lg shadow-sm bg-theme'>
       <div className=' p-4 md:p-6 space-y-4  relative'>
         <style global jsx>{`
           .no-scrollbar::-webkit-scrollbar {
@@ -237,19 +245,21 @@ const YoutubeSection: React.FC = () => {
         `}</style>
 
         <div>
-          <h2 className='text-xl font-semibold text-gray-800'>Youtube</h2>
-          <p className='text-sm text-gray-500'>93 subscribers • 74 videos</p>
+          <h2 className='text-xl font-semibold text-theme-primary'>Youtube</h2>
+          <p className='text-sm text-theme-secondary'>
+            93 subscribers • 74 videos
+          </p>
         </div>
 
-        <div className='flex border-b border-gray-200'>
+        <div className='flex border-b border-theme'>
           {["Videos", "Comments"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 cursor-pointer text-sm font-semibold ${
                 activeTab === tab
-                  ? "text-black border-b-2 border-black"
-                  : "text-gray-500 hover:text-gray-700"
+                  ? "text-theme-primary border-b-2 border-theme-primary"
+                  : "text-theme-secondary hover:text-theme-primary"
               }`}
             >
               {tab}
@@ -290,18 +300,18 @@ const YoutubeSection: React.FC = () => {
             <>
               <button
                 onClick={() => scroll("left")}
-                className='absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border cursor-pointer border-gray-300 z-10 flex items-center justify-center'
+                className='absolute left-0 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 shadow-md border cursor-pointer border-theme z-10 flex items-center justify-center'
                 style={{ marginLeft: "-12px" }}
               >
-                <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+                <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />
               </button>
 
               <button
                 onClick={() => scroll("right")}
-                className='absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md border cursor-pointer border-gray-300 z-10 flex items-center justify-center'
+                className='absolute right-0 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 shadow-md border cursor-pointer border-theme z-10 flex items-center justify-center'
                 style={{ marginRight: "-12px" }}
               >
-                <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-gray-700' />
+                <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />
               </button>
             </>
           )}
@@ -310,9 +320,9 @@ const YoutubeSection: React.FC = () => {
       <Link
         target='_blank'
         href={"https://www.youtube.com/@jahid-academy"}
-        className='block border-t rounded-b-lg  hover:bg-gray-100 border-gray-200 py-3 text-center'
+        className='block border-t rounded-b-lg  hover:bg-theme-secondary border-theme py-3 text-center'
       >
-        <span className='text-gray-700 gap-2 text-sm font-bold  flex justify-center items-center w-full'>
+        <span className='text-theme-secondary gap-2 text-sm font-bold  flex justify-center items-center w-full'>
           Show all
           <FaArrowRight className='' />
         </span>

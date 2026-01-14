@@ -16,12 +16,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
+  bgcolor: "var(--background)",
   boxShadow: 24,
   p: 5,
   borderRadius: 2,
   width: { xs: "95%", sm: "80%" },
   outline: "none",
+  border: "1px solid var(--border)",
 };
 
 type SkillsModalProps = {

@@ -24,9 +24,9 @@ const SkillsSection: React.FC = () => {
 
   const renderCategory = (cat: SkillCategory, index: number) => {
     return (
-      <div key={index} className='py-6 border-b border-gray-100 last:border-0'>
+      <div key={index} className='py-6 border-b border-theme last:border-0'>
         {/* Category Name (e.g., Programming Languages) */}
-        <h3 className='text-[13px] font-bold text-black mb-4 tracking-tight uppercase text-md text-gray-800'>
+        <h3 className='text-[13px] font-bold text-theme-primary mb-4 tracking-tight uppercase text-md'>
           {cat.category}
         </h3>
 
@@ -35,11 +35,11 @@ const SkillsSection: React.FC = () => {
           {cat.skills?.map((item, i) => (
             <li
               key={i}
-              className='list-disc list-outside text-sm text-gray-800 leading-relaxed'
+              className='list-disc list-outside text-sm text-theme-primary leading-relaxed'
             >
               <span className='font-semibold'>{item.name}</span>
-              <span className='mx-2 text-gray-400'>—</span>
-              <span className='text-gray-700'>{item.desc}</span>
+              <span className='mx-2 text-theme-secondary'>—</span>
+              <span className='text-theme-secondary'>{item.desc}</span>
             </li>
           ))}
         </ul>
@@ -50,14 +50,14 @@ const SkillsSection: React.FC = () => {
   return (
     <div
       id='skills'
-      className='bg-white mt-7 border scroll-mt-20 border-gray-300 rounded-lg shadow-sm '
+      className='bg-theme mt-7 border scroll-mt-20 border-theme rounded-lg shadow-sm '
     >
       <div className='p-6'>
         <div className='flex justify-between items-center mb-2'>
-          <h2 className='text-xl font-semibold text-gray-800'>Skills</h2>
+          <h2 className='text-xl font-semibold text-theme-primary'>Skills</h2>
         </div>
 
-        <div className='divide-y divide-gray-100'>
+        <div className='divide-y divide-theme'>
           {/* We map over categories. 
            Optional chaining (?.) prevents the "undefined" error if data hasn't loaded. 
         */}
@@ -66,10 +66,11 @@ const SkillsSection: React.FC = () => {
             .map((cat, index) => renderCategory(cat, index))}
         </div>
       </div>
-      <button className='w-full py-3 cursor-pointer text-center border-t border-gray-200 mt-2 text-gray-600 font-semibold hover:bg-gray-50 transition-colors'>
+      <button className='w-full py-3 cursor-pointer text-center border-t border-theme mt-2 text-theme-secondary font-semibold hover:bg-theme-secondary transition-colors'>
         <Link
           href={"/skills"}
-          className='text-gray-700 gap-2 text-sm font-bold  flex justify-center items-center w-full'
+          className='text-theme-secondary gap-2 text-sm font-bold  flex justify-center items-center w-full'
+          target='_blank'
         >
           Show all
           <FaArrowRight className='' />

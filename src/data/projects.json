@@ -118,7 +118,7 @@
     "endDate": "Nov 2025",
     "associatedWith": "APSIS",
     "liveLink": "https://amaniforged.com/",
-    "githubLink": "https://amaniforged.com/",
+    "githubLink": "",
     "source": "gdrive",
     "demoVideoLink": "1swO5LpgmvAxxs5w-DmeI0laCxyFkPWw5",
     "associatedImage": "/images/experiences/developerstroop.webp",
@@ -164,7 +164,6 @@
     "title": "Autoverge - Multi Tenant E-commerce",
     "startDate": "Feb 2024",
     "endDate": "Dec 2025",
-
     "liveLink": "https://autoverge.com/",
     "source": "gdrive",
     "demoVideoLink": "",
