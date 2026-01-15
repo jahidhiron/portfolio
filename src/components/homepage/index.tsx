@@ -5,11 +5,10 @@ import AboutSection from "./About/About";
 import ActivitySection from "./YouTubeSection/YouTubeSection";
 import ExperienceSection from "./Experience/Experience";
 import EducationSection from "./EducationSection/EducationSection";
-import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import SkillsSection from "./SkillsSection/SkillsSection";
-import InterestsSection from "./InterestsSection/InterestsSection";
 import UdemySection from "./UdemySection/UdemySection";
 import Top3ProjectsSection from "./Top3projects/Top3projects";
+import ProjectsSection from "./ProjectsSection/ProjectsSection";
 
 const HomePage = () => {
   return (
