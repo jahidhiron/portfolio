@@ -20,16 +20,16 @@ const SkillsSectionDetails: React.FC = () => {
   return (
     <div
       id='skills'
-      className='bg-white mt-7 border scroll-mt-20 border-gray-300 rounded-lg shadow-sm p-8'
+      className='bg-theme mt-7 border scroll-mt-20 border-theme rounded-lg shadow-sm p-8'
     >
-      <div className='mb-8 border-b pb-4'>
-        <h2 className='text-2xl font-bold text-gray-900'>Skills</h2>
+      <div className='mb-8 border-b border-theme pb-4'>
+        <h2 className='text-2xl font-bold text-theme-primary'>Skills</h2>
       </div>
 
       <div className='flex flex-col gap-8'>
         {(categories || []).map((cat, index) => (
           <div key={index} className='flex flex-col'>
-            <h3 className='text-[15px] font-bold text-black mb-4'>
+            <h3 className='text-[15px] font-bold text-theme-primary mb-4'>
               {cat.category}
             </h3>
 
@@ -37,11 +37,11 @@ const SkillsSectionDetails: React.FC = () => {
               {cat?.skills?.map((item, i) => (
                 <li
                   key={i}
-                  className='list-disc list-outside text-gray-800 text-sm leading-relaxed'
+                  className='list-disc list-outside text-theme-primary text-sm leading-relaxed'
                 >
                   <span className='font-semibold'>{item.name}</span>
                   <span className='mx-2'>—</span>
-                  <span className='text-gray-600'>{item.desc}</span>
+                  <span className='text-theme-secondary'>{item.desc}</span>
                 </li>
               ))}
             </ul>

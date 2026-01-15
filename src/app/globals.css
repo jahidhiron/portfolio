@@ -33,6 +33,9 @@
   .bg-theme-secondary {
     background-color: var(--background-secondary);
   }
+  .hover\:bg-theme-secondary:hover {
+    background-color: var(--background-secondary);
+  }
   .text-theme-primary {
     color: var(--text-primary);
   }

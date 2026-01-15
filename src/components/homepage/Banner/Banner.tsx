@@ -108,12 +108,14 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
                   href={data.foundationUrl}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-blue-600 font-medium ml-1 hover:underline'
+                  className='text-theme-primary font-medium ml-1 hover:underline'
                 >
                   Jahid Academy
                 </a>
               ) : (
-                <span className='text-black font-bold ml-1'>Jahid Academy</span>
+                <span className='text-theme-primary font-bold ml-1'>
+                  Jahid Academy
+                </span>
               )}
             </div>
           </div>
@@ -250,7 +252,7 @@ const Banner: React.FC<BannerProps> = ({ data }) => {
             className={`mt-5 font-semibold text-sm flex items-center gap-2 px-4 py-1.5 rounded-full border transition-all duration-300 ${
               isDownloading
                 ? "bg-theme-secondary text-theme-secondary border-theme cursor-wait"
-                : "border-[#262956] text-[#262956] hover:bg-[#262956] hover:text-white cursor-pointer"
+                : "border-theme-primary text-theme-primary dark:text-white hover:bg-[#262956] hover:text-white cursor-pointer"
             }`}
           >
             {isDownloading ? (

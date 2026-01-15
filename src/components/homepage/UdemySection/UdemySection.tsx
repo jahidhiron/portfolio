@@ -17,6 +17,10 @@ interface CourseCardProps {
   course: (typeof courseData)[0];
 }
 
+interface CommentCardProps {
+  comment: (typeof commentData)[0];
+}
+
 // --- 1. Course Card Component (Responsive) ---
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   return (
@@ -51,7 +55,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           <Link
             href={course.courseLink}
             target='_blank'
-            className='text-sm text-primary hover:text-blue-600 hover:underline line-clamp-2 font-medium leading-snug'
+            className='text-sm text-theme-primary hover:text-blue-600 hover:underline line-clamp-2 font-medium leading-snug'
           >
             {course.description}
           </Link>
@@ -92,7 +96,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
 };
 
 // --- 2. Comment Card (Responsive) ---
-const CommentCard: React.FC<{ comment: any }> = ({ comment }) => {
+const CommentCard: React.FC<CommentCardProps> = ({ comment }) => {
   return (
     <div className='flex-shrink-0 w-full md:w-80 h-[300px] border border-theme rounded-lg bg-theme overflow-hidden shadow-sm p-4 space-y-3'>
       <div className='flex items-start justify-between'>
@@ -137,7 +141,7 @@ const CommentCard: React.FC<{ comment: any }> = ({ comment }) => {
         {comment.commentedPost ? (
           <a
             href={comment.commentedPost}
-            className='text-sm text-primary hover:text-blue-600 truncate hover:underline cursor-pointer block'
+            className='text-sm text-theme-primary hover:text-blue-600 truncate hover:underline cursor-pointer block'
           >
             {comment.originalPostTitle}
           </a>
@@ -229,7 +233,7 @@ const UdemySection: React.FC = () => {
             style={{ scrollSnapType: "x mandatory" }}
           >
             {activeTab === "Courses" &&
-              activeData.map((course: any) => (
+              (activeData as typeof courseData).map((course) => (
                 <div
                   key={course.id}
                   className='w-full flex-shrink-0 md:w-auto'
@@ -240,7 +244,7 @@ const UdemySection: React.FC = () => {
               ))}
 
             {activeTab === "Comments" &&
-              activeData.map((comment: any) => (
+              (activeData as typeof commentData).map((comment) => (
                 <div
                   key={comment.id}
                   className='w-full flex-shrink-0 md:w-auto'
@@ -255,14 +259,14 @@ const UdemySection: React.FC = () => {
             <>
               <button
                 onClick={() => scroll("left")}
-                className='absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 cursor-pointer shadow-md border border-theme z-10 flex items-center justify-center'
+                className='absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 bg-theme rounded-full p-2 cursor-pointer shadow-md border border-theme z-10 flex items-center justify-center'
                 aria-label='Scroll Left'
               >
                 <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />
               </button>
               <button
                 onClick={() => scroll("right")}
-                className='absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 cursor-pointer shadow-md border border-theme z-10 flex items-center justify-center'
+                className='absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 bg-theme rounded-full p-2 cursor-pointer shadow-md border border-theme z-10 flex items-center justify-center'
                 aria-label='Scroll Right'
               >
                 <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />

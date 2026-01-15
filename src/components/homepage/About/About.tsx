@@ -105,7 +105,7 @@ const AboutSection: React.FC = () => {
         }
         .prose-custom :global(strong) {
           font-weight: 600;
-          color: #111827;
+          color: var(--text-primary);
         }
       `}</style>
     </div>

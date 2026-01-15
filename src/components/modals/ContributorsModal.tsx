@@ -16,11 +16,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
+  bgcolor: "var(--background)",
   boxShadow: 24,
   p: 4,
   borderRadius: 2,
-  width: { xs: "90%", sm: 720 }, // Responsive width
+  width: { xs: "90%", sm: 720 },
+  outline: "none",
+  border: "1px solid var(--border)",
 };
 
 type Contributor = {

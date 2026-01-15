@@ -113,7 +113,7 @@ const ExperienceSection: React.FC = () => {
                 <p className='text-[13px] md:text-sm text-theme-secondary mt-0.5'>
                   {job.companyUrl ? (
                     <Link
-                      className='hover:underline hover:text-blue-600 text-primary font-medium'
+                      className='hover:underline hover:text-blue-600 text-theme-secondary font-medium'
                       href={job?.companyUrl!}
                       target='_blank'
                     >

@@ -14,11 +14,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
+  bgcolor: "var(--background)",
   boxShadow: 24,
   p: 5,
   borderRadius: 2,
-  width: { xs: "90%", sm: 550 }, // Responsive width
+  width: { xs: "90%", sm: 550 },
+  outline: "none",
+  border: "1px solid var(--border)",
 };
 
 type SkillsModalProps = {

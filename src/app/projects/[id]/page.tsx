@@ -2,7 +2,7 @@ import ProjectDetailPage from "@/components/projectsPage/Details/Details";
 
 const ProjectsDetailsPage = () => {
   return (
-    <div>
+    <div className='bg-theme'>
       <ProjectDetailPage />
     </div>
   );

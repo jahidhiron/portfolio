@@ -25,7 +25,7 @@ interface CommentCardProps {
 }
 
 // --- 1. Comment Card Component (Responsive) ---
-const CommentCard: React.FC<any> = ({ comment }) => {
+const CommentCard: React.FC<CommentCardProps> = ({ comment }) => {
   return (
     <div className='flex-shrink-0 w-full sm:w-80 h-[258px] border border-theme rounded-lg bg-theme overflow-hidden shadow-sm p-4 space-y-3'>
       <div className='flex items-start justify-between'>
@@ -59,7 +59,7 @@ const CommentCard: React.FC<any> = ({ comment }) => {
         {comment.videolink ? (
           <a
             href={comment.videolink}
-            className='text-sm text-primary hover:text-blue-600 truncate hover:underline block'
+            className='text-sm text-theme-primary hover:text-blue-600 truncate hover:underline block'
           >
             {comment.originalPostTitle}
           </a>
@@ -274,24 +274,24 @@ const YoutubeSection: React.FC = () => {
             style={{ scrollSnapType: "x mandatory" }}
           >
             {activeTab === "Videos" &&
-              activeData.map((post, index) => (
+              (activeData as typeof youtubeData).map((post, index) => (
                 <div
                   key={`${post.id}-${index}`}
                   className='w-full flex-shrink-0 sm:w-auto'
                   style={{ scrollSnapAlign: "start" }}
                 >
-                  <YoutubeCard post={post as any} />
+                  <YoutubeCard post={post} />
                 </div>
               ))}
 
             {activeTab === "Comments" &&
-              activeData.map((comment) => (
+              (activeData as typeof commentData).map((comment) => (
                 <div
                   key={comment.id}
                   className='w-full flex-shrink-0 md:w-auto'
                   style={{ scrollSnapAlign: "start" }}
                 >
-                  <CommentCard comment={comment as any} />
+                  <CommentCard comment={comment} />
                 </div>
               ))}
           </div>
@@ -300,7 +300,7 @@ const YoutubeSection: React.FC = () => {
             <>
               <button
                 onClick={() => scroll("left")}
-                className='absolute left-0 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 shadow-md border cursor-pointer border-theme z-10 flex items-center justify-center'
+                className='absolute left-0 top-1/2 -translate-y-1/2 bg-theme rounded-full p-2 shadow-md border cursor-pointer border-theme z-10 flex items-center justify-center'
                 style={{ marginLeft: "-12px" }}
               >
                 <FaAngleLeft className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />
@@ -308,7 +308,7 @@ const YoutubeSection: React.FC = () => {
 
               <button
                 onClick={() => scroll("right")}
-                className='absolute right-0 top-1/2 -translate-y-1/2 bg-theme/90 rounded-full p-2 shadow-md border cursor-pointer border-theme z-10 flex items-center justify-center'
+                className='absolute right-0 top-1/2 -translate-y-1/2 bg-theme rounded-full p-2 shadow-md border cursor-pointer border-theme z-10 flex items-center justify-center'
                 style={{ marginRight: "-12px" }}
               >
                 <FaAngleRight className='w-4 h-4 md:w-5 md:h-5 text-theme-primary' />

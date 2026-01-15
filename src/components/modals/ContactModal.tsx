@@ -18,12 +18,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
+  bgcolor: "var(--background)",
   boxShadow: 24,
   p: 4,
   borderRadius: 2,
   width: { xs: "95%", sm: 620 },
   outline: "none",
+  border: "1px solid var(--border)",
 };
 
 export default function ContactModal() {
@@ -79,12 +80,19 @@ export default function ContactModal() {
           <IconButton
             onClick={() => setOpen(false)}
             size='small'
-            sx={{ position: "absolute", top: 8, right: 8 }}
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              color: "var(--text-primary)",
+            }}
           >
             <RxCross2 />
           </IconButton>
 
-          <h3 className='text-lg font-semibold mb-4'>Get in touch</h3>
+          <h3 className='text-lg font-semibold mb-4 text-theme-primary'>
+            Get in touch
+          </h3>
 
           <form onSubmit={handleSubmit} className='space-y-3'>
             <TextField
@@ -93,6 +101,14 @@ export default function ContactModal() {
               size='small'
               fullWidth
               required
+              sx={{
+                "& .MuiInputLabel-root": { color: "var(--text-secondary)" },
+                "& .MuiOutlinedInput-root": {
+                  color: "var(--text-primary)",
+                  "& fieldset": { borderColor: "var(--border)" },
+                  "&:hover fieldset": { borderColor: "var(--text-secondary)" },
+                },
+              }}
             />
 
             <TextField
@@ -102,17 +118,27 @@ export default function ContactModal() {
               size='small'
               fullWidth
               required
-              sx={{ mt: 3 }}
+              sx={{
+                mt: 3,
+                "& .MuiInputLabel-root": { color: "var(--text-secondary)" },
+                "& .MuiOutlinedInput-root": {
+                  color: "var(--text-primary)",
+                  "& fieldset": { borderColor: "var(--border)" },
+                  "&:hover fieldset": { borderColor: "var(--text-secondary)" },
+                },
+              }}
             />
 
             <div className='mt-3'>
-              <label className='text-sm font-medium mb-2 block'>Message</label>
+              <label className='text-sm font-medium mb-2 block text-theme-primary'>
+                Message
+              </label>
               <TextEditor setValue={setMessage} value={message} />
             </div>
 
             <button
               type='submit'
-              className='bg-theme text-theme-primary cursor-pointer w-full mt-5 py-1 rounded-full hover:bg-theme-secondary transition-colors'
+              className='bg-primary text-white cursor-pointer w-full mt-5 py-2 rounded-full hover:opacity-90 transition-colors border border-theme'
               disabled={loading}
             >
               {loading ? (

@@ -70,7 +70,7 @@ const SkillsSection: React.FC = () => {
         <Link
           href={"/skills"}
           className='text-theme-secondary gap-2 text-sm font-bold  flex justify-center items-center w-full'
-          target='_blank'
+          // target='_blank'
         >
           Show all
           <FaArrowRight className='' />

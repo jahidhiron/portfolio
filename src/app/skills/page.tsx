@@ -2,7 +2,7 @@ import SkillsSectionDetailsPage from "@/components/skillsPage";
 
 const ProjectsPage = () => {
   return (
-    <div>
+    <div className='bg-theme'>
       <SkillsSectionDetailsPage />
     </div>
   );

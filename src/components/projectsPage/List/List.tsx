@@ -52,12 +52,12 @@ const ProjectsSection: React.FC = () => {
     return (
       <div
         key={entry.id}
-        className='flex group hover:border-gray-500 flex-col bg-white border border-gray-200 rounded-xl md:p-5 p-3 hover:shadow-lg transition-shadow duration-300 h-full'
+        className='flex group hover:border-theme-secondary flex-col bg-theme border border-theme rounded-xl md:p-5 p-3 hover:shadow-lg transition-shadow duration-300 h-full'
       >
         <Link
           href={`projects/${entry.id}`}
           target='_blank'
-          className='mb-4 flex justify-center items-center bg-gray-50 rounded-lg h-32 border border-gray-100 overflow-hidden'
+          className='mb-4 flex justify-center items-center bg-theme-secondary rounded-lg h-32 border border-theme overflow-hidden'
         >
           <img
             src={entry.projectAvatar ?? "./not-found.png"}
@@ -71,18 +71,20 @@ const ProjectsSection: React.FC = () => {
           <Link
             href={`projects/${entry.id}`}
             target='_blank'
-            className='hover:text-blue-600 hover:underline'
+            className='hover:text-theme-primary hover:underline'
           >
-            <h3 className='text-base font-bold line-clamp-1'>{entry.title}</h3>
+            <h3 className='text-base  hover:underline hover:text-blue-600 font-bold line-clamp-1 text-theme-primary'>
+              {entry.title}
+            </h3>
           </Link>
 
-          <p className='text-[12px] text-gray-500 font-medium'>
+          <p className='text-[12px] text-theme-secondary font-medium'>
             {entry.startDate} - {entry.endDate}
           </p>
         </div>
 
         <div
-          className='text-sm flex items-center gap-2 text-gray-700 mt-0.5'
+          className='text-sm flex items-center gap-2 text-theme-primary mt-0.5'
           onClick={handleChildClick}
         >
           {entry.demoVideoLink && (
@@ -92,7 +94,7 @@ const ProjectsSection: React.FC = () => {
             <Link
               href={entry.liveLink}
               target='_blank'
-              className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
+              className='flex items-center gap-1 border border-theme px-3 rounded-full hover:bg-theme-primary hover:text-white hover:border-theme-primary text-xs py-1 cursor-pointer text-theme-primary'
             >
               <TbWorld />
 
@@ -103,7 +105,7 @@ const ProjectsSection: React.FC = () => {
             <Link
               href={entry.githubLink}
               target='_blank'
-              className='flex items-center gap-1 border px-3 rounded-full hover:bg-[#262956] hover:text-white hover:border-white text-xs py-1 cursor-pointer'
+              className='flex items-center gap-1 border border-theme px-3 rounded-full hover:bg-theme-primary hover:text-white hover:border-theme-primary text-xs py-1 cursor-pointer text-theme-primary'
             >
               <FaGithub />
 
@@ -112,7 +114,7 @@ const ProjectsSection: React.FC = () => {
           )}
         </div>
 
-        <div className='flex items-center text-sm text-gray-700 mt-3'>
+        <div className='flex items-center text-sm text-theme-secondary mt-3'>
           {entry.associatedWith && (
             <>
               {entry.associatedImage ? (
@@ -122,7 +124,7 @@ const ProjectsSection: React.FC = () => {
                   alt={entry.associatedWith}
                 />
               ) : (
-                <span className='flex items-center justify-center w-4 h-4 mr-2 bg-gray-100 rounded-sm text-xs font-bold text-gray-700'>
+                <span className='flex items-center justify-center w-4 h-4 mr-2 bg-theme-secondary rounded-sm text-xs font-bold text-theme-primary'>
                   {entry?.associatedWith?.charAt(0)?.toUpperCase()}
                 </span>
               )}
@@ -141,7 +143,7 @@ const ProjectsSection: React.FC = () => {
         {/* Skills & Contributors - Pushed to bottom */}
         <div className='mt-auto space-y-4'>
           {entry.skills?.length > 1 && (
-            <div className='text-sm text-gray-800 flex items-center gap-1 mt-2.5'>
+            <div className='text-sm text-theme-primary flex items-center gap-1 mt-2.5'>
               <IoDiamondOutline />
               {hiddenSkillCount > 0 && (
                 <SkillsModal
@@ -157,7 +159,7 @@ const ProjectsSection: React.FC = () => {
 
           {entry.contributorAvatars?.length > 0 && (
             <div className='flex items-center justify-between pt-1'>
-              <span className='text-[11px] text-gray-500 font-medium'>
+              <span className='text-[11px] text-theme-secondary font-medium'>
                 Contributors
               </span>
               <div className='flex items-center'>
@@ -199,8 +201,8 @@ const ProjectsSection: React.FC = () => {
       className='mt-10 scroll-mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20'
     >
       <div className='mb-8'>
-        <h2 className='text-2xl font-bold text-gray-900'>Projects</h2>
-        <div className='h-1 w-12 bg-[#262956] mt-2 rounded-full'></div>
+        <h2 className='text-2xl font-bold text-theme-primary'>Projects</h2>
+        <div className='h-1 w-12 bg-theme-primary mt-2 rounded-full'></div>
       </div>
 
       {/* 3-Column Grid */}
